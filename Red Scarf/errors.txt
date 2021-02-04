@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 22: indentation mismatch.
+File "game/script.rpy", line 42: choice menuitem expects a non-empty block.
+    "Can’t you please reconsider? I don’t think that I should be here. I’ll do whatever it takes to stay home.":
+                                                                                                                ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Feb  3 09:42:25 2021
+Thu Feb  4 07:51:04 2021

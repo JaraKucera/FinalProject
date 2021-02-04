@@ -1,17 +1,17 @@
-Wed Feb  3 09:44:10 2021
+Thu Feb  4 10:18:18 2021
 Windows-10-10.0.18362
 Ren'Py 7.4.2.1292
  
 
 Bootstrap to the start of init.init took 0.06s
 Early init took 0.00s
-Loader init took 0.01s
+Loader init took 0.02s
 Loading error handling took 0.02s
-Loading script took 0.21s
-Loading save slot metadata. took 0.00s
+Loading script took 0.24s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.04s
+Running init code took 0.05s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -27,17 +27,17 @@ Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.06s
-Prepare screens took 0.05s
+Save screen analysis took 0.05s
+Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.24s
+Interface start took 0.23s
 
 Initializing gl renderer:
 primary display bounds: (0, 0, 2560, 1440)
-swap interval: 1 frames
+swap interval: 2 frames
 Using GL DLL.
 Windowed mode.
 Vendor: 'NVIDIA Corporation'
@@ -463,7 +463,7 @@ Texture testing:
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.31363296509s
+Total time until interface ready: 1.32873392105s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
