@@ -361,6 +361,169 @@ label start:
     R "For a few seconds, you feel alive and happy, but after you’re left with guilt and more self-hate. You try to get that passion for things back, even trying to get that passion back in itself is difficult, and after pushing yourself so hard, only to not be able to get it back hurts a lot."
     R "It brings intense numbness. Have you ever felt so numb, where you would try anything to feel again?"
 
-    # This ends the game.
+    menu choice_8:
+        "Yes":
+            jump choice_8_yes
+        "Somewhat":
+            jump choice_8_somwhat
+        "No":
+            jump choice_8_no
+    
+    label choice_8_yes:
+        mc "Yeah, I’ve been feeling numb a lot lately. It sucks when you know how you should be feeling in certain situations, but you just don’t feel that way. Sometimes you just fake it to seem normal, but it hurts on the inside that you can’t feel what you should be feeling."
+        jump choice_8_done
+
+    label choice_8_somwhat:
+        mc "I’ve only felt numb a few times. Thankfully it goes away after a while but there are moments when I know that I should be feeling a certain way, but I just can't process any emotions. It does suck."
+        jump choice_8_done
+    
+    label choice_8_no:
+        mc "Thankfully, I’ve never felt like that, sometimes sure when you’re shocked and try to process things, but eventually it all catches up with me. But I can't imagine how bad it must be to feel like that all the time."
+        jump choice_8_done
+    
+    label choice_8_done:
+        R "Yeah it certainly isn’t nice. It all just makes you want to blame yourself, there is nothing else to blame, so it must be me. That blame against yourself, it hurts your body a lot, it stops you from sleeping at night while also making you tired and wanting to stay in bed all the time."
+    
+    R "You end up not having any energy to do anything, you either eat nothing or eat too much which just brings you more self-hate. But while all of this is happening you don’t want to worry those around you, you don’t want them to worry about you."
+    R "You don’t feel like your life is important enough to bring those that care worries and stress. You lose all control of your life. So, the main reason for my love-hate with the forest is that I don’t know."
+    "There was no more skipping from Klara after that, no more smile to brighten up that face. Just a neutral walk with a neutral expression. Like her body had been reminded of the past which brought enough horror to her that her body was no longer able to put up her mask to the world. She had to recover before she could function again."
+    mc "I guess that’s why we put on a brave face, why we act like nothing is wrong, we don’t want anyone to feel the same kind of pain that we are feeling. We don’t want them to know how much pain we are in."
+    R "Hiding it, and appearing fine is so hard sometimes, makes you want people to forget about you, makes you wish that you weren’t around so that none of your pain can be brought onto others."
+    "The only image left were two people walking slowly, one in front of the other. Tough words have been said. A moment of peace was needed, a moment to take our minds off everything."
+    mc "The stars are so pretty tonight, I wish we could just lay here and enjoy them for a while. To forget about everything, to get a little life back."
+    "Keeping my eyes open got harder and harder each second. The difference between having my eyes opened and closed was becoming less and less noticeable. Every time that I blinked my eyes remained closed for longer. What would it be like at home if I never returned?"
+    "Would they be sad without me around?  They did send me away. Mom would be heartbroken. She always tried to be tough to protect us. She didn’t often cry but when she did it felt as if the world was drowning in sorrows."
+    "Mom didn’t want us to worry about her, so she always hid her tears, didn't want to make us sad. Overworking herself each night so that everything was okay. Never taking a day off. Mom would feel like she had failed her duty to protect me. What about Dad? He always had his moments of anger, an anger that existed out of care for us."
+    "He always wanted all of us to be happy and carried us on his back. His face was always the same, drained eyes and an expressionless look. He needed to appear tough so that we could all lean against him. I don’t think that I had ever seen him cry. "
+    "He made us believe that he wasn’t even capable of it. Would he be sad if I never came back? Maybe things would be easier without me, maybe without the burden of my existence, everyone would get along better. Would I be sad if I didn’t get back? Do I still have a place to come back to? What if they don’t want me to come back?"
+    R "You sure were very weird. I guess you’re not used to amazing nighttime adventures with someone as great as me."
+    "I had not realized it until now but the entire time, my eyes were closed. I left the world for the land of the stars."
+    mc "What happened?"
+    R "Well Blue Shirt, I was just minding my own business. When I heard a loud thud sound and the next thing I know is that you’re just lying there on the ground enjoying your sleep time. You didn’t even invite me to join."
+    "It wasn’t easy getting off the grass back onto my feet. The grass pulling me back to dreamland, soothing me, and although I was dreaming about negative thoughts I still wanted to return. Pulling off from the ground felt like a connection was being severed. Goodbye dreamland, goodbye land full of glistening stars, it’s time to get back to the travels."
+    R "Hey I just want you to know that I am sorry about all these things that you have to go through, it must be hard and tiring. But hey look, we are almost there just a few more minutes."
+    "Klara was correct, right in front of us was the base of a tall hill, just a few more steps before the hill would open our view from the shackles of the surrounding trees. The inclination increased with each step, each step was more difficult to make than the one before. For the first time, I wasn’t sure if a tree wasn’t easier to climb."
+    mc "Geez you certainly picked a steep hill."
+    R "Only for you. Although I don’t remember it being this steep, this is the only spot that escapes these trees, there is no other nearby point high enough that I know of."
+    "Soon I would discover Klara’s biggest secret. The hill that we were almost climbing at this point was known to the locals as the Truth Seeker. A place that would one way or another be the cause to reveal all major secrets, and Klara’s secret was a big one."
+
+    #Chapter 5
+    R "We are almost…"
+    "As soon as those words escaped her mouth, her foot failed to maintain balance and with one slip she came tumbling down towards me. At first, I thought that it would only be a slight problem, that I would be able to catch her. But when I laid out my hands and arms to prepare myself to catch her, I discovered the real problem. Her body did not make an impact against me, it did not stop, I felt a cold shiver right as her body passed through mine."
+    mc "What the?"
+    "That was all my mouth could say as my brain realized that this girl had just passed through me. What kind of magic was this? How tired was I? Her body did not fall too far, stopping slightly behind me."
+    R "Oops, that wasn’t supposed to happen, anyway, let’s keep going shall we?"
+    mc "No no, wait for a second, what just happened? You need to explain yourself, Klara."
+    R "But Blue Shirt, it isn’t important, plus we have to get to the top of this hill and get you back as fast as possible."
+
+    menu choice_9:
+        "Please Klara, I would really like to know what is up with you. I don’t understand what just happened.":
+            jump choice_9_1
+
+        "I’m sorry I’m just confused about what just happened. If you are comfortable, could you tell me about it?":
+            jump choice_9_2
+        "Klara tell me what just happened. I deserve to know what you just did to me.":
+            jump choice_9_3
+    
+    label choice_9_1:
+        jump choice_9_done
+
+    label choice_9_2:
+        jump choice_9_done
+    
+    label choice_9_3:
+        jump choice_9_done
+    
+    label choice_9_done:
+        R "Fine, okay I will tell you everything, le’s just get to the top of this hill first, it’s not much longer, and I think that it will be much easier to do it there. I also need time to think through it."
+    
+    "The next five minutes were filled with dead silence. The only audible noises were our shoes stomping on the ground below as we tried to maintain balance. I tried to think about all the other times that Klara had touched, when I first fell while running from the bullies,"
+    "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself. She had always skipped ahead of me, only ever slowing down and turning around to talk to me."
+    "Was there something wrong with her or me? As we near the top, I noticed Klara’s face, she wasn’t hiding her emotions, there was no smile, just sadness and worry. The top of the hill was way brighter than any other location that we had been to thus far."
+    "It was free from all the sheltering trees. The dark sky, the bright stars, the shining moon were all perfectly fully visible and glancing at us for the tree’s protection as now gone. I looked across the horizon, for a second I was scared because all I could see was a large dense forest."
+    "But then as I looked towards the direction of the moon, I finally saw it. A glistening body of water, if it wasn’t for the lake I would have never noticed those dark cabins to the side of it. There wasn’t a single light on, so I would have to follow the moon to be able to get back."
+    "I turned around to tell Klara that I had just found the camp only to see her saddening face, a tear rolling down her cheek."
+    R "I guess it’s time for me to tell you everything now. I don’t remember too much about my life. I was an ordinary kid that loved being out in nature, especially this forest, painting and drawing the landscape or just running around. It was my biggest passion."
+    R "I had other passions besides that of course, but this forest was the main one. Every summer my family and I would travel here, stay out camping and just enjoy life. Just a family tradition that was passed down through generations. It was my favourite time of life, the family being together all happy,"
+    R "they would all focus on me, and we would have painting sessions together. We would take loads of photos and just smile a lot. As I grew older my passions changed but this forest remained. It was more of a home for me than my own house. Then all of a sudden I just slowly started losing interest in all of my passions. I had trouble with sleep, with eating, with being happy."
+    R "Sure there were stressful things going on in my life. The family wasn’t the best, I wasn’t doing too well in school any more. I was just left with one single piece of hope for me and my family and that was going camping in this forest over the summer. However, we had to skip that year."
+    R "Mother wasn’t feeling too well and dad was just too busy at work to make any time for us. I clawed onto this one hope for the next year to come. I hated that year, I felt like a husk, I couldn’t feel anything and hated myself for that, but I couldn’t let anyone worry about me, they all had plenty of problems themselves,"
+    R "I didn’t want to add to them, so I just put on a happy face and pretended that everything was okay while crying all night. I think that my parents must have noticed that something was up because they announced that we would be going camping that summer, that dad would take time off work and that mother was feeling well enough for it."
+    R "At the time it was two months away, but it gave me so much hope, and honestly, it was the only thing keeping me alive. I thought that one visit to the forest would help me with all of my problems that it would suddenly just fill me with joy. Mother was even feeling a little better during that time too."
+    R "When we finally got to the forest though I realized that I had no passion for it. I looked forward to being together once again, but that feeling was left unfulfilled. I felt hollow."
+    R "It wasn’t all that bad until Dad got a work call, and told us that we would have to go back because it was important, and he could just not miss out on it. Dad was once again leaving us and mother wouldn’t say anything. I couldn’t control myself at that point any more, all the emotions that were being held back erupted and came flying out, and I let it all out on them, yelling at them both."
+    R "At dad for only caring about money and not taking care of mom when she needed comfort the most, and for mom not doing anything about my dad, for being a pushover and doing nothing for herself or the family. I couldn’t take it any more and just ran out crying. I hated everything that had just happened. I regretted it the second that it happened, but I couldn’t get myself to come back."
+    R "Life was so unfair. But I wanted to calm down and return. A part of me felt fantastic for letting things go. I finally felt alive after almost two years. As I walked back I noticed the heart rising around me. There was a forest fire going off strongly right where mom and dad were. I had only been gone for about an hour, I didn’t know if they were okay or not, but I had to run away, getting caught up in the flames and smoke would have been the end of me."
+    R "I ran as fast as I could. I had to get away and find my parents. The fire was spreading at a high rate, it was almost impossible to see anything, shades of red and orange just engulfed the atmosphere.  While I was running disoriented, the ground below me collapsed and send me crashing down to some deep unused well. The fall had knocked me out and when I came to, it was already dark."
+    R "I wanted to get up and potentially climb out, but my leg was broken by the fall, and it was hard to breathe. I couldn’t move out of there, I was trapped. Not only that, but I spent hours crying and shouting for help until I lost all of my voice. No one ever came for me. I remember passing out and feeling full of regret. I awoke in the burnt down forest, "
+    R "I thought that someone had found me and rescued me, but there was no one to be found. I was feeling completely okay. I thought that maybe I just passed out, and it had all been a bad nightmare, so I went looking for people. Everyone that I met would just ignore me, after a few hours I got tired and thought that I was going to force someone to listen to me,"
+    R "but I couldn’t touch anyone I just went through them. People just passed through me and no one could hear me. I realized that I must have died that night, that it wasn’t a dream, that life was over, and I was just a wandering spirit or ghost now."
+    R "It was like that for a long time, just walking about in the forest, observing random things. Once you get used to passing time it gets easier. Days end up passing as fast as seconds, weeks passed like hours and years passed like days. It was becoming hell, then one day I saw you tumble down that hill, things didn’t look okay for you,"
+    R "so I decided to stick around to see what you would do. I was very surprised when you started talking back to me, that fact that you could see me and hear me cheered me up. It had been such a long time since I’ve talked to another person and not just myself."
+    mc "Wow that is a lot to process."
+    R "I know Blue Shirt, I am sorry that I didn’t tell you sooner, I just felt like there was never a good time to blurt it out."
+
+    menu choice_10:
+        "Focus on getting home":
+            jump choice_10_home
+
+        "Focus on Sam":
+            jump choice_10_sam
+
+    label choice_10_home:
+        mc "Well what has happened to you sucks but now that we know where the camp is I think that we should focus on getting me back home."
+        R "Oh I see, well since you know the way back I think that this is where we should separate. I feel like I have been fair to you and understanding enough, but you have not treated me with respect. So, good luck getting back home, I hope that we will never meet again."
+        "There was nothing that I could say or do to get Klara to stay with me. I  guess that I will have to finish this journey by myself."
+        jump label_10_end
+    
+    label choice_10_sam:
+        mc "You mentioned that the last thing that you remembered was falling into some kind of hole after the ground broke beneath you near the lake right? Since we’re heading in that direction anyway, would you like to come with me to see if we can find it?"
+        R "I think that I would like that, I’ve never searched for it myself, I have been too afraid of what I might find. I’m scared, I don’t want to see my body but feel like it might be the key to passing onto the next life."
+        jump choice_10_done
+    
+    label choice_10_done:
+        #Chapter 6
+    
+    "We set off onto the final stretch of our journey, a lot of things had been said.  They were all stuck in my head, and it would be awhile before I could process everything properly. It did make me question my sanity among other things, but it had been a long night, accepting supernatural events was easier than you’d think when you’re very heavily sleep-deprived."
+    "I kind of let logic go away and embraced Klara’s words for the truth. It was now downhill towards the truth and back home. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
+    R "What if the hole doesn’t even exist any more, don’t you think that someone would have found me by now, and we are just wasting our time searching? What if finding my body doesn’t change anything, and I’ll still be stuck in this world?"
+    mc "Well, I think that maybe the hole got covered over, there would have been a lot of ash after a fire. Mabe some logs fell over and covered it? I don’t know, but I don’t think that we are wasting time attempting. You have done a lot for me, so at least let me do this small task for you. Let’s not lose hope before we have even begun."
+    "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now, but this was no longer about me, this was now about repaying the one that had saved my life."
+    "I was still limping around, but my body had got used to the pain from stepping on my sore ankle."
+    R "I have a hard time remembering where exactly, well, where exactly I died. But I do remember that there was a large tree stump and the remains of a small castle tower I think. I also wanted to say that I appreciate everything that you have done for me Blue Shirt. I think that we have gone through a lot tonight but spending it with you was worthwhile and your company was really enjoyable, much better than just walking around talking to myself."
+    R "You have given me hope for the future, maybe there are other people out there like you that can see me and hear me. Plus you’ll be in camp so like maybe we could hang out sometimes if you’d like. I know that accepting a person lie me might not be the easiest, but I really do cherish this night with you"
+    "Just as I was about to answer Klara, I heard faint shouting coming from the direction of the camp. I turned around trying to solve what the words shouted at us meant, thinking that maybe some camp instructor had seen us and was worried about me. But as my luck would have it, my eyes focused and realized that it was none other than the people responsible"
+    "for my adventure in the forest, the bullies. Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. Klara had no clue what was going on at first until she saw my terrified expression. I think that she could guess who these people were."
+    "Just as I thought that life was going to be over, Klara grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind. How was she holding me when a few hours ago she couldn’t make contact with me? They say that spirits stay around if they have a lot of willpower."
+    "Was it all possible because of the amount of willpower she put into helping me? It would be something that I would only be able to speculate about. The ground was muddy and damp, each step drained the slimmer of energy that I had left. Lifting my leg was a struggle, each step felt like the earth was grabbing my shoes, not wanting me to leave."
+    "We did not run long before we spotted what might have been exactly what Klara had described, a small run-down stone tower. It did not feel like we were getting any distance on the bullies they were getting closer, Klara pulled my hand towards the castle tower. It wouldn’t be long before I would collapse,"
+    "my lungs were working overtime and after walking around all night, my legs were starting to give up. Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Klara was trying her best to get us to safety, there wasn’t a smile on her face"
+    "nor any sense of positive emotions, it was completely different from the dog incident. Back then she forced herself to wear a smile to hide her true feelings from the world, but right now the mask was destroyed."
+    "The scenery here was completely different, huge trees with branches that crept out to block out the sun were replaced with sparse burnt tree stumps that embraced the rising sun and used the dampness in the air to create orange filled burning sights."
+    "Those were the last images I saw as we entered the tower, where the ground below me gave away and crumbled underneath me. As everything was going black I heard the loudest, darkest screech that I have ever heard in my life."
+    "I don’t think that it was dark for long before my eyes adjusted and could see around me. Sunlight was entering through the circular hole in the sky through which I had fallen. I was surrounded by narrow stone slimy walls."
+    "Laying in a pool of water explained my drenched state and low body heat. I was freezing and sore all over. Where was I? That was when my eyes adjusted and noticed that I was not the only one stuck in this hole, right beside me were skeleton remains."
+    "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Klara wore. We must have done it, we must have found her body."
+    "Well now hopefully I won’t meet the same end as her. I used the last tiny amount of energy that I had managed to recollect to shout at the top of my lungs for help. No one answered back."
+    "What had happened to Klara and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
+    "because he had heard a loud screech and my call for help. Firefights and the police were called, firefights to save me and police to investigate the body. I awoke in a hospital bed where the police questioned me about the night."
+    "I changed the story around to not include any mentions of Klara but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Klara pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
+    "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Klara and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
+    "The article didn’t mention me by name but mentioned how I almost suffered the same faith. The article ended with missing pictures of the bullies, they had gone missing from the camp at the same time as I was found."
+    "There were search parties sent out but no one could find them. I wanted to revisit that forest and see Klara again, but a broken leg was keeping me at home and finding an excuse to revisit the forest was basically impossible."
+    "It sadly took a few years before I would be able to visit again. A few years that would have been much more difficult if I hadn’t had met Klara that night. It was strange, but she felt like a part of me, there to remind me of hope at the worst of times."
+    "I spent the day strolling through the forest, revisiting the cabin that we used for shelter, the hilltop, the place where I awoke to see her for the first time. In all those years it had not changed at all. A part of me hoped to be able to see her again, while the other hoped that she was laid to rest after her body had been found."
+    "She was free from the forest. Life went on, and I decided to use her memory of visiting the forest with her family every year for my family too. Every year as I grew older I wished that maybe she would be there or at least know how grateful I was for her existence."
+    jump end
+
+    label choice_10_end:
+        "I had been walking for a while. My ankle was sorer than ever. I would say that it was worse than when I first hurt it. All the walking must have taken its toll. For some reason, the forest seemed scarier alone."
+        "The sounds seemed to intensify when you were alone with just your thoughts. Only a little while to go before I would get back to the camp. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
+        "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now. Just as I was about to rest before walking further, I heard faint shouting coming from the direction of the camp."
+        "I turned around trying to solve what the words shouted at me meant, thinking that maybe some camp instructor had seen me and was worried that I wasn’t in bed, but as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure "
+        " in the forest, the bullies. Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. It wasn’t long before they caught up to me. The impact they had on my body made it give up. It was too much to handle, it was over."
+    
+    label end:
+        # This ends the game.
 
     return
