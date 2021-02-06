@@ -20,9 +20,7 @@ label start:
     # These display lines of dialogue.
 
     mom "Are you sure that this is absolutely the best idea? Do you genuinely think that one less mouth to…"
-
     dad "Quiet, he’ll hear you. You wouldn’t want to cause that boy any more harm, would you?"
-
     mom "It’s fine, he’s listening to his music, he can’t hear us. He’s probably all lost in his virtual world again."
 
     "I was in truth not listening to any music nor was I in any virtual fantasy world where everything was OK."
@@ -38,38 +36,47 @@ label start:
     dad "Look Sport, we already discussed this with your mom, this will benefit you the most, so get out there and let the person in charge know that you’re here."
 
     menu choice_1:
-        "Can’t you please reconsider? I don’t think that I should be here. I’ll do whatever it takes to stay home.":
+        "Reconsider":
             jump choice_1_home
 
         "*silence*":
             jump choice_1_done
 
-        "Yeah, I understand, I will give this a shot, and hopefully, it won’t be too bad.  If anything happens I will let you guys know.":
+        "Understanding":
             jump choice_1_understanding
     
     label choice_1_home:
+        mc "Can’t you please reconsider? I don’t think that I should be here. I’ll do whatever it takes to stay home."
         dad "Listen, it will only be for a short time, soon you’ll be back home with us. We just can’t handle things right now."
         jump choice_1_done
 
     label choice_1_understanding:
+        mc "Yeah, I understand, I will give this a shot, and hopefully, it won’t be too bad.  If anything happens I will let you guys know."
         dad "Thanks for understanding sport."
         jump choice_1_done
 
     label choice_1_done:
         "Without even saying goodbye they were gone. The car getting swallowed by the spiral of trees, possibly never to be seen again."
     
+    play sound "audio/CampAmbi.ogg" fadein 2.0 volume 0.25
+
     "By looking at the camp, you could tell that in the past it must have been filled with joyous souls of children laughing about, enjoying their summers, stress-free and happy."
     "All the buildings shining, feeling alive and fresh. The new reality was a mere husk of the past. The lake where children would cool off after a long day of activities looked more like one step would fill your body with toxic waste."
     "The cabins and buildings all looked soulless, the colour drained from this place. It looked like it was all going to collapse soon from all the mould and lack of care."
     "From everyone’s expressions, you could tell that joy and happiness were two emotions gone from this world. Everyone had the same facial expression, an expression that screamed help me, let me leave, I’ve had enough."
     "Even those that were in charge all looked like they were slaves, salving away for a minimal wage, hoping to get by until their next paycheque."
-    t "Hey watch it, what do you think that you’re doing?"
+    
+    stop sound 
+    play sound "audio/Thud.ogg" volume 1.0
+    
+    t "Hey watch it! What do you think that you’re doing?"
     "Before I even get a chance to respond, he grabs me by my shirt and holds me against the wall."
     t "Listen here, I see that you’re new here, so I’m only going to give you a warning this time. People around here are in fear when they hear my name. The boys and I here are T."
     t "We run this little camp, so don’t you dare ever bump into me or the boys ever again. If you do you’ll get this but much worse."
+    play sound "audio/Punch.ogg"
     "With that, he punched me in the gut and left me heaving on the ground. As his friends walked by they spat on me and called me various names."
     "What a great way to start this camp. Hopefully, he won’t be too much of a problem."
-    
+
     "After going to the head’s office to sign up and be assigned to a bed in a run-down cabin. I was informed that I’ve come on time to be able to partake in the final activity of the day before bedtime."
     "One of the run-down buildings had a nice set of windows to one of the sides of the walls overlooking the forest. The cabin wasn’t as bad as it looked from the outside, the walls constructed out of logs with certifications hung up and framed from years before I was even born."
     "How I wish I could have dealt with this camp twenty years ago during its glory years.  While I am the last person to enjoy group activities and the outside, it would have made it much more bearable."
@@ -80,6 +87,15 @@ label start:
     "I almost lost my heart to shock when I heard my name announced after the name Tray. For I realized in that split second upon seeing his face that the guy that had punched a hole through my gut was Tray."
     t "I hope that you remember the warning that you got earlier today."
     "Hearing those words echo in my brain along with the devious smile plastered on his face brought back the feeling of pain that still wasn’t fully away. I was first to hold the punching bad. Trays face grew with pleasure every time that he punched."
+    play sound "audio/Punch.ogg"
+    pause 0.25
+    queue sound "audio/Punch.ogg" volume 0.75
+    pause 0.25
+    queue sound "audio/Punch.ogg" volume 0.60
+    pause 0.25
+    queue sound "audio/Punch.ogg" volume 0.25
+    pause 0.25
+    queue sound "audio/Punch.ogg" volume 0.5
     "Each punch sent shockwaves through my body and pushed me further. Keeping my balance was getting more difficult with each punch. The harder the punch the wider the grin on his face would be."
     "Somehow I managed to survive the first twenty minutes, it was now my turn to punch. It didn’t seem like my punches had any impact on Tray whatsoever. It was as if I was just gently tapping the punching bag."
     "For the first time, I was a little at peace, I could study the surrounding environment. Everyone seemed to be doing much better, some even had a smile on their face. It looked like they were making friends."
@@ -88,31 +104,35 @@ label start:
     "As I punched I started to immerse myself, none of this would have happened if I wasn’t here, this pain wouldn’t be in my stomach. I wouldn’t be wasting my time on a summer camp if it wasn’t for:"
 
     menu choice_2:
-        "This is all my fault, if I had just done things differently, helped out more if I was different. If I was better, to myself and them. I wish I was good enough.":
+        "Myself":
             jump choice_2_me
 
-        "It’s all of their fault, if only they would just care, maybe offer some help. Focus on me for once. Why can’t I get the focus for a bit sometimes? I just wish that they were better.":
+        "My family":
             jump choice_2_family
 
-        "It’s no one’s fault that I am in this situation. Things just sometimes happen that we have no control over. Things happen because of luck and misfortune, and I was just unlucky to get to this point.":
+        "No one's fault":
             jump choice_2_no_one
     
     label choice_2_me:
+        mc "This is all my fault, if I had just done things differently, helped out more if I was different. If I was better, to myself and them. I wish I was good enough."
         jump choice_2_done
     
     label choice_2_family:
+        mc "It’s all of their fault, if only they would just care, maybe offer some help. Focus on me for once. Why can’t I get the focus for a bit sometimes? I just wish that they were better."
         jump choice_2_done
 
     label choice_2_no_one:
+        mc "It’s no one’s fault that I am in this situation. Things just sometimes happen that we have no control over. Things happen because of luck and misfortune, and I was just unlucky to get to this point."
         jump choice_2_done
     
     label choice_2_done:
+        play sound "audio/Punch.ogg" volume 0.75
         t "Oh I am going to absolutely kill you."
     
     "I was so lost in thought that I did not realize that time was over. I boxed Trevor into the throat."
     i "Hey now calm down it was an accident, leave him alone."
     "Thank god that the supervisor was there to save me otherwise I probably would have died just there and then."
-    t "You’re dead"
+    t "You’re dead."
     "That’s all Tray said as he left the building."
 
     "With that, the activities had come to an end and so did the day. After making my way to the cabin and being checked off the present list I was ready to end the day in a hard and cold bed. I wanted to finally rest, the day had been so exhausting."
@@ -121,7 +141,7 @@ label start:
     "Finding the cabin where I would be sleeping was not a difficult task. Even going blindly would give you a twenty percent chance to guess on the first try. There were five cabins for each gender which housed five kids each."
     "It didn’t take long before I heard the door open before a hand had been put over my mouth, with other hands used to drag me outside. It all happened so fast that I didn’t even get a chance to yell or focus attention on myself."
     "The last thing that I saw was a bright star shining in the night sky before everything went dark."
-
+    play sound "audio/Punch.ogg" volume 0.75
     "I woke up to a punch to the gut, the same punch that I had received earlier."
     t "Well, well, well, I told you that I’d kill you. You know, no one has messed up on the same day as their warning. You must be incredibly stupid or incredibly unlucky."
     t "Either way, let me explain what's going to happen to you. I want to see the fear in your eyes as I go over everything that will happen to you."
@@ -139,36 +159,40 @@ label start:
     r "Oh looks like you’re waking up. That fall looked like it hurt a lot."
     "I awoke to the sounds of someone gently talking as if assuming that no one would hear them. I couldn’t understand what they were saying, everything muffled and blurring. It took a couple of seconds before my eyes adjusted, and I could decipher what was said to me."
     "I was still in the forest, however, it felt different, that dead atmosphere disappeared and got replaced by a brighter living forest. Although it was dark, the bright stars illuminated the surroundings."
-    "The trees no longer looked like they were trying to grab at you but instead looked like they were offering you a hug to console you. In front of me sat a girl about my age on a log. She wore a typical summer outfit of a t-shirt and pants, but for some reason had a red scarf tied around her neck."
+    "The trees no longer looked like they were trying to grab at you but instead looked like they were offering you a hug to console you. In front of me sat a girl about my age on a log."
+    "She wore a typical summer outfit of a t-shirt and pants, but for some reason had a red scarf tied around her neck."
     r "Well blue shirt? Did the fall remove your ability to communicate? Are you okay?"
     mc "Oh yeah Uhm sorry I was just trying to recollect myself. Where are we?"
     "I tried getting up to get closer to her for a better look but as I tried to stand on my right foot, I collapsed to the ground from the pain."
-    r "Yikes blue shirt, looks like that fall might have twisted your ankle. You’re lucky that I am here to save you. You did almost fall on me though when you decided to tumble down all of those hills. I did notice that your hands had been tied with some rope, poor craftsmanship for sure though."
-    r "So bad that your hands got untied by the fall. What did happen to you?"
+    r "Yikes blue shirt, looks like that fall might have twisted your ankle. You’re lucky that I am here to save you. You did almost fall on me though when you decided to tumble down all of those hills."
+    r "I did notice that your hands had been tied with some rope, poor craftsmanship for sure though. So bad that your hands got untied by the fall. What did happen to you?"
     "As she talked the moon lit up her face, she looked like an ordinary weird girl, weird because she had a huge smile plastered on her face the entire time that she talked."
     "Snickering here and there at her jokes. It kinda felt like she was happy that I almost fell on her. What do I tell her about what had happened?"
 
     menu choice_3:
-        "I messed up a lot, where bumping into someone lead up to getting beaten up to messing up again. I ran away from them, but I couldn’t see in the dark and slipped, so now I am here. It is all my fault.":
+        "My own fault":
             jump choice_3_depressive
 
-        "I got bullied by this guy called Trevor and his friends. I don’t know why I deserved such treatment, but I did accidentally punch Trevor in the throat.":
+        "Trevor":
             jump choice_3_hurtful
 
-        "I don’t want to talk about it. Things happened, and now I am here with bruises all over my body and a potentially twisted ankle.":
+        "Dismiss Question":
             jump choice_3_distrustrusful
 
     label choice_3_depressive:
+        mc "I messed up a lot, where bumping into someone lead up to getting beaten up to messing up again. I ran away from them, but I couldn’t see in the dark and slipped, so now I am here. It is all my fault."
         r "Yeah that makes a little sense, most of our pain starts from little things that transpire out of control and eventually lead us here. But everything will be okay, we just need to get you to someplace to rest for a while. This part of the forest sometimes has wild rabid dogs."
         r "I wouldn’t want you getting hurt more than you already are, Blue Shirt." 
         jump choice_3_done
 
     label choice_3_hurtful:
+        mc "I got bullied by this guy called Trevor and his friends. I don’t know why I deserved such treatment, but I did accidentally punch Trevor in the throat."
         r "Well thanks for being honest with me. The treatment that we get from others isn’t always the one that we deserve."
         r "Though I understand why someone would be upset if they got hit in the throat. We should walk to a cabin nearby, this part of the forest sometimes has wild rabid dogs sniffing about. I worry about getting caught up in that, Blue Shirt."
         jump choice_3_done
 
     label choice_3_distrustrusful:
+        mc "I don’t want to talk about it. Things happened, and now I am here with bruises all over my body and a potentially twisted ankle."
         r "Things could be worse. At least you’re still alive. Let’s go get you some help, this part of the forest tends to have wild dogs roaming about."
         r "Wouldn’t want to add damage top that body. Would we now? Blue Shirt."       
         jump choice_3_done
@@ -206,7 +230,8 @@ label start:
         jump choice_4_done
 
     label choice_4_appreciative:
-        "No, I appreciate hearing that. I feel like I understand you a little more. I understand losing passion for something that you used to love. While it has not happened to me, I know that it must be very painful. Losing our passion for something is kind of like losing a part of ourselves."
+        "No, I appreciate hearing that. I feel like I understand you a little more. I understand losing passion for something that you used to love. While it has not happened to me, I know that it must be very painful."
+        "Losing our passion for something is kind of like losing a part of ourselves."
         r "Thanks, I’m sorry for going off, but I am glad that you can understand a part of this weird reality that I live in. We are almost at the cabin now."
         jump choice_4_done
 
@@ -220,8 +245,9 @@ label start:
     label choice_4_done:
         "After a few seconds of us silently walking through the forest, twigs breaking under our feet, our shoes getting dirtier by the damp soil. A howl similar to that which I’ve used to escape from Tray echoed throughout the woods again."
         "This time the sound wrapped through my skull, it felt much more intense and much closer. My legs started to twitch from the fear, my eyes gazing all around hoping to not see the source of the noises."
-        "he red scarf girl had noticed my twitching and looking around, she pointed behind me and when I averted my gaze to what laid there, I saw two bright yellow eyes. Eyes of death hungry not just for the meat on my bones but eager to ravage my soul."
-        r "Listen to me Blue shirt, we will be in trouble if we are caught, I want you to go run as fast as possible with that hurt ankle, in the direction that we have been heading in. You will see the cabin, go inside, and you should see a ladder heading up into the attic. Go there now, I will distract these dogs. Trust me, go!"
+        "The red scarf girl had noticed my twitching and looking around, she pointed behind me and when I averted my gaze to what laid there, I saw two bright yellow eyes. Eyes of death hungry not just for the meat on my bones but eager to ravage my soul."
+        r "Listen to me Blue shirt, we will be in trouble if we are caught, I want you to go run as fast as possible with that hurt ankle, in the direction that we have been heading in. You will see the cabin, go inside, and you should see a ladder heading up into the attic."
+        r "Go there now, I will distract these dogs. Trust me, go!"
 
     menu choice_5:
         "Trust":
@@ -266,7 +292,8 @@ label start:
 
     #Chapter 3
     "She must have enjoyed calling me ‘Blue Shirt’, although it is true that neither one of us had introduced ourselves to one another. I guess that if I had worn any other t-shirt that day then I would have been called by that colour instead."
-    "The sense of urgency of it all just left us without much time or care towards names. We just went along with everything, both of our social skills must have needed a little help. To me, she’s just a weird girl that found me in the forest at a time of need, a girl with a red scarf, a girl that gives me hope and helps me survive right now."
+    "The sense of urgency of it all just left us without much time or care towards names. We just went along with everything, both of our social skills must have needed a little help. To me, she’s just a weird girl that found me in the forest at a time of need,"
+    " a girl with a red scarf, a girl that gives me hope and helps me survive right now."
     "Finding the bandage in the first aid box was an easy task. Most of the other items were missing, but luckily I was able to use the bandages. Had I injured something else and required other items I would have been out of luck."
     "Thankfully upon closer inspection of my ankle, I noticed that although I had put plenty of pressure on it while running over here, it was not bruised nor had grown in size. Although a small victory still a victory that gave me hope that I very much needed."
     mc "You know it is kinda funny that I haven’t even asked for your name yet even after you have helped me so much."
@@ -302,7 +329,8 @@ label start:
         jump choice_6_done
     
     label choice_6_done:
-        R "I don’t know Blue Shirt, I don’t think that there is any hope in getting back to where you came from. Do you even want to return to a place that hurt you? Don’t you think that the pain will just happen again, over and over? I think that it is pretty hopeless, will people even look for you? Does anyone care?"
+        R "I don’t know Blue Shirt, I don’t think that there is any hope in getting back to where you came from. Do you even want to return to a place that hurt you? Don’t you think that the pain will just happen again, over and over?"
+        R "I think that it is pretty hopeless, will people even look for you? Does anyone care?"
     
     menu choice_7:
         "Hopeful":
@@ -315,32 +343,36 @@ label start:
             jump choice_7_optimistic
     
     label choice_7_hopeful:
-        mc "I can’t just lose hope now. Things are bad, I know that, but I can’t just give up. Even if no one would come looking for me. Even if there isn’t anyone that cares, I have to keep fighting. Life can always get better even if it may not seem that way, even if I don’t know what’s to come, I want my future to be better even if I have to fight for it."
+        mc "I can’t just lose hope now. Things are bad, I know that, but I can’t just give up. Even if no one would come looking for me. Even if there isn’t anyone that cares, I have to keep fighting. Life can always get better even if it may not seem that way,"
+        mc "even if I don’t know what’s to come, I want my future to be better even if I have to fight for it."
         R "Why fight for a future with more pain in it?  Even if there are good things to come, the bad overshadows it. Isn’t it easier to give up now to give up on the pain?"
         "Although still maintaining that smile of hers, her voice trembled."
         R "What if you can’t save yourself?"
-        mc "I don’t think that most of us can do this alone, I can’t beat my problems alone. I need help from others, but I won’t ever get that help if I don’t try if I don’t ask for it. I have to take the first step. I can’t do this alone. So Klara please help me. Please help me return home."
-        "That was the first time that I saw her face without s smile, without a mask on. Her sad glistening eyes now matched the rest of her face. A single tear rolled down her cheek. This was the true Klara in front of me. It only lasted a few seconds that I would see her like that. Looking into her eyes full of despair felt like hours had been lost,"
+        mc "I don’t think that most of us can do this alone, I can’t beat my problems alone. I need help from others, but I won’t ever get that help if I don’t try if I don’t ask for it. I have to take the first step. I can’t do this alone. So Sam please help me. Please help me return home."
+        "That was the first time that I saw her face without s smile, without a mask on. Her sad glistening eyes now matched the rest of her face. A single tear rolled down her cheek. This was the true Sam in front of me."
+        "It only lasted a few seconds that I would see her like that. Looking into her eyes full of despair felt like hours had been lost,"
         "it felt like a lot was still unexplained a lot more tears were built up, still yet to drop. But that single droplet was all I was going to get out of her today. She quickly composed herself, the mask wasn’t shattered yet, it was still capable of hiding her emotions."
         R "Okay Blue Shirt, I’ll give you my all to help you."
         jump choice_7_done
     
     label choice_7_anger:
-        mc "I don’t care if anyone cares about me or not. I am not living my life for others, I am not going to let anyone ruin my life. If I have to go through some pain to live then I will. Yeah, it hurts to live like this. Hurts to have to face life alone. But life isn’t fair, it was never fair and never will be fair. Just get over it."
-        mc "Being just sad about things won’t help. It doesn’t help you, doesn’t help me. Doesn’t help anyone. Let’s just focus on getting me home."
+        mc "I don’t care if anyone cares about me or not. I am not living my life for others, I am not going to let anyone ruin my life. If I have to go through some pain to live then I will. Yeah, it hurts to live like this. Hurts to have to face life alone."
+        mc "But life isn't fair, it was never fair and never will be fair. Just get over it. Being just sad about things won’t help. It doesn’t help you, doesn’t help me. Doesn’t help anyone. Let’s just focus on getting me home."
         "Once again she had that smile on her face, the smile that she uses to hide behind. Caring about every little thing won’t help anyone. I don't need her help to get home, I can't be too far."
         R "Fine, I'll help you"
         jump choice_7_done
     
     label choice_7_optimistic:
-        mc "Some people care about me. People will come to look for me. I know that I was hurt and may be hurt again, but there are people out there that love me and need me. A few bullies won't stop me from living my life. I got hurt physically, but mentally I am still strong. Those bullies just have their problems and used me to deal with them."
+        mc "Some people care about me. People will come to look for me. I know that I was hurt and may be hurt again, but there are people out there that love me and need me. A few bullies won't stop me from living my life."
+        mc "I got hurt physically, but mentally I am still strong. Those bullies just have their problems and used me to deal with them."
         mc "I don’t think that bad people mean to be bad. They are just people with issues trying to solve them in evil ways, but they aren’t evil. Our society just can’t deal with them properly yet."
-        "As I was saying those words, Klara’s smile changed, she didn’t lose her smile, it just changed. This changed wasn’t permanent, it only lasted a little while, but for that while, it just felt genuine that it was hard not to smile myself."
+        "As I was saying those words, Sam’s smile changed, she didn’t lose her smile, it just changed. This changed wasn’t permanent, it only lasted a little while, but for that while, it just felt genuine that it was hard not to smile myself."
         R "You are way too optimistic about the world, you’re a big dumbass but the world needs more people like you. I may not completely agree with you but hey I will help you get back home if you want my help."
         jump choice_7_done
 
     label choice_7_done:
-        "Hmm, how would I get back to the camp without knowing in which direction it is or anything. The dog chase got both of us very disoriented. I didn’t have the faintest of clues, but if I got to some high point then maybe I would be able to see it, I just need to find the lake, and then I would be set and should be able to get back."
+        "Hmm, how would I get back to the camp without knowing in which direction it is or anything. The dog chase got both of us very disoriented. I didn’t have the faintest of clues, but if I got to some high point then maybe I would be able to see it,"
+        "I just need to find the lake, and then I would be set and should be able to get back."
     
     mc "I think that our best bet is to get to some high ground to find out where the lake is. Finding the lake will make it much easier to find the camp. Do you know what place where we would have a view of the surrounding area?"
     R "Yeah good idea, I don’t think that it should be too hard to climb up a hill and get a view of the surroundings, alternatively though, you could just climb one of the trees, if you know how to climb them that is, along with a bad ankle of course."
@@ -349,11 +381,11 @@ label start:
     #Chapter 4
     "It was finally time to leave the attic, time to set off home. A sense of hope washed over me, it was always noise to have a plan, hopefully, there will be no more encounters with any wildlife. As we departed from the shack, we were both illuminated under the night sky."
     "It wasn’t a typical skyline where all the stars were covered by clouds, only peeking from time to time like we had been used to. No, tonight was different, there wasn’t a single cloud in the sky, no light pollution, just tonnes of sparkling stars in the sky surrounding a large hypnotizing full moon."
-    "Tonight was special. The only tall hill that would allow us to see the surrounding area that Klara knew of was about a few minutes walk from where we were. With my ankle, it would take a bit longer but shouldn’t have too much of an impact."
-    "Thankfully my ankle was recovering. Klara started skipping along ahead of me. How did she have so much energy to skip. I have no idea. It made me realize that I didn’t even know what time it could possibly be."
-    "How long was I out for initially, how long had I spent with Klara, time was all a blur. Only the moon directly above us gave some sort of sense of time."
+    "Tonight was special. The only tall hill that would allow us to see the surrounding area that Sam knew of was about a few minutes walk from where we were. With my ankle, it would take a bit longer but shouldn’t have too much of an impact."
+    "Thankfully my ankle was recovering. Sam started skipping along ahead of me. How did she have so much energy to skip. I have no idea. It made me realize that I didn’t even know what time it could possibly be."
+    "How long was I out for initially, how long had I spent with Sam, time was all a blur. Only the moon directly above us gave some sort of sense of time."
     R "It really is a beautiful night, you picked the best night to be bullied on. Nights like these used to be the best for getting rid of all the stress. For a while it used to help so much, yet ended up causing all the problems in the end."
-    "Her voice trembled with the delivery of that last line. Klara was still a large mystery to me, sometimes she would talk about the forest with so much passion and love, but that passion would turn to sadness and despair very easily. The forest helped her a lot but also caused her the most problems."
+    "Her voice trembled with the delivery of that last line. Sam was still a large mystery to me, sometimes she would talk about the forest with so much passion and love, but that passion would turn to sadness and despair very easily. The forest helped her a lot but also caused her the most problems."
     R "I used to feel so motivated, so hopeful, so full of life. I used to want to become an environmentalist to help protect this forest and many forests like it, forests that helped other people like me. Those times were much better."
     mc "What happened that made you change your mind? At times, you’re in love with this forest and at other times, the forest seems to almost bring you to tears."
     R "I don’t want to talk about it too much, because the reason is weird. I wish that I had a particular reason and could just blame it all on that. But I don’t have that. I have nothing to blame, it all just happened, no cause and effect, just bam there you go all of your feelings."
@@ -386,43 +418,48 @@ label start:
     
     R "You end up not having any energy to do anything, you either eat nothing or eat too much which just brings you more self-hate. But while all of this is happening you don’t want to worry those around you, you don’t want them to worry about you."
     R "You don’t feel like your life is important enough to bring those that care worries and stress. You lose all control of your life. So, the main reason for my love-hate with the forest is that I don’t know."
-    "There was no more skipping from Klara after that, no more smile to brighten up that face. Just a neutral walk with a neutral expression. Like her body had been reminded of the past which brought enough horror to her that her body was no longer able to put up her mask to the world. She had to recover before she could function again."
+    "There was no more skipping from Sam after that, no more smile to brighten up that face. Just a neutral walk with a neutral expression. Like her body had been reminded of the past which brought enough horror to her that her body was no longer able to put up her mask to the world."
+    "She had to recover before she could function again."
     mc "I guess that’s why we put on a brave face, why we act like nothing is wrong, we don’t want anyone to feel the same kind of pain that we are feeling. We don’t want them to know how much pain we are in."
     R "Hiding it, and appearing fine is so hard sometimes, makes you want people to forget about you, makes you wish that you weren’t around so that none of your pain can be brought onto others."
     "The only image left were two people walking slowly, one in front of the other. Tough words have been said. A moment of peace was needed, a moment to take our minds off everything."
     mc "The stars are so pretty tonight, I wish we could just lay here and enjoy them for a while. To forget about everything, to get a little life back."
     "Keeping my eyes open got harder and harder each second. The difference between having my eyes opened and closed was becoming less and less noticeable. Every time that I blinked my eyes remained closed for longer. What would it be like at home if I never returned?"
     "Would they be sad without me around?  They did send me away. Mom would be heartbroken. She always tried to be tough to protect us. She didn’t often cry but when she did it felt as if the world was drowning in sorrows."
-    "Mom didn’t want us to worry about her, so she always hid her tears, didn't want to make us sad. Overworking herself each night so that everything was okay. Never taking a day off. Mom would feel like she had failed her duty to protect me. What about Dad? He always had his moments of anger, an anger that existed out of care for us."
-    "He always wanted all of us to be happy and carried us on his back. His face was always the same, drained eyes and an expressionless look. He needed to appear tough so that we could all lean against him. I don’t think that I had ever seen him cry. "
-    "He made us believe that he wasn’t even capable of it. Would he be sad if I never came back? Maybe things would be easier without me, maybe without the burden of my existence, everyone would get along better. Would I be sad if I didn’t get back? Do I still have a place to come back to? What if they don’t want me to come back?"
-    R "You sure were very weird. I guess you’re not used to amazing nighttime adventures with someone as great as me."
+    "Mom didn’t want us to worry about her, so she always hid her tears, didn't want to make us sad. Overworking herself each night so that everything was okay. Never taking a day off. Mom would feel like she had failed her duty to protect me."
+    "What about Dad? He always had his moments of anger, an anger that existed out of care for us. He always wanted all of us to be happy and carried us on his back."
+    "His face was always the same, drained eyes and an expressionless look. He needed to appear tough so that we could all lean against him. I don’t think that I had ever seen him cry. He made us believe that he wasn’t even capable of it."
+    "Would he be sad if I never came back? Maybe things would be easier without me, maybe without the burden of my existence, everyone would get along better. Would I be sad if I didn’t get back? Do I still have a place to come back to? What if they don’t want me to come back?"
+    R "You sure were very weird. I guess you’re not used to amazing night-time adventures with someone as great as me."
     "I had not realized it until now but the entire time, my eyes were closed. I left the world for the land of the stars."
     mc "What happened?"
     R "Well Blue Shirt, I was just minding my own business. When I heard a loud thud sound and the next thing I know is that you’re just lying there on the ground enjoying your sleep time. You didn’t even invite me to join."
-    "It wasn’t easy getting off the grass back onto my feet. The grass pulling me back to dreamland, soothing me, and although I was dreaming about negative thoughts I still wanted to return. Pulling off from the ground felt like a connection was being severed. Goodbye dreamland, goodbye land full of glistening stars, it’s time to get back to the travels."
+    "It wasn’t easy getting off the grass back onto my feet. The grass pulling me back to dreamland, soothing me, and although I was dreaming about negative thoughts I still wanted to return. Pulling off from the ground felt like a connection was being severed."
+    "Goodbye dreamland, goodbye land full of glistening stars, it’s time to get back to the travels."
     R "Hey I just want you to know that I am sorry about all these things that you have to go through, it must be hard and tiring. But hey look, we are almost there just a few more minutes."
-    "Klara was correct, right in front of us was the base of a tall hill, just a few more steps before the hill would open our view from the shackles of the surrounding trees. The inclination increased with each step, each step was more difficult to make than the one before. For the first time, I wasn’t sure if a tree wasn’t easier to climb."
+    "Sam was correct, right in front of us was the base of a tall hill, just a few more steps before the hill would open our view from the shackles of the surrounding trees. The inclination increased with each step, each step was more difficult to make than the one before."
+    "For the first time, I wasn’t sure if a tree wasn’t easier to climb."
     mc "Geez you certainly picked a steep hill."
     R "Only for you. Although I don’t remember it being this steep, this is the only spot that escapes these trees, there is no other nearby point high enough that I know of."
-    "Soon I would discover Klara’s biggest secret. The hill that we were almost climbing at this point was known to the locals as the Truth Seeker. A place that would one way or another be the cause to reveal all major secrets, and Klara’s secret was a big one."
+    "Soon I would discover Sam’s biggest secret. The hill that we were almost climbing at this point was known to the locals as the Truth Seeker. A place that would one way or another be the cause to reveal all major secrets, and Sam’s secret was a big one."
 
     #Chapter 5
     R "We are almost…"
-    "As soon as those words escaped her mouth, her foot failed to maintain balance and with one slip she came tumbling down towards me. At first, I thought that it would only be a slight problem, that I would be able to catch her. But when I laid out my hands and arms to prepare myself to catch her, I discovered the real problem. Her body did not make an impact against me, it did not stop, I felt a cold shiver right as her body passed through mine."
+    "As soon as those words escaped her mouth, her foot failed to maintain balance and with one slip she came tumbling down towards me. At first, I thought that it would only be a slight problem, that I would be able to catch her."
+    "But when I laid out my hands and arms to prepare myself to catch her, I discovered the real problem. Her body did not make an impact against me, it did not stop, I felt a cold shiver right as her body passed through mine."
     mc "What the?"
     "That was all my mouth could say as my brain realized that this girl had just passed through me. What kind of magic was this? How tired was I? Her body did not fall too far, stopping slightly behind me."
     R "Oops, that wasn’t supposed to happen, anyway, let’s keep going shall we?"
-    mc "No no, wait for a second, what just happened? You need to explain yourself, Klara."
+    mc "No no, wait for a second, what just happened? You need to explain yourself, Sam."
     R "But Blue Shirt, it isn’t important, plus we have to get to the top of this hill and get you back as fast as possible."
 
     menu choice_9:
-        "Please Klara, I would really like to know what is up with you. I don’t understand what just happened.":
+        "Please Sam, I would really like to know what is up with you. I don’t understand what just happened.":
             jump choice_9_1
 
         "I’m sorry I’m just confused about what just happened. If you are comfortable, could you tell me about it?":
             jump choice_9_2
-        "Klara tell me what just happened. I deserve to know what you just did to me.":
+        "Sam tell me what just happened. I deserve to know what you just did to me.":
             jump choice_9_3
     
     label choice_9_1:
@@ -437,28 +474,36 @@ label start:
     label choice_9_done:
         R "Fine, okay I will tell you everything, le’s just get to the top of this hill first, it’s not much longer, and I think that it will be much easier to do it there. I also need time to think through it."
     
-    "The next five minutes were filled with dead silence. The only audible noises were our shoes stomping on the ground below as we tried to maintain balance. I tried to think about all the other times that Klara had touched, when I first fell while running from the bullies,"
+    "The next five minutes were filled with dead silence. The only audible noises were our shoes stomping on the ground below as we tried to maintain balance. I tried to think about all the other times that Sam had touched, when I first fell while running from the bullies,"
     "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself. She had always skipped ahead of me, only ever slowing down and turning around to talk to me."
-    "Was there something wrong with her or me? As we near the top, I noticed Klara’s face, she wasn’t hiding her emotions, there was no smile, just sadness and worry. The top of the hill was way brighter than any other location that we had been to thus far."
+    "Was there something wrong with her or me? As we near the top, I noticed Sam’s face, she wasn’t hiding her emotions, there was no smile, just sadness and worry. The top of the hill was way brighter than any other location that we had been to thus far."
     "It was free from all the sheltering trees. The dark sky, the bright stars, the shining moon were all perfectly fully visible and glancing at us for the tree’s protection as now gone. I looked across the horizon, for a second I was scared because all I could see was a large dense forest."
     "But then as I looked towards the direction of the moon, I finally saw it. A glistening body of water, if it wasn’t for the lake I would have never noticed those dark cabins to the side of it. There wasn’t a single light on, so I would have to follow the moon to be able to get back."
-    "I turned around to tell Klara that I had just found the camp only to see her saddening face, a tear rolling down her cheek."
+    "I turned around to tell Sam that I had just found the camp only to see her saddening face, a tear rolling down her cheek."
     R "I guess it’s time for me to tell you everything now. I don’t remember too much about my life. I was an ordinary kid that loved being out in nature, especially this forest, painting and drawing the landscape or just running around. It was my biggest passion."
     R "I had other passions besides that of course, but this forest was the main one. Every summer my family and I would travel here, stay out camping and just enjoy life. Just a family tradition that was passed down through generations. It was my favourite time of life, the family being together all happy,"
-    R "they would all focus on me, and we would have painting sessions together. We would take loads of photos and just smile a lot. As I grew older my passions changed but this forest remained. It was more of a home for me than my own house. Then all of a sudden I just slowly started losing interest in all of my passions. I had trouble with sleep, with eating, with being happy."
+    R "they would all focus on me, and we would have painting sessions together. We would take loads of photos and just smile a lot. As I grew older my passions changed but this forest remained. It was more of a home for me than my own house."
+    R "Then all of a sudden I just slowly started losing interest in all of my passions. I had trouble with sleep, with eating, with being happy."
     R "Sure there were stressful things going on in my life. The family wasn’t the best, I wasn’t doing too well in school any more. I was just left with one single piece of hope for me and my family and that was going camping in this forest over the summer. However, we had to skip that year."
     R "Mother wasn’t feeling too well and dad was just too busy at work to make any time for us. I clawed onto this one hope for the next year to come. I hated that year, I felt like a husk, I couldn’t feel anything and hated myself for that, but I couldn’t let anyone worry about me, they all had plenty of problems themselves,"
-    R "I didn’t want to add to them, so I just put on a happy face and pretended that everything was okay while crying all night. I think that my parents must have noticed that something was up because they announced that we would be going camping that summer, that dad would take time off work and that mother was feeling well enough for it."
+    R "I didn’t want to add to them, so I just put on a happy face and pretended that everything was okay while crying all night. I think that my parents must have noticed that something was up because they announced that we would be going camping that summer,"
+    R "that dad would take time off work and that mother was feeling well enough for it."
     R "At the time it was two months away, but it gave me so much hope, and honestly, it was the only thing keeping me alive. I thought that one visit to the forest would help me with all of my problems that it would suddenly just fill me with joy. Mother was even feeling a little better during that time too."
     R "When we finally got to the forest though I realized that I had no passion for it. I looked forward to being together once again, but that feeling was left unfulfilled. I felt hollow."
-    R "It wasn’t all that bad until Dad got a work call, and told us that we would have to go back because it was important, and he could just not miss out on it. Dad was once again leaving us and mother wouldn’t say anything. I couldn’t control myself at that point any more, all the emotions that were being held back erupted and came flying out, and I let it all out on them, yelling at them both."
-    R "At dad for only caring about money and not taking care of mom when she needed comfort the most, and for mom not doing anything about my dad, for being a pushover and doing nothing for herself or the family. I couldn’t take it any more and just ran out crying. I hated everything that had just happened. I regretted it the second that it happened, but I couldn’t get myself to come back."
-    R "Life was so unfair. But I wanted to calm down and return. A part of me felt fantastic for letting things go. I finally felt alive after almost two years. As I walked back I noticed the heart rising around me. There was a forest fire going off strongly right where mom and dad were. I had only been gone for about an hour, I didn’t know if they were okay or not, but I had to run away, getting caught up in the flames and smoke would have been the end of me."
-    R "I ran as fast as I could. I had to get away and find my parents. The fire was spreading at a high rate, it was almost impossible to see anything, shades of red and orange just engulfed the atmosphere.  While I was running disoriented, the ground below me collapsed and send me crashing down to some deep unused well. The fall had knocked me out and when I came to, it was already dark."
-    R "I wanted to get up and potentially climb out, but my leg was broken by the fall, and it was hard to breathe. I couldn’t move out of there, I was trapped. Not only that, but I spent hours crying and shouting for help until I lost all of my voice. No one ever came for me. I remember passing out and feeling full of regret. I awoke in the burnt down forest, "
-    R "I thought that someone had found me and rescued me, but there was no one to be found. I was feeling completely okay. I thought that maybe I just passed out, and it had all been a bad nightmare, so I went looking for people. Everyone that I met would just ignore me, after a few hours I got tired and thought that I was going to force someone to listen to me,"
+    R "It wasn’t all that bad until Dad got a work call, and told us that we would have to go back because it was important, and he could just not miss out on it. Dad was once again leaving us and mother wouldn’t say anything."
+    R "I couldn’t control myself at that point any more, all the emotions that were being held back erupted and came flying out, and I let it all out on them, yelling at them both."
+    R "At dad for only caring about money and not taking care of mom when she needed comfort the most, and for mom not doing anything about my dad, for being a pushover and doing nothing for herself or the family."
+    R "I couldn’t take it any more and just ran out crying. I hated everything that had just happened. I regretted it the second that it happened, but I couldn’t get myself to come back."
+    R "Life was so unfair. But I wanted to calm down and return. A part of me felt fantastic for letting things go. I finally felt alive after almost two years. As I walked back I noticed the heart rising around me."
+    R "There was a forest fire going off strongly right where mom and dad were. I had only been gone for about an hour, I didn’t know if they were okay or not, but I had to run away, getting caught up in the flames and smoke would have been the end of me."
+    R "I ran as fast as I could. I had to get away and find my parents. The fire was spreading at a high rate, it was almost impossible to see anything, shades of red and orange just engulfed the atmosphere."
+    R "While I was running disoriented, the ground below me collapsed and send me crashing down to some deep unused well. The fall had knocked me out and when I came to, it was already dark."
+    R "I wanted to get up and potentially climb out, but my leg was broken by the fall, and it was hard to breathe. I couldn’t move out of there, I was trapped. Not only that, but I spent hours crying and shouting for help until I lost all of my voice. No one ever came for me."
+    R "I remember passing out and feeling full of regret. I awoke in the burnt down forest, I thought that someone had found me and rescued me, but there was no one to be found."
+    R "I was feeling completely okay. I thought that maybe I just passed out, and it had all been a bad nightmare, so I went looking for people. Everyone that I met would just ignore me, after a few hours I got tired and thought that I was going to force someone to listen to me,"
     R "but I couldn’t touch anyone I just went through them. People just passed through me and no one could hear me. I realized that I must have died that night, that it wasn’t a dream, that life was over, and I was just a wandering spirit or ghost now."
-    R "It was like that for a long time, just walking about in the forest, observing random things. Once you get used to passing time it gets easier. Days end up passing as fast as seconds, weeks passed like hours and years passed like days. It was becoming hell, then one day I saw you tumble down that hill, things didn’t look okay for you,"
+    R "It was like that for a long time, just walking about in the forest, observing random things. Once you get used to passing time it gets easier. Days end up passing as fast as seconds, weeks passed like hours and years passed like days."
+    R "It was becoming hell, then one day I saw you tumble down that hill, things didn’t look okay for you,"
     R "so I decided to stick around to see what you would do. I was very surprised when you started talking back to me, that fact that you could see me and hear me cheered me up. It had been such a long time since I’ve talked to another person and not just myself."
     mc "Wow that is a lot to process."
     R "I know Blue Shirt, I am sorry that I didn’t tell you sooner, I just felt like there was never a good time to blurt it out."
@@ -473,8 +518,8 @@ label start:
     label choice_10_home:
         mc "Well what has happened to you sucks but now that we know where the camp is I think that we should focus on getting me back home."
         R "Oh I see, well since you know the way back I think that this is where we should separate. I feel like I have been fair to you and understanding enough, but you have not treated me with respect. So, good luck getting back home, I hope that we will never meet again."
-        "There was nothing that I could say or do to get Klara to stay with me. I  guess that I will have to finish this journey by myself."
-        jump label_10_end
+        "There was nothing that I could say or do to get Sam to stay with me. I  guess that I will have to finish this journey by myself."
+        jump choice_10_end
     
     label choice_10_sam:
         mc "You mentioned that the last thing that you remembered was falling into some kind of hole after the ground broke beneath you near the lake right? Since we’re heading in that direction anyway, would you like to come with me to see if we can find it?"
@@ -484,35 +529,43 @@ label start:
     label choice_10_done:
         #Chapter 6
     
-    "We set off onto the final stretch of our journey, a lot of things had been said.  They were all stuck in my head, and it would be awhile before I could process everything properly. It did make me question my sanity among other things, but it had been a long night, accepting supernatural events was easier than you’d think when you’re very heavily sleep-deprived."
-    "I kind of let logic go away and embraced Klara’s words for the truth. It was now downhill towards the truth and back home. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
+    "We set off onto the final stretch of our journey, a lot of things had been said. They were all stuck in my head, and it would be awhile before I could process everything properly. It did make me question my sanity among other things,"
+    "but it had been a long night, accepting supernatural events was easier than you’d think when you’re very heavily sleep-deprived."
+    "I kind of let logic go away and embraced Sam’s words for the truth. It was now downhill towards the truth and back home. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
     R "What if the hole doesn’t even exist any more, don’t you think that someone would have found me by now, and we are just wasting our time searching? What if finding my body doesn’t change anything, and I’ll still be stuck in this world?"
-    mc "Well, I think that maybe the hole got covered over, there would have been a lot of ash after a fire. Mabe some logs fell over and covered it? I don’t know, but I don’t think that we are wasting time attempting. You have done a lot for me, so at least let me do this small task for you. Let’s not lose hope before we have even begun."
+    mc "Well, I think that maybe the hole got covered over, there would have been a lot of ash after a fire. Mabe some logs fell over and covered it? I don’t know, but I don’t think that we are wasting time attempting. You have done a lot for me, so at least let me do this small task for you."
+    mc "Let’s not lose hope before we have even begun."
     "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now, but this was no longer about me, this was now about repaying the one that had saved my life."
     "I was still limping around, but my body had got used to the pain from stepping on my sore ankle."
-    R "I have a hard time remembering where exactly, well, where exactly I died. But I do remember that there was a large tree stump and the remains of a small castle tower I think. I also wanted to say that I appreciate everything that you have done for me Blue Shirt. I think that we have gone through a lot tonight but spending it with you was worthwhile and your company was really enjoyable, much better than just walking around talking to myself."
+    R "I have a hard time remembering where exactly, well, where exactly I died. But I do remember that there was a large tree stump and the remains of a small castle tower I think. I also wanted to say that I appreciate everything that you have done for me Blue Shirt."
+    R "I think that we have gone through a lot tonight but spending it with you was worthwhile and your company was really enjoyable, much better than just walking around talking to myself."
     R "You have given me hope for the future, maybe there are other people out there like you that can see me and hear me. Plus you’ll be in camp so like maybe we could hang out sometimes if you’d like. I know that accepting a person lie me might not be the easiest, but I really do cherish this night with you"
-    "Just as I was about to answer Klara, I heard faint shouting coming from the direction of the camp. I turned around trying to solve what the words shouted at us meant, thinking that maybe some camp instructor had seen us and was worried about me. But as my luck would have it, my eyes focused and realized that it was none other than the people responsible"
-    "for my adventure in the forest, the bullies. Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. Klara had no clue what was going on at first until she saw my terrified expression. I think that she could guess who these people were."
-    "Just as I thought that life was going to be over, Klara grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind. How was she holding me when a few hours ago she couldn’t make contact with me? They say that spirits stay around if they have a lot of willpower."
-    "Was it all possible because of the amount of willpower she put into helping me? It would be something that I would only be able to speculate about. The ground was muddy and damp, each step drained the slimmer of energy that I had left. Lifting my leg was a struggle, each step felt like the earth was grabbing my shoes, not wanting me to leave."
-    "We did not run long before we spotted what might have been exactly what Klara had described, a small run-down stone tower. It did not feel like we were getting any distance on the bullies they were getting closer, Klara pulled my hand towards the castle tower. It wouldn’t be long before I would collapse,"
-    "my lungs were working overtime and after walking around all night, my legs were starting to give up. Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Klara was trying her best to get us to safety, there wasn’t a smile on her face"
+    "Just as I was about to answer Sam, I heard faint shouting coming from the direction of the camp. I turned around trying to solve what the words shouted at us meant, thinking that maybe some camp instructor had seen us and was worried about me."
+    "But as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure in the forest, the bullies."
+    "Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. Sam had no clue what was going on at first until she saw my terrified expression. I think that she could guess who these people were."
+    "Just as I thought that life was going to be over, Sam grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind."
+    "How was she holding me when a few hours ago she couldn’t make contact with me? They say that spirits stay around if they have a lot of willpower."
+    "Was it all possible because of the amount of willpower she put into helping me? It would be something that I would only be able to speculate about. The ground was muddy and damp, each step drained the slimmer of energy that I had left."
+    "Lifting my leg was a struggle, each step felt like the earth was grabbing my shoes, not wanting me to leave."
+    "We did not run long before we spotted what might have been exactly what Sam had described, a small run-down stone tower. It did not feel like we were getting any distance on the bullies they were getting closer, Sam pulled my hand towards the castle tower."
+    "It wouldn’t be long before I would collapse, my lungs were working overtime and after walking around all night, my legs were starting to give up."
+    " Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Sam was trying her best to get us to safety, there wasn’t a smile on her face"
     "nor any sense of positive emotions, it was completely different from the dog incident. Back then she forced herself to wear a smile to hide her true feelings from the world, but right now the mask was destroyed."
     "The scenery here was completely different, huge trees with branches that crept out to block out the sun were replaced with sparse burnt tree stumps that embraced the rising sun and used the dampness in the air to create orange filled burning sights."
     "Those were the last images I saw as we entered the tower, where the ground below me gave away and crumbled underneath me. As everything was going black I heard the loudest, darkest screech that I have ever heard in my life."
     "I don’t think that it was dark for long before my eyes adjusted and could see around me. Sunlight was entering through the circular hole in the sky through which I had fallen. I was surrounded by narrow stone slimy walls."
     "Laying in a pool of water explained my drenched state and low body heat. I was freezing and sore all over. Where was I? That was when my eyes adjusted and noticed that I was not the only one stuck in this hole, right beside me were skeleton remains."
-    "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Klara wore. We must have done it, we must have found her body."
+    "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Sam wore. We must have done it, we must have found her body."
     "Well now hopefully I won’t meet the same end as her. I used the last tiny amount of energy that I had managed to recollect to shout at the top of my lungs for help. No one answered back."
-    "What had happened to Klara and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
+    "What had happened to Sam and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
     "because he had heard a loud screech and my call for help. Firefights and the police were called, firefights to save me and police to investigate the body. I awoke in a hospital bed where the police questioned me about the night."
-    "I changed the story around to not include any mentions of Klara but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Klara pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
-    "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Klara and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
+    "I changed the story around to not include any mentions of Sam but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Sam pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
+    "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Sam and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
     "The article didn’t mention me by name but mentioned how I almost suffered the same faith. The article ended with missing pictures of the bullies, they had gone missing from the camp at the same time as I was found."
-    "There were search parties sent out but no one could find them. I wanted to revisit that forest and see Klara again, but a broken leg was keeping me at home and finding an excuse to revisit the forest was basically impossible."
-    "It sadly took a few years before I would be able to visit again. A few years that would have been much more difficult if I hadn’t had met Klara that night. It was strange, but she felt like a part of me, there to remind me of hope at the worst of times."
-    "I spent the day strolling through the forest, revisiting the cabin that we used for shelter, the hilltop, the place where I awoke to see her for the first time. In all those years it had not changed at all. A part of me hoped to be able to see her again, while the other hoped that she was laid to rest after her body had been found."
+    "There were search parties sent out but no one could find them. I wanted to revisit that forest and see Sam again, but a broken leg was keeping me at home and finding an excuse to revisit the forest was basically impossible."
+    "It sadly took a few years before I would be able to visit again. A few years that would have been much more difficult if I hadn’t had met Sam that night. It was strange, but she felt like a part of me, there to remind me of hope at the worst of times."
+    "I spent the day strolling through the forest, revisiting the cabin that we used for shelter, the hilltop, the place where I awoke to see her for the first time. In all those years it had not changed at all."
+    "A part of me hoped to be able to see her again, while the other hoped that she was laid to rest after her body had been found."
     "She was free from the forest. Life went on, and I decided to use her memory of visiting the forest with her family every year for my family too. Every year as I grew older I wished that maybe she would be there or at least know how grateful I was for her existence."
     jump end
 
