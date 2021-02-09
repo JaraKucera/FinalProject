@@ -507,7 +507,45 @@ label start:
     R "so I decided to stick around to see what you would do. I was very surprised when you started talking back to me, that fact that you could see me and hear me cheered me up. It had been such a long time since I’ve talked to another person and not just myself."
     mc "Wow that is a lot to process."
     R "I know Blue Shirt, I am sorry that I didn’t tell you sooner, I just felt like there was never a good time to blurt it out."
+    "Tears were running down her face, dripping onto the grass below. She had become the most beautiful waterfall."
+    R "It’s too much to think about. I had held it down for so long. I can’t take it."
+    "Each sentence took longer to leave her mind. Each in between sobs."
+    R "I just feel everything and nothing at the same time. I just can’t."
+    "She collapsed onto her knees, crying and sobbing. It was hard not to do anything. I wanted to hug her so hard. I wanted to hold her and tell her that everything was going to be okay."
+    "A part of me related to her heavily. I’ve held in emotions a lot too. When they suddenly come crashing out it overwhelms you and leaves you crushed."
+    R "It’s so difficult. I know that I am crying here in front of you, and I’m really sorry about that but at the same time, I don't feel anything. I’m so numb and overwhelmed."
+    menu choice_9_5:
+        "Relate, Understanding":
+            mc "It’s okay don’t worry I understand you, I’ve felt like that before. Just overwhelmed and so emotional but just not feeling anything. People have tried to console me in that state, but it’s just like I understand that you’re worried about me, but I just can’t emotionally feel it."
+            jump choice_9_5_1
+        "Sorry, Can't imagine how you're feeling.":
+            mc "I can’t imagine how you’re feeling. I am sorry for making you let all of that pain out."
+            jump choice_9_5_2
+        "Get over it":
+            mc "Listen can you get over it. We need to head on, we don’t have the entire night."
+            jump choice_9_5_3
 
+    label choice_9_5_1:
+        R "Just give me some time, I’ll be fine don’t worry. I have gone through worse before."
+        "At the end of that sentence she tried really hard to let out a smile, but her body had failed her. It was too tired to fake any sort of positive emotion."
+        jump choice_9_5_done
+    
+    label choice_9_5_2:
+        R "Just give me some time, I’ll be fine don’t worry. I have gone through worse before. It isn’t your fault."
+        "At the end of that sentence she tried really hard to let out a smile, but her body had failed her. It was too tired to fake any sort of positive emotion."
+        jump choice_9_5_done
+
+    label choice_9_5_3:
+        R "Yeah sure, just give me some time to recover."
+        jump choice_9_5_done
+
+    label choice_9_5_done:
+        "We sat around at the top of the hill taking in the environment. We felt like we were on top of the world being able to see the entire landscape out in front of us. The sun was going to be rising soon. Filling the world with red, orange, and yellow colours of warmth."
+    
+    R "You know, this would be very romantic if it wasn’t for the fact that I am dead and stuff."
+    mc "Oh absolutely so romantic. Sitting on the top of a hill in our tears watching the sunrise together while being sleep-deprived."
+    "Sam was back to normal for now. We could set out now onto our journey, but where should we go?"
+                
     menu choice_10:
         "Focus on getting home":
             jump choice_10_home
@@ -532,6 +570,35 @@ label start:
     "We set off onto the final stretch of our journey, a lot of things had been said. They were all stuck in my head, and it would be awhile before I could process everything properly. It did make me question my sanity among other things,"
     "but it had been a long night, accepting supernatural events was easier than you’d think when you’re very heavily sleep-deprived."
     "I kind of let logic go away and embraced Sam’s words for the truth. It was now downhill towards the truth and back home. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
+    R "I miss my Mom and Dad. I tried looking for them after I awoke. But I never found them. I never even heard a thing about them. The thought that they had lost their daughter either to a fire or potentially hoping that she had run off and started a new life, was just heartbreaking to me."
+    mc "Did you find anything at the place you guys were camping at?"
+    R "Just ashes. The whole part of being born again as a spirit must have taken a while. Somehow I never managed to leave this forest. I did try but whenever I would head in a direction that I knew would lead me out, the forest would just keep going without ending."
+    R "Maybe I am cursed to this place? Maybe I am tied to my body?  I don’t know, we are dealing with the weird paranormal here. I don’t live in reality but in fiction. Not only that, but I really miss them and wish that the last memory of me wouldn’t be me running away from them. It’s been too long now."
+    R "The chances that they are alive are very slim. I used to read every single newspaper that I would find in hopes of maybe hearing something about them, but newspapers rarely have any good news, it was becoming depressing to read. Plus it's not common to bring newspaper to a random forest in the middle of nowhere."
+    R "Do you miss your parents?"
+    menu choice_11:
+        "Yeah, I do.":
+            jump choice_11_1
+        "Not really.":
+            jump choice_11_2
+    
+    label choice_11_1:
+        mc "Yeah, I do. I know that it’s only been a day since I last got to see them but life at home has been weird for a while. They haven’t been their old selves because of the stress they are under."
+        mc "I wish that there was something that I could do to help them, I really worry that I am just taking up space and not helping in any way."
+        jump choice_11_done
+
+    label choice_11_2:
+        mc "Not really. They have been going through a lot and don’t pay attention to me or what I need at all. The reason I am here is because of them, because they could no longer take proper care of me and needed time without me. It hurts."
+        jump choice_11_done
+
+    label choice_11_done:
+        R "I think that it is important to remember that they won’t be with us forever. One day we will lose them and most of us won’t know that day in advanced."
+        R "Had I known things would have turned that way I would have told them about my emotions and my state while I was still in control. Not in some random outburst."
+
+    mc "I know, it’s just sometimes you get tired of being the bigger person. You want them to take you seriously. You want them to listen. They are great parents they just have a lot on their plate. I just don’t want to be robbed of my future because of them. If they mess up their life, they mess up mine too."     
+    R "I robbed myself of my future. I don’t know how that fire started. I don’t really blame it either, I blame myself for everything. I don’t even know if I wanted a future back then. I wish for a future now, but I know that is no longer possible."
+    R "I think that now I just want to be able to pass on. Living like this is not what I want."
+    "The walk downhill was much easier physically, but emotionally it had been much tougher. Sam was having a hard time keeping everything together. A mask of fake emotions was no longer possible for now. All the raw emotions were out there to deal with now."    
     R "What if the hole doesn’t even exist any more, don’t you think that someone would have found me by now, and we are just wasting our time searching? What if finding my body doesn’t change anything, and I’ll still be stuck in this world?"
     mc "Well, I think that maybe the hole got covered over, there would have been a lot of ash after a fire. Mabe some logs fell over and covered it? I don’t know, but I don’t think that we are wasting time attempting. You have done a lot for me, so at least let me do this small task for you."
     mc "Let’s not lose hope before we have even begun."
