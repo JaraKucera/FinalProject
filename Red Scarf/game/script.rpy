@@ -8,9 +8,9 @@ define i = Character("Instructor", color="#CE8147")
 define t2 = Character("Tray", color="#CDE7BE")
 
 # The game starts here.
-
 label start:
-
+    $ choices = []
+    $ relantionship = 0
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -37,12 +37,21 @@ label start:
 
     menu choice_1:
         "Reconsider":
+            python:
+                choices.append("Reconsider")
+
             jump choice_1_home
 
         "*silence*":
+            python:
+                choices.append("Silence")
+
             jump choice_1_done
 
         "Understanding":
+            python:
+                choices.append("Understanding")
+
             jump choice_1_understanding
     
     label choice_1_home:
@@ -105,12 +114,21 @@ label start:
 
     menu choice_2:
         "Myself":
+            python:
+                choices.append("Myself")
+            
             jump choice_2_me
 
         "My family":
+            python:
+                choices.append("Family")
+
             jump choice_2_family
 
         "No one's fault":
+            python:
+                choices.append("No ones fault")
+
             jump choice_2_no_one
     
     label choice_2_me:
@@ -171,12 +189,24 @@ label start:
 
     menu choice_3:
         "My own fault":
+            python:
+                choices.append("Blame self")
+                relantionship += 5
+
             jump choice_3_depressive
 
         "Trevor":
+            python:
+                choices.append("Blame Bully")
+                relantionship += 2
+
             jump choice_3_hurtful
 
         "Dismiss Question":
+            python:
+                choices.append("Distrust")
+                relantionship -= 5
+
             jump choice_3_distrustrusful
 
     label choice_3_depressive:
@@ -217,11 +247,24 @@ label start:
     
     menu choice_4:
         "Dismissal":
+            python:
+                choices.append("Dismissal")
+                relantionship -= 5
+
             jump choice_4_dismissal
 
         "Appreciative":
+            python:
+                choices.append("Appreciative")
+                relantionship += 2
+
             jump choice_4_appreciative
+
         "Relate":
+            python:
+                choices.append("Relate to losing passion")
+                relantionship += 5
+
             jump choice_4_relate
 
     label choice_4_dismissal:
@@ -251,9 +294,17 @@ label start:
 
     menu choice_5:
         "Trust":
+            python:
+                choices.append("Trust")
+                relantionship += 10
+
             jump choice_5_trust
 
         "Distrust":
+            python:
+                choices.append("Distrust")
+                relantionship -= 10
+            
             jump choice_5_distrust
     
     label choice_5_trust:
@@ -302,9 +353,17 @@ label start:
 
     menu choice_6:
         "Nice":
+            python:
+                choices.append("Nice")
+                relantionship += 5
+            
             jump choice_6_nice
 
         "Dismiss":
+            python:
+                choices.append("Dismiss")
+                relantionship -= 5
+            
             jump choice_6_dismiss
 
     label choice_6_nice:
@@ -334,12 +393,24 @@ label start:
     
     menu choice_7:
         "Hopeful":
+            python:
+                choices.append("Hopeful")
+                relantionship += 5
+
             jump choice_7_hopeful
 
         "Anger":
+            python:
+                choices.append("Anger")
+                relantionship -= 5
+
             jump choice_7_anger
 
         "Optimistic":
+            python:
+                choices.append("Optimistic")
+                relantionship += 3
+
             jump choice_7_optimistic
     
     label choice_7_hopeful:
@@ -395,10 +466,24 @@ label start:
 
     menu choice_8:
         "Yes":
+            python:
+                choices.append("Yes")
+                relantionship += 5
+
             jump choice_8_yes
+
         "Somewhat":
+            python:
+                choices.append("Somewhat")
+                relantionship += 2
+
             jump choice_8_somwhat
+
         "No":
+            python:
+                choices.append("No")
+                relantionship += 2
+
             jump choice_8_no
     
     label choice_8_yes:
@@ -455,11 +540,24 @@ label start:
 
     menu choice_9:
         "Please Sam, I would really like to know what is up with you. I don’t understand what just happened.":
+            python:
+                choices.append("Pressure")
+                relantionship += 2
+
             jump choice_9_1
 
         "I’m sorry I’m just confused about what just happened. If you are comfortable, could you tell me about it?":
+            python:
+                choices.append("Careful")
+                relantionship += 5
+
             jump choice_9_2
+
         "Sam tell me what just happened. I deserve to know what you just did to me.":
+            python:
+                choices.append("Pushing")
+                relantionship -= 5
+
             jump choice_9_3
     
     label choice_9_1:
@@ -517,12 +615,26 @@ label start:
     menu choice_9_5:
         "Relate, Understanding":
             mc "It’s okay don’t worry I understand you, I’ve felt like that before. Just overwhelmed and so emotional but just not feeling anything. People have tried to console me in that state, but it’s just like I understand that you’re worried about me, but I just can’t emotionally feel it."
+            python:
+                choices.append("Understanding")
+                relantionship += 5
+
             jump choice_9_5_1
+
         "Sorry, Can't imagine how you're feeling.":
             mc "I can’t imagine how you’re feeling. I am sorry for making you let all of that pain out."
+            python:
+                choices.append("Apologetic")
+                relantionship += 5
+            
             jump choice_9_5_2
+        
         "Get over it":
             mc "Listen can you get over it. We need to head on, we don’t have the entire night."
+            python:
+                choices.append("Get over it")
+                relantionship -= 5
+            
             jump choice_9_5_3
 
     label choice_9_5_1:
@@ -548,9 +660,17 @@ label start:
                 
     menu choice_10:
         "Focus on getting home":
+            python:
+                choices.append("Focus getting Home")
+                relantionship -= 5
+            
             jump choice_10_home
 
         "Focus on Sam":
+            python:
+                choices.append("Focus on Sam")
+                relantionship += 10
+
             jump choice_10_sam
 
     label choice_10_home:
@@ -578,8 +698,17 @@ label start:
     R "Do you miss your parents?"
     menu choice_11:
         "Yeah, I do.":
+            python:
+                choices.append("Miss Parents")
+                relantionship += 2
+
             jump choice_11_1
+
         "Not really.":
+            python:
+                choices.append("Doesn't miss parents")
+                relantionship -= 2
+
             jump choice_11_2
     
     label choice_11_1:
