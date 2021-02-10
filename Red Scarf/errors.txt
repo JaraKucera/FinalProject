@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 22: indentation mismatch.
+File "game/script.rpy", line 61: expected simple expression
+    play sound "audio/CampAmbi" fadein
+                                      ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Feb  3 09:42:25 2021
+Sat Feb  6 10:15:14 2021
