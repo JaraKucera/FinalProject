@@ -14,7 +14,7 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-
+    play music "audio/Awaiting-the-Devil.ogg" volume 1.0 fadein 1 fadeout 1 loop
     scene bg room
 
     # These display lines of dialogue.
@@ -32,6 +32,7 @@ label start:
     "The dirt track road spiralled down a forest so dense it felt as if the car would have to squeeze through to pass."
     "Even though it was July, the deeper we went, the more and more the trees lost their colours. With each passing minute, colours got drained out of the environment to leave just pale broken down tree barks."
     "Hollow emotionless trees replaced those bright summer colours and with them, they took the already sparse joyous emotions"
+    play sound "audio/Car.ogg" volume 0.5 fadein 1 fadeout 1
     mc "So this, is it? The place where I will spend the rest of the summer all away from you guys?"
     dad "Look Sport, we already discussed this with your mom, this will benefit you the most, so get out there and let the person in charge know that you’re here."
 
@@ -67,25 +68,25 @@ label start:
     label choice_1_done:
         "Without even saying goodbye they were gone. The car getting swallowed by the spiral of trees, possibly never to be seen again."
     
-    play sound "audio/CampAmbi.ogg" fadein 2.0 volume 0.25
-
+    play music "audio/Punch-Deck-Longing.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "By looking at the camp, you could tell that in the past it must have been filled with joyous souls of children laughing about, enjoying their summers, stress-free and happy."
     "All the buildings shining, feeling alive and fresh. The new reality was a mere husk of the past. The lake where children would cool off after a long day of activities looked more like one step would fill your body with toxic waste."
     "The cabins and buildings all looked soulless, the colour drained from this place. It looked like it was all going to collapse soon from all the mould and lack of care."
     "From everyone’s expressions, you could tell that joy and happiness were two emotions gone from this world. Everyone had the same facial expression, an expression that screamed help me, let me leave, I’ve had enough."
     "Even those that were in charge all looked like they were slaves, salving away for a minimal wage, hoping to get by until their next paycheque."
     
-    stop sound 
     play sound "audio/Thud.ogg" volume 1.0
-    
+    with hpunch
     t "Hey watch it! What do you think that you’re doing?"
     "Before I even get a chance to respond, he grabs me by my shirt and holds me against the wall."
     t "Listen here, I see that you’re new here, so I’m only going to give you a warning this time. People around here are in fear when they hear my name. The boys and I here are T."
     t "We run this little camp, so don’t you dare ever bump into me or the boys ever again. If you do you’ll get this but much worse."
-    play sound "audio/Punch.ogg"
+    play sound "audio/Punch.ogg" 
+    with vpunch
     "With that, he punched me in the gut and left me heaving on the ground. As his friends walked by they spat on me and called me various names."
     "What a great way to start this camp. Hopefully, he won’t be too much of a problem."
 
+    play music "audio/Dystopian.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "After going to the head’s office to sign up and be assigned to a bed in a run-down cabin. I was informed that I’ve come on time to be able to partake in the final activity of the day before bedtime."
     "One of the run-down buildings had a nice set of windows to one of the sides of the walls overlooking the forest. The cabin wasn’t as bad as it looked from the outside, the walls constructed out of logs with certifications hung up and framed from years before I was even born."
     "How I wish I could have dealt with this camp twenty years ago during its glory years.  While I am the last person to enjoy group activities and the outside, it would have made it much more bearable."
@@ -97,14 +98,19 @@ label start:
     t "I hope that you remember the warning that you got earlier today."
     "Hearing those words echo in my brain along with the devious smile plastered on his face brought back the feeling of pain that still wasn’t fully away. I was first to hold the punching bad. Trays face grew with pleasure every time that he punched."
     play sound "audio/Punch.ogg"
+    with vpunch
     pause 0.25
     queue sound "audio/Punch.ogg" volume 0.75
+    with hpunch
     pause 0.25
     queue sound "audio/Punch.ogg" volume 0.60
+    with vpunch
     pause 0.25
     queue sound "audio/Punch.ogg" volume 0.25
+    with hpunch
     pause 0.25
     queue sound "audio/Punch.ogg" volume 0.5
+    with vpunch
     "Each punch sent shockwaves through my body and pushed me further. Keeping my balance was getting more difficult with each punch. The harder the punch the wider the grin on his face would be."
     "Somehow I managed to survive the first twenty minutes, it was now my turn to punch. It didn’t seem like my punches had any impact on Tray whatsoever. It was as if I was just gently tapping the punching bag."
     "For the first time, I was a little at peace, I could study the surrounding environment. Everyone seemed to be doing much better, some even had a smile on their face. It looked like they were making friends."
@@ -152,13 +158,14 @@ label start:
     "Thank god that the supervisor was there to save me otherwise I probably would have died just there and then."
     t "You’re dead."
     "That’s all Tray said as he left the building."
-
+    play music "audio/EmptyStreets.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "With that, the activities had come to an end and so did the day. After making my way to the cabin and being checked off the present list I was ready to end the day in a hard and cold bed. I wanted to finally rest, the day had been so exhausting."
     "Even though I was so dead my body did not listen to me and instead kept me awake reliving all the events that had transpired. I just sat there at my bed wishing that this was all a dream and that I would just wake up in my bed at home."
     "Sadly, this isn’t a primary school short story where all conflicts had been resolved and disappear when the character suddenly wakes up and realizes it had all been just a dream. This is instead a reality where Trevor had gathered his friends and had come after me."
     "Finding the cabin where I would be sleeping was not a difficult task. Even going blindly would give you a twenty percent chance to guess on the first try. There were five cabins for each gender which housed five kids each."
     "It didn’t take long before I heard the door open before a hand had been put over my mouth, with other hands used to drag me outside. It all happened so fast that I didn’t even get a chance to yell or focus attention on myself."
     "The last thing that I saw was a bright star shining in the night sky before everything went dark."
+    play music "audio/sad_piano_track_4.ogg" volume 0.5 fadein 1 fadeout 1 loop
     play sound "audio/Punch.ogg" volume 0.75
     "I woke up to a punch to the gut, the same punch that I had received earlier."
     t "Well, well, well, I told you that I’d kill you. You know, no one has messed up on the same day as their warning. You must be incredibly stupid or incredibly unlucky."
@@ -169,10 +176,11 @@ label start:
     "The branches as if being held against my mouth muffling anything that would escape my mouth in hopes of getting help. It was almost pitch black now if I was top survive this beat down would I even be able to get back? I didn’t deserve this."
     t2 "Hey Trevor isn’t this forest haunted?"
     t "Tray are you completely stupid?"
+    play sound "audio/Howl2.ogg" volume 1 
     "Suddenly a loud howl echoed throughout the forest distracting everyone. Although my hands remained tied by some rope, my legs although beaten were free."
     "With the adrenaline in my body, I made a run for it through the forest with only a slight head start before being followed."
     "There wasn’t much light left from the sun and most of it was unable to pass through the forest sky. I had no clue where I was going before slipping and tumbling down."
-
+    play music "audio/Punch-Deck-Brahe.ogg" volume 1.0 fadein 1 fadeout 1 loop
     #Chapter 2
     r "Oh looks like you’re waking up. That fall looked like it hurt a lot."
     "I awoke to the sounds of someone gently talking as if assuming that no one would hear them. I couldn’t understand what they were saying, everything muffled and blurring. It took a couple of seconds before my eyes adjusted, and I could decipher what was said to me."
@@ -286,7 +294,9 @@ label start:
         jump choice_4_done
     
     label choice_4_done:
+        play music "audio/sad_piano_track_6.ogg" volume 0.5 fadein 1 fadeout 1 loop
         "After a few seconds of us silently walking through the forest, twigs breaking under our feet, our shoes getting dirtier by the damp soil. A howl similar to that which I’ve used to escape from Tray echoed throughout the woods again."
+        play sound "audio/Howl4.ogg" volume 1
         "This time the sound wrapped through my skull, it felt much more intense and much closer. My legs started to twitch from the fear, my eyes gazing all around hoping to not see the source of the noises."
         "The red scarf girl had noticed my twitching and looking around, she pointed behind me and when I averted my gaze to what laid there, I saw two bright yellow eyes. Eyes of death hungry not just for the meat on my bones but eager to ravage my soul."
         r "Listen to me Blue shirt, we will be in trouble if we are caught, I want you to go run as fast as possible with that hurt ankle, in the direction that we have been heading in. You will see the cabin, go inside, and you should see a ladder heading up into the attic."
@@ -315,6 +325,7 @@ label start:
     label choice_5_distrust:
         mc "No, I don’t trust you, what if something happens?"
         "As soon as those words left my mouth a growling vicious-looking dog emerged from behind me. Its eyes full of lust for meat, awaiting its turn to attack."
+        play sound "audio/Howl1.ogg" volume 1
         r "If you don’t leave right now you’ll be a dogs chew toy, so go!"
         "No more words of encouragement were needed, I had to trust her and with that, I limped out of her way as fast as my legs would carry me."
         $ trust = False
@@ -328,11 +339,15 @@ label start:
     "Pain was the last thing that I needed more of. I was all out of breath, wondering if the girl was going to be okay. Each second felt like an hour. What was I going to do without her? How would I get back?"
     "Would I be able to live with the fact that a girl could have given up her life for me?"
     r "You’re whimpering like a scared little puppy, don’t worry everything is okay."
+    play music "audio/Beautiful-Splatter-Invadable-Harmony.ogg" volume 1.0 fadein 1 fadeout 1 loop
 
     if trust:
         r "Thanks for trusting me by the way"
     else:
         r "Would have certainly been easier if you had just trusted me."
+        if relantionship < -15:
+            jump end_distrust
+    
     
     r "Hmm, let’s see, I could swear that there was a first aid box somewhere around here, oh yeah there it is."
     "After finally being able to calm down and realize that the girl was okay, I finally had the chance to notice where I was. A low wooden ceiling that did not offer much protection. If the girl stayed here during the night, the scarf would start to make more sense, it was starting to get chilly."
@@ -567,11 +582,15 @@ label start:
         jump choice_9_done
     
     label choice_9_3:
-        jump choice_9_done
+        if relantionship < -11:
+            jump end_hill
+        else:
+            jump choice_9_done
     
     label choice_9_done:
         R "Fine, okay I will tell you everything, le’s just get to the top of this hill first, it’s not much longer, and I think that it will be much easier to do it there. I also need time to think through it."
     
+    play music "audio/ForeverLost.ogg" volume 0.5 fadein 1 fadeout 1 loop
     "The next five minutes were filled with dead silence. The only audible noises were our shoes stomping on the ground below as we tried to maintain balance. I tried to think about all the other times that Sam had touched, when I first fell while running from the bullies,"
     "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself. She had always skipped ahead of me, only ever slowing down and turning around to talk to me."
     "Was there something wrong with her or me? As we near the top, I noticed Sam’s face, she wasn’t hiding her emotions, there was no smile, just sadness and worry. The top of the hill was way brighter than any other location that we had been to thus far."
@@ -593,6 +612,9 @@ label start:
     R "At dad for only caring about money and not taking care of mom when she needed comfort the most, and for mom not doing anything about my dad, for being a pushover and doing nothing for herself or the family."
     R "I couldn’t take it any more and just ran out crying. I hated everything that had just happened. I regretted it the second that it happened, but I couldn’t get myself to come back."
     R "Life was so unfair. But I wanted to calm down and return. A part of me felt fantastic for letting things go. I finally felt alive after almost two years. As I walked back I noticed the heart rising around me."
+    
+    play sound "audio/ForestFire.ogg" volume 0.2
+    
     R "There was a forest fire going off strongly right where mom and dad were. I had only been gone for about an hour, I didn’t know if they were okay or not, but I had to run away, getting caught up in the flames and smoke would have been the end of me."
     R "I ran as fast as I could. I had to get away and find my parents. The fire was spreading at a high rate, it was almost impossible to see anything, shades of red and orange just engulfed the atmosphere."
     R "While I was running disoriented, the ground below me collapsed and send me crashing down to some deep unused well. The fall had knocked me out and when I came to, it was already dark."
@@ -737,6 +759,7 @@ label start:
     R "I think that we have gone through a lot tonight but spending it with you was worthwhile and your company was really enjoyable, much better than just walking around talking to myself."
     R "You have given me hope for the future, maybe there are other people out there like you that can see me and hear me. Plus you’ll be in camp so like maybe we could hang out sometimes if you’d like. I know that accepting a person lie me might not be the easiest, but I really do cherish this night with you"
     "Just as I was about to answer Sam, I heard faint shouting coming from the direction of the camp. I turned around trying to solve what the words shouted at us meant, thinking that maybe some camp instructor had seen us and was worried about me."
+    play music "audio/Forgotten-Memories.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "But as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure in the forest, the bullies."
     "Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. Sam had no clue what was going on at first until she saw my terrified expression. I think that she could guess who these people were."
     "Just as I thought that life was going to be over, Sam grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind."
@@ -745,16 +768,19 @@ label start:
     "Lifting my leg was a struggle, each step felt like the earth was grabbing my shoes, not wanting me to leave."
     "We did not run long before we spotted what might have been exactly what Sam had described, a small run-down stone tower. It did not feel like we were getting any distance on the bullies they were getting closer, Sam pulled my hand towards the castle tower."
     "It wouldn’t be long before I would collapse, my lungs were working overtime and after walking around all night, my legs were starting to give up."
-    " Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Sam was trying her best to get us to safety, there wasn’t a smile on her face"
+    "Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Sam was trying her best to get us to safety, there wasn’t a smile on her face"
     "nor any sense of positive emotions, it was completely different from the dog incident. Back then she forced herself to wear a smile to hide her true feelings from the world, but right now the mask was destroyed."
     "The scenery here was completely different, huge trees with branches that crept out to block out the sun were replaced with sparse burnt tree stumps that embraced the rising sun and used the dampness in the air to create orange filled burning sights."
     "Those were the last images I saw as we entered the tower, where the ground below me gave away and crumbled underneath me. As everything was going black I heard the loudest, darkest screech that I have ever heard in my life."
+    play sound "audio/Ghost.ogg" volume 1.0
     "I don’t think that it was dark for long before my eyes adjusted and could see around me. Sunlight was entering through the circular hole in the sky through which I had fallen. I was surrounded by narrow stone slimy walls."
     "Laying in a pool of water explained my drenched state and low body heat. I was freezing and sore all over. Where was I? That was when my eyes adjusted and noticed that I was not the only one stuck in this hole, right beside me were skeleton remains."
     "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Sam wore. We must have done it, we must have found her body."
+    stop sound
     "Well now hopefully I won’t meet the same end as her. I used the last tiny amount of energy that I had managed to recollect to shout at the top of my lungs for help. No one answered back."
     "What had happened to Sam and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
     "because he had heard a loud screech and my call for help. Firefights and the police were called, firefights to save me and police to investigate the body. I awoke in a hospital bed where the police questioned me about the night."
+    play music "audio/Punch-Deck-Ethereal.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "I changed the story around to not include any mentions of Sam but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Sam pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
     "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Sam and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
     "The article didn’t mention me by name but mentioned how I almost suffered the same faith. The article ended with missing pictures of the bullies, they had gone missing from the camp at the same time as I was found."
@@ -765,13 +791,77 @@ label start:
     "She was free from the forest. Life went on, and I decided to use her memory of visiting the forest with her family every year for my family too. Every year as I grew older I wished that maybe she would be there or at least know how grateful I was for her existence."
     jump end
 
+    label end_hill:
+        play music "audio/joshua-mclean_dreams-left-behind.ogg" volume 1.0 fadein 1 fadeout 1 loop
+        R "Blue Shirt that’s too much. I... I don’t think that I can do this any more. I know that you must be very confused about the current situation, but you’ve been kinda rude to me and I just can’t trust you this much."
+        R "I understand that it is partly unfair to you, but I’m sorry this is my fault. I have to leave, good luck with getting home, you should be able to do it on your own now."
+        "Tears ran down her face, her eyes screamed from the pain that she was in. It was too much for her to handle. She ran away from me, I was now all alone to solve what just happened and to get home. The next five minutes were filled with dead silence."
+        "The only audible noises were my shoes stomping on the ground below as I tried to maintain balance. I tried to think about all the other times that Sam had touched, when I first fell while running from the bullies,"
+        "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself."
+        "She had always skipped ahead of me, only ever slowing down and turning around to talk to me. The top of the hill was way brighter than any other location that we had been to thus far. It was free from all the sheltering trees."
+        "The dark sky, the bright stars, the shining moon were all perfectly fully visible and glancing at us for the tree’s protection as now gone. I looked across the horizon, for a second I was scared because all I could see was a large dense forest. But then as I looked towards the direction of the moon, I finally saw it."
+        "A glistening body of water, if it wasn’t for the lake I would have never noticed those dark cabins to the side of it. There wasn’t a single light on, so I would have to follow the moon to be able to get back."
+        "It was time to get home."
+        jump choice_10_end
+
     label choice_10_end:
+        play music "audio/joshua-mclean_dreams-left-behind.ogg" volume 1.0 fadein 1 fadeout 1 loop
         "I had been walking for a while. My ankle was sorer than ever. I would say that it was worse than when I first hurt it. All the walking must have taken its toll. For some reason, the forest seemed scarier alone."
         "The sounds seemed to intensify when you were alone with just your thoughts. Only a little while to go before I would get back to the camp. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
         "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now. Just as I was about to rest before walking further, I heard faint shouting coming from the direction of the camp."
         "I turned around trying to solve what the words shouted at me meant, thinking that maybe some camp instructor had seen me and was worried that I wasn’t in bed, but as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure "
-        " in the forest, the bullies. Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. It wasn’t long before they caught up to me. The impact they had on my body made it give up. It was too much to handle, it was over."
+        " in the forest, the bullies. Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions."
+        if relantionship => 30:
+            jump reunite
+        else:
+            "It wasn’t long before they caught up to me. The impact they had on my body made it give up. It was too much to handle, it was over. I'm sorry."
+            jump end
     
+    label end_distrust:
+        play music "audio/joshua-mclean_dreams-left-behind.ogg" volume 1.0 fadein 1 fadeout 1 loop
+        r "Sorry Blue Shirt but I don’t think that we should do this journey together. You’ve shown me that you don’t trust me, and it does seem like you don’t want me here. I can take a lot, but I have to be fair to myself, this isn’t good for me."
+        r "I’ve enjoyed your company a bit since I haven’t been in one for a long time. But enough is enough. I wish you the best of luck with getting home. I'm sorry."
+        "My words had hurt her too much, showing a lack of trust and being dismissal towards her didn’t work. I guess that I will have to do this alone now."
+        "The attic space showed no signs of being used, no place for a bed, absolutely nothing lying around. Just an empty hollow room that would have been swallowed in darkness if it was not for a tiny circle window that allowed some moonlight to enter through its mouth."
+        "Finding the bandage in the first aid box was an easy task. Most of the other items were missing, but luckily I was able to use the bandages. Had I injured something else and required other items I would have been out of luck."
+        "While I was bandaging my ankle I realized how bad it truly was. Inflamed and bruised, it will be difficult to walk the rest of the journey with this ankle. The next thing that I remember is waking up in massive pain, not just my ankle, but I was starving."
+        "Sun shined through the circle window, it was daytime now, I must have fallen asleep from the pain and weakness. I had to leave this place and get back to camp or else I would starve soon, well I was more likely to die from thirst first."
+        "Each step was extremely painful, my ankle wouldn’t be able to take much. However, that pain could not be compared to the pain that I would feel next. The pack of dogs had surrounded the entrance of the cabin."
+        " I didn’t realize this until it was too late. Way too late to do anything at all. I’m sorry."
+        jump end 
+
+    label reunite:
+        play music "audio/Forgotten-Memories.ogg" volume 1.0 fadein 1 fadeout 1 loop
+        "Just as I thought that life was going to be over, Sam grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind."
+        R "You’re not going to get rid of me so easily blue shirt, now shush I’ll save you."
+        "How was she holding me when a few hours ago she couldn’t make contact with me? They say that spirits stay around if they have a lot of willpower."
+        "Was it all possible because of the amount of willpower she put into helping me? It would be something that I would only be able to speculate about. The ground was muddy and damp, each step drained the slimmer of energy that I had left."
+        "Lifting my leg was a struggle, each step felt like the earth was grabbing my shoes, not wanting me to leave."
+        "We did not run long before we spotted what might have been exactly what Sam had described, a small run-down stone tower. It did not feel like we were getting any distance on the bullies they were getting closer, Sam pulled my hand towards the castle tower."
+        "It wouldn’t be long before I would collapse, my lungs were working overtime and after walking around all night, my legs were starting to give up."
+        "Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Sam was trying her best to get us to safety, there wasn’t a smile on her face"
+        "nor any sense of positive emotions, it was completely different from the dog incident. Back then she forced herself to wear a smile to hide her true feelings from the world, but right now the mask was destroyed."
+        "The scenery here was completely different, huge trees with branches that crept out to block out the sun were replaced with sparse burnt tree stumps that embraced the rising sun and used the dampness in the air to create orange filled burning sights."
+        "Those were the last images I saw as we entered the tower, where the ground below me gave away and crumbled underneath me. As everything was going black I heard the loudest, darkest screech that I have ever heard in my life."
+        play sound "audio/Ghost.ogg" volume 1.0
+        "I don’t think that it was dark for long before my eyes adjusted and could see around me. Sunlight was entering through the circular hole in the sky through which I had fallen. I was surrounded by narrow stone slimy walls."
+        "Laying in a pool of water explained my drenched state and low body heat. I was freezing and sore all over. Where was I? That was when my eyes adjusted and noticed that I was not the only one stuck in this hole, right beside me were skeleton remains."
+        stop sound
+        "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Sam wore. We must have done it, we must have found her body."
+        "Well now hopefully I won’t meet the same end as her. I used the last tiny amount of energy that I had managed to recollect to shout at the top of my lungs for help. No one answered back."
+        "What had happened to Sam and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
+        "because he had heard a loud screech and my call for help. Firefights and the police were called, firefights to save me and police to investigate the body. I awoke in a hospital bed where the police questioned me about the night."
+        play music "audio/Punch-Deck-Ethereal.ogg" volume 1.0 fadein 1 fadeout 1 loop
+        "I changed the story around to not include any mentions of Sam but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Sam pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
+        "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Sam and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
+        "The article didn’t mention me by name but mentioned how I almost suffered the same faith. The article ended with missing pictures of the bullies, they had gone missing from the camp at the same time as I was found."
+        "There were search parties sent out but no one could find them. I wanted to revisit that forest and see Sam again, but a broken leg was keeping me at home and finding an excuse to revisit the forest was basically impossible."
+        "It sadly took a few years before I would be able to visit again. A few years that would have been much more difficult if I hadn’t had met Sam that night. It was strange, but she felt like a part of me, there to remind me of hope at the worst of times."
+        "I spent the day strolling through the forest, revisiting the cabin that we used for shelter, the hilltop, the place where I awoke to see her for the first time. In all those years it had not changed at all."
+        "A part of me hoped to be able to see her again, while the other hoped that she was laid to rest after her body had been found."
+        "She was free from the forest. Life went on, and I decided to use her memory of visiting the forest with her family every year for my family too. Every year as I grew older I wished that maybe she would be there or at least know how grateful I was for her existence."
+        jump end
+
     label end:
         # This ends the game.
 

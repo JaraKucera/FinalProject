@@ -1,28 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 40, in script
-    python:
-  File "game/script.rpy", line 41, in <module>
-    choices[0] = "Reconsider"
-IndexError: list assignment index out of range
+  File "game/script.rpy", line 35, in script
+    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
+  File "renpy/common/000statements.rpy", line 292, in execute_play_sound
+    fadein=eval(p["fadein"]),
+  File "game/script.rpy", line 35, in <module>
+    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
+NameError: name 'fadeout' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 40, in script
-    python:
-  File "renpy/ast.py", line 922, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 41, in <module>
-    choices[0] = "Reconsider"
-  File "renpy/python.py", line 875, in do_mutation
-    return method(self, *args, **kwargs)
-IndexError: list assignment index out of range
+  File "game/script.rpy", line 35, in script
+    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
+  File "renpy/ast.py", line 1969, in execute
+    self.call("execute")
+  File "renpy/ast.py", line 1957, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 292, in execute_play_sound
+    fadein=eval(p["fadein"]),
+  File "renpy/python.py", line 2249, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2242, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 35, in <module>
+    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
+NameError: name 'fadeout' is not defined
 
 Windows-10-10.0.18362
 Ren'Py 7.4.2.1292
 Red Scarf 1.0
-Wed Feb 10 08:48:49 2021
+Sat Feb 13 07:34:59 2021
