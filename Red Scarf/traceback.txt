@@ -1,46 +1,39 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 63, in script
-    "By looking at the camp, you could tell that in the past it must have been filled with joyous souls of children laughing about, enjoying their summers, stress-free and happy."
-IOError: Couldn't find file 'audio/CampAmbi'.
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "game/script.rpy", line 19, in <module>
+    import algorithm
+SyntaxError: invalid syntax (__init__.py, line 131)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 63, in script
-    "By looking at the camp, you could tell that in the past it must have been filled with joyous souls of children laughing about, enjoying their summers, stress-free and happy."
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1384, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1179, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 851, in do_display
-    **display_args)
-  File "renpy/character.py", line 601, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3007, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3700, in interact_core
-    renpy.audio.audio.periodic()
-  File "renpy/audio/audio.py", line 1101, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "renpy/audio/audio.py", line 1079, in periodic_thread_main
-    periodic_pass()
-  File "renpy/audio/audio.py", line 1021, in periodic_pass
-    c.periodic()
-  File "renpy/audio/audio.py", line 487, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/CampAmbi'.
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 515, in main
+    renpy.game.context().run(node)
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 19, in <module>
+    import algorithm
+  File "renpy/loader.py", line 985, in load_module
+    exec(code, mod.__dict__)
+  File "algorithm.py", line 2, in <module>
+  File "renpy/loader.py", line 979, in load_module
+    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
+SyntaxError: invalid syntax (__init__.py, line 131)
 
 Windows-10-10.0.18362
 Ren'Py 7.4.2.1292
 Red Scarf 1.0
-Sat Feb  6 10:15:46 2021
+Sun Feb 21 22:12:18 2021
