@@ -1,36 +1,39 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 35, in script
-    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
-  File "renpy/common/000statements.rpy", line 292, in execute_play_sound
-    fadein=eval(p["fadein"]),
-  File "game/script.rpy", line 35, in <module>
-    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
-NameError: name 'fadeout' is not defined
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "game/script.rpy", line 19, in <module>
+    import algorithm
+SyntaxError: invalid syntax (__init__.py, line 131)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 35, in script
-    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
-  File "renpy/ast.py", line 1969, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 1957, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 292, in execute_play_sound
-    fadein=eval(p["fadein"]),
-  File "renpy/python.py", line 2249, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 2242, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 35, in <module>
-    play sound "audio/Car.ogg" volume 1.0 fadein fadeout
-NameError: name 'fadeout' is not defined
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 515, in main
+    renpy.game.context().run(node)
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "game/script.rpy", line 17, in script
+    init python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 19, in <module>
+    import algorithm
+  File "renpy/loader.py", line 985, in load_module
+    exec(code, mod.__dict__)
+  File "algorithm.py", line 2, in <module>
+  File "renpy/loader.py", line 979, in load_module
+    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
+SyntaxError: invalid syntax (__init__.py, line 131)
 
 Windows-10-10.0.18362
 Ren'Py 7.4.2.1292
 Red Scarf 1.0
-Sat Feb 13 07:34:59 2021
+Sun Feb 21 22:12:18 2021
