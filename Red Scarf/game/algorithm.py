@@ -8,19 +8,19 @@ from copy import deepcopy
 ### CLASSES ###
 class Row:
     def __init__(self,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13):
-        self.c1 = c1 #Choices 1-12
-        self.c2 = c2
-        self.c3 = c3
-        self.c4 = c4
-        self.c5 = c5
-        self.c6 = c6
-        self.c7 = c7
-        self.c8 = c8
-        self.c9 = c9
-        self.c10 = c10
-        self.c11 = c11
-        self.c12 = c12
-        self.c13 = c13 #Depression level
+        self.c1 = c1.replace(" ","") #Choices 1-12
+        self.c2 = c2.replace(" ","")
+        self.c3 = c3.replace(" ","")
+        self.c4 = c4.replace(" ","")
+        self.c5 = c5.replace(" ","")
+        self.c6 = c6.replace(" ","")
+        self.c7 = c7.replace(" ","")
+        self.c8 = c8.replace(" ","")
+        self.c9 = c9.replace(" ","")
+        self.c10 = c10.replace(" ","")
+        self.c11 = c11.replace(" ","")
+        self.c12 = c12.replace(" ","")
+        self.c13 = c13.replace(" ","") #Depression level
     
 class Col:
     def __init__(self):
@@ -39,20 +39,24 @@ class Node:
         self.leftChild = None
         self.rightChild = None
         self.middleChild = None
-        self.isLeaf = None
+        self.isLeaf = True
         self.isTriple = None
         self.name = None
+        self.value = None
 
     def setLeftChild(self, child):
         self.leftChild = child
+        self.isLeaf = False
         self.children.append(self.leftChild)
     
     def setRightChild(self, child):
         self.rightChild = child
+        self.isLeaf = False
         self.children.append(self.rightChild)
     
     def setMiddleChild(self, child):
         self.middleChild = child
+        self.isLeaf = False
         self.children.append(self.middleChild)
         self.isTriple = True
 
@@ -64,13 +68,18 @@ class Node:
     
     def getMiddleChild(self):
         return self.middleChild
+    
+    def display(self, indent = 0):
+        print( (' '*indent)+self.name)        
+        for val in self.children:
+            val.display(indent+1)
 
 ### FUNCTIONS ###
 
 #Columns are Col list that contains a col object which contains a colList, classList is a list of results, depth is an int, names is a list of column names
 def subTreeBuilding(columnObjectList, classList, depth, names):
     #check number of elements in column and depth
-    if len(columnObjectList[0].colList) <= 1 or depth >= 4:
+    if len(columnObjectList[0].colList) <= 5 or depth >= 6:
         print("Exit condition 1, size with depth of: "+str(depth))
         return createLeafNode(deepcopy(columnObjectList), classList[:], names)
 
@@ -78,8 +87,9 @@ def subTreeBuilding(columnObjectList, classList, depth, names):
     columnNameWithHighestGain = ""
     maxGainRatio = 0.0
     #Get total entropy
-    classDetails = detailClassList(classList[:])
-    totalEntropy = calculateEntropy(classDetails['depressed'], classDetails['notDepressed'], classDetails['depressed']+classDetails['notDepressed'])
+    classDetails = detailClassList(deepcopy(classList))
+    x = classDetails['depressed']+classDetails['notDepressed']
+    totalEntropy = calculateEntropy(classDetails['depressed'], classDetails['notDepressed'], x)
 
     #Get column with highest gain Ratio
     numberOfColumns = len(columnObjectList)
@@ -91,20 +101,28 @@ def subTreeBuilding(columnObjectList, classList, depth, names):
             columnNameWithHighestGain = names[i]
     
     #Separate data into two node streams
+    
     node = Node()
+    if depth == 0:
+        node.value = "root"
+    
     node.isLeaf = False
     node.name = columnNameWithHighestGain
-    answers = getAllPossibleAnswers(columnObjectList[columnNumberWithHighestGain])
-    if answers == 2:
+    answers = getAllPossibleAnswers(columnObjectList[columnNumberWithHighestGain].colList[:])
+    if len(answers) == 2:
+        print("######### Number of answers is 2 #############")
         data = partition(deepcopy(columnObjectList), classList[:], answers[0])
         leftClassList = data['classList']
         leftColumnList = data['cols']
+        leftChild = Node()
+        #leftChild.name = 
         node.setLeftChild(subTreeBuilding(leftColumnList, leftClassList, depth + 1, names))
         data = partition(deepcopy(columnObjectList), classList[:], answers[1])
         rightColumnList = data['cols']
         rightClassList = data['classList']
         node.setRightChild(subTreeBuilding(rightColumnList, rightClassList, depth + 1, names))
-    elif answers == 3:
+    elif len(answers) == 3:
+        print("########## Number of answers is 3 ###########")
         data = partition(deepcopy(columnObjectList), classList[:], answers[0])
         leftClassList = data['classList']
         leftColumnList = data['cols']
@@ -119,6 +137,7 @@ def subTreeBuilding(columnObjectList, classList, depth, names):
         node.setMiddleChild(subTreeBuilding(middleColumnList, middleClassList, depth + 1, names))
     else:
         print("Answers != 2 or 3")
+        return createLeafNode(deepcopy(columnObjectList), classList[:], names)
     
     return node
 
@@ -133,8 +152,8 @@ def partition(columnObject, classList, stringToSplitOn):
                     indicesList.append(j)
     
     for i in reversed(range(len(columnObject))):
-        for j in reversed(range(columnObject[0].colList)):
-            if columnObject[i].colList[j] in indicesList:
+        for j in reversed(range(len(columnObject[0].colList))):
+            if j in indicesList:
                 del columnObject[i].colList[j]
     
     for i in reversed(range(len(classList))):
@@ -152,14 +171,14 @@ def getGainRatio(oneColumn, classList, totalEntropy):
             case2AndDepressed = 0
             case1AndNotDepressed = 0
             case2AndNotDepressed = 0
-            for j in range(classColumn):
-                if oneColumn[j] == allPossibleAnswers[0] and classColumn[j] == "depressed":
+            for j in range(len(classList)):
+                if oneColumn[j] == allPossibleAnswers[0] and classList[j] == "depressed":
                     case1AndDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[0] and classColumn[j] == "notdepressed":
+                elif oneColumn[j] == allPossibleAnswers[0] and classList[j] == "notdepressed":
                     case1AndNotDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[1] and classColumn[j] == "depressed":
+                elif oneColumn[j] == allPossibleAnswers[1] and classList[j] == "depressed":
                     case2AndDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[1] and classColumn[j] == "notdepressed":
+                elif oneColumn[j] == allPossibleAnswers[1] and classList[j] == "notdepressed":
                     case2AndNotDepressed += 1
             
             entropyFirst = calculateEntropy(case1AndDepressed, case1AndNotDepressed, case1AndDepressed+case1AndNotDepressed)
@@ -181,18 +200,18 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         case1AndNotDepressed = 0
         case2AndNotDepressed = 0
         case3AndNotDepressed = 0
-        for j in range(classColumn):
-                if oneColumn[j] == allPossibleAnswers[0] and classColumn[j] == "depressed":
+        for j in range(len(classList)):
+                if oneColumn[j] == allPossibleAnswers[0] and classList[j] == "depressed":
                     case1AndDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[0] and classColumn[j] == "notdepressed":
+                elif oneColumn[j] == allPossibleAnswers[0] and classList[j] == "notdepressed":
                     case1AndNotDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[1] and classColumn[j] == "depressed":
+                elif oneColumn[j] == allPossibleAnswers[1] and classList[j] == "depressed":
                     case2AndDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[1] and classColumn[j] == "notdepressed":
+                elif oneColumn[j] == allPossibleAnswers[1] and classList[j] == "notdepressed":
                     case2AndNotDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[2] and classColumn[j] == "notdepressed":
+                elif oneColumn[j] == allPossibleAnswers[2] and classList[j] == "notdepressed":
                     case3AndNotDepressed += 1
-                elif oneColumn[j] == allPossibleAnswers[2] and classColumn[j] == "depressed":
+                elif oneColumn[j] == allPossibleAnswers[2] and classList[j] == "depressed":
                     case3AndDepressed += 1
         
         entropyFirst = calculateEntropy(case1AndDepressed, case1AndNotDepressed, case1AndDepressed+case1AndNotDepressed)
@@ -211,7 +230,7 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         return gainRatio
 
     else:
-        print("Number of possible answers: "+str(len(allPossibleAnswers)))
+        #print("Number of possible answers: "+str(len(allPossibleAnswers)))
         return 0
 
     return 0
@@ -222,6 +241,8 @@ def getAllPossibleAnswers(columnList):
     for i in range(len(columnList)):
         if columnList[i] not in listofAnswers:
             listofAnswers.append(columnList[i])
+    #for val in listofAnswers:
+        #print(val)
     
     return listofAnswers
 
@@ -242,7 +263,7 @@ def detailClassList(classList):
 #Entropy = -value1/total*log2(value1/total)-value2/total*log2(value2/total)
 def calculateEntropy(value1, value2, total):
     if total == 0 or value1 == 0 or value2 == 0:
-        print("entropy equal to 0")
+        print("entropy equal to 0 Total: "+str(total) + " Value 1:"+str(value1)+" Value 2: "+str(value2))
         return 0
     
     first = value1 / total
@@ -259,11 +280,26 @@ def createLeafNode(Columns, classList, names):
     node.isLeaf = True
     if data['depressed'] >= data['notDepressed']:
         node.name = "depressed"
+        node.value = "depressed"
     elif data['depressed'] < data['notDepressed']:
         node.name = "notdepressed"
+        node.value = "notdepressed"
+    else:
+        print("No name error")
 
     return node
 
+
+def testingOfData(ColumnObject, root):
+    while(root.name != None):
+        attribute = root.name
+
+def columnsToColList(ColumnObject, index):
+    outputList = []
+    for i in range(len(ColumnObject)):
+        for j in range(len(ColumnObject[i].colList)):
+            if j == index:
+                outputList.append(ColumnObject[i].colList[j])
 
 ### DATA PREP ###
 client = MongoClient('*')
@@ -358,3 +394,8 @@ print(cols[0].colList[0])
 ### TRAINING ###
 #classColumn object with list of results [depressed] [notdepressed]
 #cols list with  column objects, each column object has a list of that particular column number
+names = ["Choice 1","Choice 2","Choice 3","Choice 4","Choice 5","Choice 6","Choice 7","Choice 8","Choice 9","Choice 10","Choice 11","Choice 12"]
+node = subTreeBuilding(deepcopy(cols), classColumn.colList[:], 0, names)
+print("###################")
+node.display()
+
