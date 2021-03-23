@@ -11,6 +11,8 @@ define t2 = Character("Tray", color="#CDE7BE")
 label start:
     $ choices = []
     $ relantionship = 0
+    $ ghostStats = {'trust':50, 'anger':50, 'anxiety':50, 'helped':50, 'strength':50, 'hurt':50, 'happiness':50}
+
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -225,6 +227,10 @@ label start:
             python:
                 choices.append("Blame self")
                 relantionship += 5
+                ghostStats['happiness'] -= 5
+                ghostStats['strength'] -= 2
+                ghostStats['trust'] += 2
+                
 
             jump choice_3_depressive
 
@@ -232,6 +238,9 @@ label start:
             python:
                 choices.append("Blame Bully")
                 relantionship += 2
+                ghostStats['happiness'] -= 2
+                ghostStats['strength'] += 2
+                ghostStats['trust'] += 2
 
             jump choice_3_hurtful
 
@@ -239,6 +248,10 @@ label start:
             python:
                 choices.append("Distrust")
                 relantionship -= 5
+                ghostStats['happiness'] -= 5
+                ghostStats['strength'] -= 5
+                ghostStats['trust'] -= 10
+                ghostStats['anger'] += 5
 
             jump choice_3_distrustrusful
 
@@ -283,6 +296,13 @@ label start:
             python:
                 choices.append("Dismissal")
                 relantionship -= 5
+                ghostStats['happiness'] -= 5
+                ghostStats['strength'] -= 5
+                ghostStats['trust'] -= 5
+                ghostStats['anger'] += 5
+                ghostStats['anxiety'] += 2
+                ghostStats['helped'] -= 5
+                ghostStats['hurt'] -= 5
 
             jump choice_4_dismissal
 
@@ -290,6 +310,13 @@ label start:
             python:
                 choices.append("Appreciative")
                 relantionship += 2
+                ghostStats['happiness'] += 5
+                ghostStats['strength'] += 2
+                ghostStats['trust'] += 5
+                ghostStats['anger'] -= 5
+                ghostStats['anxiety'] -= 2
+                ghostStats['helped'] += 2
+                ghostStats['hurt'] -= 2
 
             jump choice_4_appreciative
 
@@ -297,6 +324,11 @@ label start:
             python:
                 choices.append("Relate to losing passion")
                 relantionship += 5
+                ghostStats['happiness'] += 2
+                ghostStats['trust'] += 5
+                ghostStats['anger'] -= 5
+                ghostStats['anxiety'] -= 2
+                ghostStats['hurt'] -= 2
 
             jump choice_4_relate
 
@@ -332,6 +364,11 @@ label start:
             python:
                 choices.append("Trust")
                 relantionship += 10
+                ghostStats['happiness'] += 5
+                ghostStats['strength'] += 5
+                ghostStats['trust'] += 5
+                ghostStats['anger'] -= 2
+                ghostStats['anxiety'] -= 5
 
             jump choice_5_trust
 
@@ -339,6 +376,12 @@ label start:
             python:
                 choices.append("Distrust")
                 relantionship -= 10
+                ghostStats['happiness'] -= 2
+                ghostStats['strength'] -= 2
+                ghostStats['trust'] -= 5
+                ghostStats['anger'] += 5
+                ghostStats['anxiety'] += 2
+                ghostStats['helped'] -= 2
             
             jump choice_5_distrust
     
@@ -396,6 +439,13 @@ label start:
             python:
                 choices.append("Nice")
                 relantionship += 5
+                ghostStats['happiness'] += 5
+                ghostStats['strength'] += 2
+                ghostStats['trust'] += 2
+                ghostStats['anger'] -= 5
+                ghostStats['anxiety'] -= 5
+                ghostStats['helped'] += 2
+                ghostStats['hurt'] -= 5
             
             jump choice_6_nice
 
@@ -403,6 +453,12 @@ label start:
             python:
                 choices.append("Dismiss")
                 relantionship -= 5
+                ghostStats['happiness'] -= 2
+                ghostStats['strength'] -= 2
+                ghostStats['trust'] -= 2
+                ghostStats['anxiety'] += 5
+                ghostStats['helped'] -= 2
+                ghostStats['hurt'] += 2
             
             jump choice_6_dismiss
 
@@ -436,6 +492,11 @@ label start:
             python:
                 choices.append("Hopeful")
                 relantionship += 5
+                ghostStats['happiness'] += 2
+                ghostStats['strength'] += 5
+                ghostStats['trust'] += 2
+                ghostStats['anxiety'] -= 2
+                ghostStats['hurt'] -= 5
 
             jump choice_7_hopeful
 
@@ -443,6 +504,10 @@ label start:
             python:
                 choices.append("Anger")
                 relantionship -= 5
+                ghostStats['happiness'] -= 5
+                ghostStats['trust'] -= 2
+                ghostStats['anger'] += 5
+                ghostStats['anxiety'] += 5
 
             jump choice_7_anger
 
@@ -450,6 +515,13 @@ label start:
             python:
                 choices.append("Optimistic")
                 relantionship += 3
+                ghostStats['happiness'] += 2
+                ghostStats['strength'] += 5
+                ghostStats['trust'] += 5
+                ghostStats['anger'] -= 2
+                ghostStats['anxiety'] -= 5
+                ghostStats['helped'] += 2
+                ghostStats['hurt'] -= 5
 
             jump choice_7_optimistic
     
@@ -509,6 +581,9 @@ label start:
             python:
                 choices.append("Yes")
                 relantionship += 5
+                ghostStats['happiness'] += 2
+                ghostStats['strength'] += 5
+                ghostStats['anxiety'] -= 5
 
             jump choice_8_yes
 
@@ -516,6 +591,8 @@ label start:
             python:
                 choices.append("Somewhat")
                 relantionship += 2
+                ghostStats['happiness'] += 2
+                ghostStats['strength'] += 2
 
             jump choice_8_somwhat
 
@@ -523,6 +600,8 @@ label start:
             python:
                 choices.append("No")
                 relantionship += 2
+                ghostStats['happiness'] += 2
+                ghostStats['anxiety'] += 2
 
             jump choice_8_no
     
@@ -583,6 +662,12 @@ label start:
             python:
                 choices.append("Pressure")
                 relantionship += 2
+                ghostStats['happiness'] += 5
+                ghostStats['trust'] -= 5
+                ghostStats['anger'] += 5
+                ghostStats['anxiety'] += 5
+                ghostStats['helped'] -= 5
+                ghostStats['hurt'] += 5
 
             jump choice_9_1
 
@@ -590,6 +675,13 @@ label start:
             python:
                 choices.append("Careful")
                 relantionship += 5
+                ghostStats['happiness'] += 5
+                ghostStats['strength'] += 5
+                ghostStats['trust'] += 5
+                ghostStats['anger'] -= 5
+                ghostStats['anxiety'] -= 5
+                ghostStats['helped'] += 5
+                ghostStats['hurt'] -= 5
 
             jump choice_9_2
 
@@ -597,6 +689,11 @@ label start:
             python:
                 choices.append("Pushing")
                 relantionship -= 5
+                ghostStats['happiness'] -= 5
+                ghostStats['anger'] += 2
+                ghostStats['anxiety'] += 10
+                ghostStats['helped'] -= 5
+                ghostStats['hurt'] -= 2
 
             jump choice_9_3
     
@@ -665,6 +762,13 @@ label start:
             python:
                 choices.append("Understanding")
                 relantionship += 5
+                ghostStats['happiness'] += 2
+                ghostStats['strength'] += 5
+                ghostStats['trust'] += 5
+                ghostStats['anger'] -= 5
+                ghostStats['anxiety'] -= 5
+                ghostStats['helped'] += 2
+                ghostStats['hurt'] -= 2
 
             jump choice_9_5_1
 
@@ -673,6 +777,13 @@ label start:
             python:
                 choices.append("Apologetic")
                 relantionship += 5
+                ghostStats['happiness'] += 2
+                ghostStats['strength'] += 5
+                ghostStats['trust'] += 5
+                ghostStats['anger'] -= 5
+                ghostStats['anxiety'] -= 5
+                ghostStats['helped'] += 2
+                ghostStats['hurt'] -= 2
             
             jump choice_9_5_2
         
@@ -681,6 +792,13 @@ label start:
             python:
                 choices.append("Get over it")
                 relantionship -= 5
+                ghostStats['happiness'] -= 5
+                ghostStats['strength'] -= 5
+                ghostStats['trust'] -= 5
+                ghostStats['anger'] += 2
+                ghostStats['anxiety'] += 2
+                ghostStats['helped'] -= 2
+                ghostStats['hurt'] += 5
             
             jump choice_9_5_3
 
@@ -710,6 +828,12 @@ label start:
             python:
                 choices.append("Focus getting Home")
                 relantionship -= 5
+                ghostStats['happiness'] -= 2
+                ghostStats['strength'] -= 2
+                ghostStats['trust'] -= 2
+                ghostStats['anger'] += 2
+                ghostStats['helped'] -= 2
+                ghostStats['hurt'] += 5
             
             jump choice_10_home
 
@@ -717,6 +841,13 @@ label start:
             python:
                 choices.append("Focus on Sam")
                 relantionship += 10
+                ghostStats['happiness'] += 10
+                ghostStats['strength'] += 5
+                ghostStats['trust'] += 10
+                ghostStats['anger'] -= 5
+                ghostStats['anxiety'] -= 2
+                ghostStats['helped'] += 10
+                ghostStats['hurt'] -= 10
 
             jump choice_10_sam
 
@@ -748,6 +879,9 @@ label start:
             python:
                 choices.append("Miss Parents")
                 relantionship += 2
+                ghostStats['happiness'] += 5
+                ghostStats['strength'] += 2
+                ghostStats['trust'] += 5
 
             jump choice_11_1
 
@@ -755,6 +889,9 @@ label start:
             python:
                 choices.append("Doesn't miss parents")
                 relantionship -= 2
+                ghostStats['happiness'] -= 2
+                ghostStats['strength'] += 2
+                ghostStats['trust'] += 5
 
             jump choice_11_2
     
@@ -900,32 +1037,32 @@ label start:
 
     
     
-    python:
-        lengthC = len(choicesUpload)
-        if lengthC < 12:
-            if lengthC == 11:
-                choicesUpload.append("")
-            else:
-                choicesUpload.append("")
-                choicesUpload.append("")
-                choicesUpload.append("")
-        
-        posts = db.projectTest
-        post_data = {
-            'Choice 1': choicesUpload[0],
-            'Choice 2': choicesUpload[1],
-            'Choice 3': choicesUpload[2],
-            'Choice 4': choicesUpload[3],
-            'Choice 5': choicesUpload[4],
-            'Choice 6': choicesUpload[5],
-            'Choice 7': choicesUpload[6],
-            'Choice 8': choicesUpload[7],
-            'Choice 9': choicesUpload[8],
-            'Choice 10': choicesUpload[9],
-            'Choice 11': choicesUpload[10],
-            'Choice 12': choicesUpload[11],
-        }
-        result = posts.insert_one(post_data) 
+    #python:
+        #lengthC = len(choicesUpload)
+        #if lengthC < 12:
+        #    if lengthC == 11:
+        #        choicesUpload.append("")
+        #    else:
+        #        choicesUpload.append("")
+        #        choicesUpload.append("")
+        #        choicesUpload.append("")
+        # 
+        #posts = db.projectTest
+        #post_data = {
+        #    'Choice 1': choicesUpload[0],
+        #    'Choice 2': choicesUpload[1],
+        #    'Choice 3': choicesUpload[2],
+        #    'Choice 4': choicesUpload[3],
+        #    'Choice 5': choicesUpload[4],
+        #    'Choice 6': choicesUpload[5],
+        #    'Choice 7': choicesUpload[6],
+        #    'Choice 8': choicesUpload[7],
+        #    'Choice 9': choicesUpload[8],
+        #    'Choice 10': choicesUpload[9],
+        #    'Choice 11': choicesUpload[10],
+        #    'Choice 12': choicesUpload[11],
+        #}
+        #result = posts.insert_one(post_data) 
         
     menu optional_name:
         "Say Statement"
