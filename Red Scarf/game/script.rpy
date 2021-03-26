@@ -413,7 +413,7 @@ label start:
         r "Thanks for trusting me by the way"
     else:
         r "Would have certainly been easier if you had just trusted me."
-        if relantionship < -15:
+        if ghostStats['trust'] <= 50:
             jump end_distrust
     
     
@@ -704,7 +704,7 @@ label start:
         jump choice_9_done
     
     label choice_9_3:
-        if relantionship < -11:
+        if ghostStats['anger'] > 30 and ghostStats['trust'] < 40:
             jump end_hill
         else:
             jump choice_9_done
@@ -824,7 +824,7 @@ label start:
     "Sam was back to normal for now. We could set out now onto our journey, but where should we go?"
                 
     menu choice_10:
-        "Focus on getting home":
+        "I just want to get home, I don't wish to help her":
             python:
                 choices.append("Focus getting Home")
                 relantionship -= 5
@@ -837,7 +837,7 @@ label start:
             
             jump choice_10_home
 
-        "Focus on Sam":
+        "Focus on getting Sam, with the chance that I may not be able to get home":
             python:
                 choices.append("Focus on Sam")
                 relantionship += 10
@@ -973,7 +973,7 @@ label start:
         "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now. Just as I was about to rest before walking further, I heard faint shouting coming from the direction of the camp."
         "I turned around trying to solve what the words shouted at me meant, thinking that maybe some camp instructor had seen me and was worried that I wasn’t in bed, but as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure "
         " in the forest, the bullies. Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions."
-        if relantionship => 30:
+        if ghostStats['trust'] >= 50 and ghostStats['hurt'] <= 50 and ghostStats['anger'] <= 45:
             jump reunite
         else:
             "It wasn’t long before they caught up to me. The impact they had on my body made it give up. It was too much to handle, it was over. I'm sorry."
