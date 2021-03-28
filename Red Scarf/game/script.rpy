@@ -25,10 +25,22 @@ label start:
 
     #python:
         #algorithm.algorithm_function()
+    screen simple_screen():
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Hello, this is the creator of the game.\n\nI would like to warn you that this game is centred around topics of depression, anxiety and bullying.\n\nIf you are sensitive to these topics and wish to avoid them then please exit the game now.\n\nThe game and dialogue has been created with one form of depression in mind, learned about from various research papers, and through the experiences of those around me.\n\nYou will be playing as an unnamed boy that has just been sent to a summer camp by his parents. This game seeks to find out if there can be a correlation between signs of potential depression through the actions that the player takes when developing a bond with a character that this game is centred around.\n\nPlease, try to answer each choice based on how you would act rather than how you think the character would act. Some choices are more important than others. Thank you for playing!\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton "I consent.":
+                        action Return(True)
+                    textbutton "I do not consent.":
+                        action Quit(confirm=None)
+
         
+    call screen simple_screen
     play music "audio/Awaiting-the-Devil.ogg" volume 1.0 fadein 1 fadeout 1 loop
     scene bg room
-
+    
     # These display lines of dialogue.
 
     mom "Are you sure that this is absolutely the best idea? Do you genuinely think that one less mouth to…"
