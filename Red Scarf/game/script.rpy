@@ -25,7 +25,8 @@ label start:
 
     #python:
         #algorithm.algorithm_function()
-    screen simple_screen():
+        
+    screen start_screen():
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
@@ -37,12 +38,12 @@ label start:
                         action Quit(confirm=None)
 
         
-    call screen simple_screen
+    call screen start_screen
     play music "audio/Awaiting-the-Devil.ogg" volume 1.0 fadein 1 fadeout 1 loop
-    scene bg room
-    
-    # These display lines of dialogue.
-
+    scene act1 with Dissolve(1.0)
+    pause .5
+    scene bg room with Dissolve(1.0)
+    pause .5
     mom "Are you sure that this is absolutely the best idea? Do you genuinely think that one less mouth to…"
     dad "Quiet, he’ll hear you. You wouldn’t want to cause that boy any more harm, would you?"
     mom "It’s fine, he’s listening to his music, he can’t hear us. He’s probably all lost in his virtual world again."
@@ -221,6 +222,10 @@ label start:
     "There wasn’t much light left from the sun and most of it was unable to pass through the forest sky. I had no clue where I was going before slipping and tumbling down."
     play music "audio/Punch-Deck-Brahe.ogg" volume 1.0 fadein 1 fadeout 1 loop
     #Chapter 2
+    scene act2 with Dissolve(1.0)
+    pause .5
+    scene bg room with Dissolve(1.0)
+    pause .5
     r "Oh looks like you’re waking up. That fall looked like it hurt a lot."
     "I awoke to the sounds of someone gently talking as if assuming that no one would hear them. I couldn’t understand what they were saying, everything muffled and blurring. It took a couple of seconds before my eyes adjusted, and I could decipher what was said to me."
     "I was still in the forest, however, it felt different, that dead atmosphere disappeared and got replaced by a brighter living forest. Although it was dark, the bright stars illuminated the surroundings."
@@ -437,6 +442,10 @@ label start:
     r "Now no more questions, get yourself patched up, there are some bandages in that aid box over there."
 
     #Chapter 3
+    scene act3 with Dissolve(1.0)
+    pause .5
+    scene bg room with Dissolve(1.0)
+    pause .5
     "She must have enjoyed calling me ‘Blue Shirt’, although it is true that neither one of us had introduced ourselves to one another. I guess that if I had worn any other t-shirt that day then I would have been called by that colour instead."
     "The sense of urgency of it all just left us without much time or care towards names. We just went along with everything, both of our social skills must have needed a little help. To me, she’s just a weird girl that found me in the forest at a time of need,"
     " a girl with a red scarf, a girl that gives me hope and helps me survive right now."
@@ -574,6 +583,10 @@ label start:
     mc "Well hill it is then since I don’t know how to climb trees and a bad ankle would make things way too hard to learn now."
 
     #Chapter 4
+    scene act4 with Dissolve(1.0)
+    pause .5
+    scene bg room with Dissolve(1.0)
+    pause .5
     "It was finally time to leave the attic, time to set off home. A sense of hope washed over me, it was always noise to have a plan, hopefully, there will be no more encounters with any wildlife. As we departed from the shack, we were both illuminated under the night sky."
     "It wasn’t a typical skyline where all the stars were covered by clouds, only peeking from time to time like we had been used to. No, tonight was different, there wasn’t a single cloud in the sky, no light pollution, just tonnes of sparkling stars in the sky surrounding a large hypnotizing full moon."
     "Tonight was special. The only tall hill that would allow us to see the surrounding area that Sam knew of was about a few minutes walk from where we were. With my ankle, it would take a bit longer but shouldn’t have too much of an impact."
@@ -660,6 +673,10 @@ label start:
     "Soon I would discover Sam’s biggest secret. The hill that we were almost climbing at this point was known to the locals as the Truth Seeker. A place that would one way or another be the cause to reveal all major secrets, and Sam’s secret was a big one."
 
     #Chapter 5
+    scene act5 with Dissolve(1.0)
+    pause .5
+    scene bg room with Dissolve(1.0)
+    pause .5
     R "We are almost…"
     "As soon as those words escaped her mouth, her foot failed to maintain balance and with one slip she came tumbling down towards me. At first, I thought that it would only be a slight problem, that I would be able to catch her."
     "But when I laid out my hands and arms to prepare myself to catch her, I discovered the real problem. Her body did not make an impact against me, it did not stop, I felt a cold shiver right as her body passed through mine."
@@ -877,6 +894,10 @@ label start:
     label choice_10_done:
         #Chapter 6
     
+    scene act6 with Dissolve(1.0)
+    pause .5
+    scene bg room with Dissolve(1.0)
+    pause .5
     "We set off onto the final stretch of our journey, a lot of things had been said. They were all stuck in my head, and it would be awhile before I could process everything properly. It did make me question my sanity among other things,"
     "but it had been a long night, accepting supernatural events was easier than you’d think when you’re very heavily sleep-deprived."
     "I kind of let logic go away and embraced Sam’s words for the truth. It was now downhill towards the truth and back home. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
