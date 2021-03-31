@@ -1,23 +1,22 @@
-Sun Feb 21 22:12:33 2021
+Wed Mar 31 15:40:25 2021
 Windows-10-10.0.18362
 Ren'Py 7.4.2.1292
  
 
-Bootstrap to the start of init.init took 0.06s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
-Loader init took 0.06s
-Loading error handling took 0.01s
-Loading script took 0.24s
-Loading save slot metadata. took 0.01s
+Loader init took 0.04s
+Loading error handling took 0.02s
+Loading script took 0.10s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
- - Init at game/script.rpy:17 took 0.26030 s.
-Running init code took 0.30s
+ - Init at game/script.rpy:22 took 0.26996 s.
+Running init code took 0.31s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\JKTP8\\AppData\\Roaming/RenPy/backups\\Red Scarf':
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -26,15 +25,15 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.06s
-Prepare screens took 0.04s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.24s
+Interface start took 0.23s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 2560, 1440)
@@ -447,7 +446,7 @@ Extensions:
     GL_SUN_slice_accum
     GL_WIN_swap_hint
     WGL_EXT_swap_control
-Screen sizes: virtual=(1920, 1080) physical=(1246, 701) drawable=(1246, 701)
+Screen sizes: virtual=(1920, 1080) physical=(2379, 1338) drawable=(2379, 1338)
 vertex renpy.alpha, renpy.geometry, renpy.texture ------------------------------
 #version 120
 attribute vec2 a_tex_coord;
@@ -584,8 +583,8 @@ void main() {
 
 --------------------------------------------------------------------------------
 Maximum texture size: 4096x4096
-Total time until interface ready: 1.66533994675s
-Screen sizes: virtual=(1920, 1080) physical=(2496, 1417) drawable=(2496, 1417)
+Total time until interface ready: 1.35177588463s
+Screen sizes: virtual=(1920, 1080) physical=(2486, 1417) drawable=(2486, 1417)
 vertex renpy.alpha, renpy.geometry, renpy.texture ------------------------------
 #version 120
 attribute vec2 a_tex_coord;
@@ -722,13 +721,3 @@ void main() {
 
 --------------------------------------------------------------------------------
 Maximum texture size: 4096x4096
-[u'Understanding', u'No ones fault', u'Blame Bully', u'Appreciative', u'Trust', u'Nice', u'Anger', u'Somewhat', u'Pushing', u'Understanding', u'Focus on Sam', u'Miss Parents']
-Understanding
-[u'Understanding', u'No ones fault', u'Blame Bully', u'Appreciative', u'Trust', u'Nice', u'Anger', u'Somewhat', u'Pushing', u'Understanding', u'Focus on Sam', u'Miss Parents']
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
