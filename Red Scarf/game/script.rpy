@@ -6,6 +6,9 @@ define mc = Character("You", color="#3bd9b4")
 define t = Character("Trevor", color="#36b300")
 define i = Character("Instructor", color="#CE8147")
 define t2 = Character("Tray", color="#CDE7BE")
+define gui.text_font = "NewTegomin-Regular.ttf"
+define gui.interface_text_font = "NewTegomin-Regular.ttf"
+define gui.glyph_font = "NewTegomin-Regular.ttf"
 
 # The game starts here.
 label start:
@@ -22,6 +25,7 @@ label start:
         from pymongo import MongoClient
         client = MongoClient('****')
         db = client.mongodb4075
+
 
     #python:
         #algorithm.algorithm_function()
