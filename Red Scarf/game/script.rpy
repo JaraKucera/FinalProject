@@ -12,10 +12,33 @@ define gui.glyph_font = "NewTegomin-Regular.ttf"
 
 # The game starts here.
 label start:
-    $ choices = []
-    $ relantionship = 0
+    
+    $ choices = [] #Contains the keyword strings of all choices made by the player.
+    $ relantionship = 0 #Relantionship rating based on choices made [int]
+    #A bool dict to help with final showing of results
+    $ choicesMade = {"2a":False,"2b":False,"3a":False,"3c":False,"4a":False,"4b":False,"4c":False,"5a":False,"5b":False,"6a":False,"6b":False,"7b":False,"8":False,"9a":False,"9b":False,"9c":False,"10a":False,"10b":False,"10c":False}
+    #Stats of ghost girl, each choice changes her emotions, too low in certain values causes the end of the game.
     $ ghostStats = {'trust':50, 'anger':50, 'anxiety':50, 'helped':50, 'strength':50, 'hurt':50, 'happiness':50}
-
+    $ resultOutput = {  "2a":"Self blame is usually a sign of symptoms of depression. Repeated self-doubt and lack of belief in one self is connected with low self-esteem. The lower the confidence the higher the chance of having been affected by depression.",
+                        "2b":"Repeated blaming of everyone around you instead of yourself, can be a sign of a mental health issues however is not usually tied with depression.",
+                        "3a":"Self blame is usually a sign of symptoms of depression. Repeated self-doubt and lack of belief in one self is connected with low self-esteem. The lower the confidence the higher the chance of having been affected by depression.",
+                        "3c":"Showed a lack of trust towards Sam, when you first met her. While not as hurtful when it is your first time meeting her, if continued would cause more pain. Trust can only be earned through trust.",
+                        "4a":"Dismissing Sam opening up to you made her trust you less and made her feel unwanted. It’s best to listen to depressed people when they open up to you because it can be a really difficult thing for them to do. Shutting them down will make them feel like their battle to tell you has been for nothing and that they should have listened to their doubts about telling you.",
+                        "4b":"Appreciating Sam opening up to you and telling you about losing her passion for things is one of the best choices that can be made. It is best to encourage when depressed people open up to you as it can be a quite difficult thing to do and shows a lot of trust.",
+                        "4c":"Losing your passion for many things in life is one of the main symptoms of depression. It can be absolutely heartbreaking. Not having things that used to bring you happiness any more can be destructive.",
+                        "5a":"Trusted Sam during the dog attack, while it can be hard to trust people, this was a needed factor for Sam.",
+                        "5b":"Didn’t trust Sam during the dog attack. The Repeated lack of trust towards her was very hurtful and caused her to not want to open up to you much. Unless you managed to prove otherwise.",
+                        "6a":"You provided Sam your name. It is important to remember that it’s best to sometimes reach out to someone multiple times, even if they seem fine. Looking available for help can be really reassuring.",
+                        "6b":"It’s best to show that you’re there and available for people to vent to you and trust you, but it’s also a good idea not to push anyone into revealing information that they don’t want to give you.",
+                        "7b":"You responded with anger when asked if you had hope for being found. This represents your hidden anger for the world. Feeling like you don’t don’t owe anything to the world. A lack of care for your actions on the world. Can be a sign of a form of depression. Best would be to not lose hope in this situation.",
+                        "8":"The feeling of numbness is what depression can most be associated with. It’s that feeling of being so overwhelmed with emotions that no emotions are active at all. It is not prevalent in all forms of depression. Feeling numb from time to time can be okay and just a sign of being overwhelmed with emotions but frequent occurrences is a sign of depression.",
+                        "9a":"When Sam passed through you, you put pressure on her to tell you what is up. This is not the best way to go about this as you are putting stress onto her to tell you something that is very difficult to talk about. In real life when interacting with a depressed person it is best to not pressure them into telling you everything straight away. The best strategy is to be available to them and let them know that you’re there for them and that they can open up to you.",
+                        "9b":"When Sam passed through you, you were careful with her. This is the best approach to this situation, putting too much pressure on her to open up may cause her to close up and not want to open up. In real life when interacting with a depressed person it is best to not pressure them into telling you everything straight away. The best strategy is to be available to them and let them know that you’re there for them and that they can open up to you.",
+                        "9c":"When Sam passed through you, you put a lot pressure on her to tell you what is up. This is not the best way to go about this as you are putting stress onto her to tell you something that is very difficult to talk about. In real life when interacting with a depressed person it is best to not pressure them into telling you everything straight away. The best strategy is to be available to them and let them know that you’re there for them and that they can open up to you.",
+                        "10a":"During Sam’s mental breakdown you were understanding to her and supportive. Mental breakdowns are not fun to go through and generally feel horrible to go through. An outburst of emotions suddenly happens and it is very difficult to control that's why it is best to be understanding, careful and supportive with anyone going through one.",
+                        "10b":"During Sam’s mental breakdown you were apologetic to her but supportive. Mental breakdowns are not fun to go through and generally feel horrible to go through. An outburst of emotions suddenly happens and it is very difficult to control that's why it is best to be understanding, careful and supportive with anyone going through one.",
+                        "10c":"During Sam’s mental breakdown you pushed her to move on and get over it. This is the worst approach that can be taken and can be very hurtful when a person is at their worst. Mental breakdowns are not fun to go through and generally feel horrible to go through. An outburst of emotions suddenly happens and it is very difficult to control that's why it is best to be understanding, careful and supportive with anyone going through one."
+                        }
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -151,12 +174,13 @@ label start:
         "Myself":
             python:
                 choices.append("Myself")
-            
+                choicesMade["2a"] = True
             jump choice_2_me
 
         "My family":
             python:
                 choices.append("Family")
+                choicesMade["2b"] = True
 
             jump choice_2_family
 
@@ -248,6 +272,7 @@ label start:
             python:
                 choices.append("Blame self")
                 relantionship += 5
+                choicesMade["3a"] = True
                 ghostStats['happiness'] -= 5
                 ghostStats['strength'] -= 2
                 ghostStats['trust'] += 2
@@ -269,6 +294,7 @@ label start:
             python:
                 choices.append("Distrust")
                 relantionship -= 5
+                choicesMade["3c"] = True
                 ghostStats['happiness'] -= 5
                 ghostStats['strength'] -= 5
                 ghostStats['trust'] -= 10
@@ -317,6 +343,7 @@ label start:
             python:
                 choices.append("Dismissal")
                 relantionship -= 5
+                choicesMade["4a"] = True
                 ghostStats['happiness'] -= 5
                 ghostStats['strength'] -= 5
                 ghostStats['trust'] -= 5
@@ -331,6 +358,7 @@ label start:
             python:
                 choices.append("Appreciative")
                 relantionship += 2
+                choicesMade["4b"] = True
                 ghostStats['happiness'] += 5
                 ghostStats['strength'] += 2
                 ghostStats['trust'] += 5
@@ -345,6 +373,7 @@ label start:
             python:
                 choices.append("Relate to losing passion")
                 relantionship += 5
+                choicesMade["4c"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['trust'] += 5
                 ghostStats['anger'] -= 5
@@ -385,6 +414,7 @@ label start:
             python:
                 choices.append("Trust")
                 relantionship += 10
+                choicesMade["5a"] = True
                 ghostStats['happiness'] += 5
                 ghostStats['strength'] += 5
                 ghostStats['trust'] += 5
@@ -397,6 +427,7 @@ label start:
             python:
                 choices.append("Distrust")
                 relantionship -= 10
+                choicesMade["5b"] = True
                 ghostStats['happiness'] -= 2
                 ghostStats['strength'] -= 2
                 ghostStats['trust'] -= 5
@@ -464,6 +495,7 @@ label start:
             python:
                 choices.append("Nice")
                 relantionship += 5
+                choicesMade["6a"] = True
                 ghostStats['happiness'] += 5
                 ghostStats['strength'] += 2
                 ghostStats['trust'] += 2
@@ -478,6 +510,7 @@ label start:
             python:
                 choices.append("Dismiss")
                 relantionship -= 5
+                choicesMade["6b"] = True
                 ghostStats['happiness'] -= 2
                 ghostStats['strength'] -= 2
                 ghostStats['trust'] -= 2
@@ -517,6 +550,7 @@ label start:
             python:
                 choices.append("Hopeful")
                 relantionship += 5
+                choicesMade["7a"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['strength'] += 5
                 ghostStats['trust'] += 2
@@ -529,6 +563,7 @@ label start:
             python:
                 choices.append("Anger")
                 relantionship -= 5
+                choicesMade["7b"] = True
                 ghostStats['happiness'] -= 5
                 ghostStats['trust'] -= 2
                 ghostStats['anger'] += 5
@@ -610,6 +645,7 @@ label start:
             python:
                 choices.append("Yes")
                 relantionship += 5
+                choicesMade["8"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['strength'] += 5
                 ghostStats['anxiety'] -= 5
@@ -620,6 +656,7 @@ label start:
             python:
                 choices.append("Somewhat")
                 relantionship += 2
+                choicesMade["8"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['strength'] += 2
 
@@ -629,6 +666,7 @@ label start:
             python:
                 choices.append("No")
                 relantionship += 2
+                choicesMade["8"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['anxiety'] += 2
 
@@ -695,6 +733,7 @@ label start:
             python:
                 choices.append("Pressure")
                 relantionship += 2
+                choicesMade["9a"] = True
                 ghostStats['happiness'] += 5
                 ghostStats['trust'] -= 5
                 ghostStats['anger'] += 5
@@ -708,6 +747,7 @@ label start:
             python:
                 choices.append("Careful")
                 relantionship += 5
+                choicesMade["9b"] = True
                 ghostStats['happiness'] += 5
                 ghostStats['strength'] += 5
                 ghostStats['trust'] += 5
@@ -722,6 +762,7 @@ label start:
             python:
                 choices.append("Pushing")
                 relantionship -= 5
+                choicesMade["9c"] = True
                 ghostStats['happiness'] -= 5
                 ghostStats['anger'] += 2
                 ghostStats['anxiety'] += 10
@@ -795,6 +836,7 @@ label start:
             python:
                 choices.append("Understanding")
                 relantionship += 5
+                choicesMade["10a"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['strength'] += 5
                 ghostStats['trust'] += 5
@@ -810,6 +852,7 @@ label start:
             python:
                 choices.append("Apologetic")
                 relantionship += 5
+                choicesMade["10b"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['strength'] += 5
                 ghostStats['trust'] += 5
@@ -825,6 +868,7 @@ label start:
             python:
                 choices.append("Get over it")
                 relantionship -= 5
+                choicesMade["10c"] = True
                 ghostStats['happiness'] -= 5
                 ghostStats['strength'] -= 5
                 ghostStats['trust'] -= 5
