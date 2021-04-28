@@ -14,6 +14,7 @@ define gui.glyph_font = "NewTegomin-Regular.ttf"
 label start:
     
     $ choices = [] #Contains the keyword strings of all choices made by the player.
+    $ trueChoices = dict()
     $ relantionship = 0 #Relantionship rating based on choices made [int]
     #A bool dict to help with final showing of results
     $ choicesMade = {"2a":False,"2b":False,"3a":False,"3c":False,"4a":False,"4b":False,"4c":False,"5a":False,"5b":False,"6a":False,"6b":False,"7b":False,"8":False,"9a":False,"9b":False,"9c":False,"10a":False,"10b":False,"10c":False}
@@ -44,10 +45,10 @@ label start:
     # images directory to show it.
     init python:
         import pymongo
-        #import algorithm
+        import algorithm
         from pymongo import MongoClient
-        client = MongoClient('****')
-        db = client.mongodb4075
+        #client = MongoClient('****')
+        #db = client.mongodb4075
 
 
     #python:
@@ -92,18 +93,20 @@ label start:
         "Reconsider":
             python:
                 choices.append("Reconsider")
-
+                trueChoices[0] = "Reconsider"
             jump choice_1_home
 
         "*silence*":
             python:
                 choices.append("Silence")
+                trueChoices[0] = "Silence"
 
             jump choice_1_done
 
         "Understanding":
             python:
                 choices.append("Understanding")
+                trueChoices[0] = "Understanding"
 
             jump choice_1_understanding
     
@@ -175,18 +178,22 @@ label start:
             python:
                 choices.append("Myself")
                 choicesMade["2a"] = True
+                trueChoices[1] = "Myself"
+                
             jump choice_2_me
 
         "My family":
             python:
                 choices.append("Family")
                 choicesMade["2b"] = True
+                trueChoices[1] = "Family"
 
             jump choice_2_family
 
         "No one's fault":
             python:
                 choices.append("No ones fault")
+                trueChoices[1] = "Noonesfault"
 
             jump choice_2_no_one
     
@@ -276,6 +283,7 @@ label start:
                 ghostStats['happiness'] -= 5
                 ghostStats['strength'] -= 2
                 ghostStats['trust'] += 2
+                trueChoices[2] = "Blameself"
                 
 
             jump choice_3_depressive
@@ -287,6 +295,7 @@ label start:
                 ghostStats['happiness'] -= 2
                 ghostStats['strength'] += 2
                 ghostStats['trust'] += 2
+                trueChoices[2] = "BlameBully"
 
             jump choice_3_hurtful
 
@@ -299,6 +308,7 @@ label start:
                 ghostStats['strength'] -= 5
                 ghostStats['trust'] -= 10
                 ghostStats['anger'] += 5
+                trueChoices[2] = "Distrust"
 
             jump choice_3_distrustrusful
 
@@ -351,6 +361,7 @@ label start:
                 ghostStats['anxiety'] += 2
                 ghostStats['helped'] -= 5
                 ghostStats['hurt'] -= 5
+                trueChoices[3] = "Dismissal"
 
             jump choice_4_dismissal
 
@@ -366,6 +377,7 @@ label start:
                 ghostStats['anxiety'] -= 2
                 ghostStats['helped'] += 2
                 ghostStats['hurt'] -= 2
+                trueChoices[3] = "Appreciative"
 
             jump choice_4_appreciative
 
@@ -379,6 +391,7 @@ label start:
                 ghostStats['anger'] -= 5
                 ghostStats['anxiety'] -= 2
                 ghostStats['hurt'] -= 2
+                trueChoices[3] = "Relatetolosingpassion"
 
             jump choice_4_relate
 
@@ -420,6 +433,7 @@ label start:
                 ghostStats['trust'] += 5
                 ghostStats['anger'] -= 2
                 ghostStats['anxiety'] -= 5
+                trueChoices[4] = "Trust"
 
             jump choice_5_trust
 
@@ -434,6 +448,7 @@ label start:
                 ghostStats['anger'] += 5
                 ghostStats['anxiety'] += 2
                 ghostStats['helped'] -= 2
+                trueChoices[4] = "Distrust"
             
             jump choice_5_distrust
     
@@ -503,6 +518,8 @@ label start:
                 ghostStats['anxiety'] -= 5
                 ghostStats['helped'] += 2
                 ghostStats['hurt'] -= 5
+                trueChoices[5] = "Nice"
+                
             
             jump choice_6_nice
 
@@ -517,6 +534,7 @@ label start:
                 ghostStats['anxiety'] += 5
                 ghostStats['helped'] -= 2
                 ghostStats['hurt'] += 2
+                trueChoices[5] = "Dismiss"
             
             jump choice_6_dismiss
 
@@ -556,6 +574,7 @@ label start:
                 ghostStats['trust'] += 2
                 ghostStats['anxiety'] -= 2
                 ghostStats['hurt'] -= 5
+                trueChoices[6] = "Hopeful"
 
             jump choice_7_hopeful
 
@@ -568,6 +587,7 @@ label start:
                 ghostStats['trust'] -= 2
                 ghostStats['anger'] += 5
                 ghostStats['anxiety'] += 5
+                trueChoices[6] = "Anger"
 
             jump choice_7_anger
 
@@ -582,6 +602,7 @@ label start:
                 ghostStats['anxiety'] -= 5
                 ghostStats['helped'] += 2
                 ghostStats['hurt'] -= 5
+                trueChoices[6] = "Optimistic"
 
             jump choice_7_optimistic
     
@@ -649,6 +670,7 @@ label start:
                 ghostStats['happiness'] += 2
                 ghostStats['strength'] += 5
                 ghostStats['anxiety'] -= 5
+                trueChoices[7] = "Yes"
 
             jump choice_8_yes
 
@@ -659,6 +681,7 @@ label start:
                 choicesMade["8"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['strength'] += 2
+                trueChoices[7] = "Somewhat"
 
             jump choice_8_somwhat
 
@@ -669,6 +692,7 @@ label start:
                 choicesMade["8"] = True
                 ghostStats['happiness'] += 2
                 ghostStats['anxiety'] += 2
+                trueChoices[7] = "No"
 
             jump choice_8_no
     
@@ -740,6 +764,7 @@ label start:
                 ghostStats['anxiety'] += 5
                 ghostStats['helped'] -= 5
                 ghostStats['hurt'] += 5
+                trueChoices[8] = "Pressure"
 
             jump choice_9_1
 
@@ -755,6 +780,8 @@ label start:
                 ghostStats['anxiety'] -= 5
                 ghostStats['helped'] += 5
                 ghostStats['hurt'] -= 5
+                trueChoices[8] = "Careful"
+                
 
             jump choice_9_2
 
@@ -768,6 +795,7 @@ label start:
                 ghostStats['anxiety'] += 10
                 ghostStats['helped'] -= 5
                 ghostStats['hurt'] -= 2
+                trueChoices[8] = "Pushing"
 
             jump choice_9_3
     
@@ -844,6 +872,7 @@ label start:
                 ghostStats['anxiety'] -= 5
                 ghostStats['helped'] += 2
                 ghostStats['hurt'] -= 2
+                trueChoices[9] = "Understanding"
 
             jump choice_9_5_1
 
@@ -860,6 +889,7 @@ label start:
                 ghostStats['anxiety'] -= 5
                 ghostStats['helped'] += 2
                 ghostStats['hurt'] -= 2
+                trueChoices[9] = "Apologetic"
             
             jump choice_9_5_2
         
@@ -876,6 +906,7 @@ label start:
                 ghostStats['anxiety'] += 2
                 ghostStats['helped'] -= 2
                 ghostStats['hurt'] += 5
+                trueChoices[9] = "Getoverit"
             
             jump choice_9_5_3
 
@@ -911,6 +942,7 @@ label start:
                 ghostStats['anger'] += 2
                 ghostStats['helped'] -= 2
                 ghostStats['hurt'] += 5
+                trueChoices[10] = "FocusgettingHome"
             
             jump choice_10_home
 
@@ -925,6 +957,7 @@ label start:
                 ghostStats['anxiety'] -= 2
                 ghostStats['helped'] += 10
                 ghostStats['hurt'] -= 10
+                trueChoices[10] = "FocusonSam"
 
             jump choice_10_sam
 
@@ -963,6 +996,7 @@ label start:
                 ghostStats['happiness'] += 5
                 ghostStats['strength'] += 2
                 ghostStats['trust'] += 5
+                trueChoices[11] = "MissParents"
 
             jump choice_11_1
 
@@ -973,6 +1007,7 @@ label start:
                 ghostStats['happiness'] -= 2
                 ghostStats['strength'] += 2
                 ghostStats['trust'] += 5
+                trueChoices[11] = "Doesntmissparents"
 
             jump choice_11_2
     
@@ -1383,7 +1418,7 @@ screen end_screen1():
     frame:
         xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
         vbox:
-            text "You left Sam feeling "+highestEmotion+"\n"
+            text "You left Sam feeling "+highestEmotion+"\n"+"your result: "+algorithm.startAlgorithm(trueChoices)
             $ displayAmount = 4
             
             if choicesMade["2a"] and displayAmount > 0:

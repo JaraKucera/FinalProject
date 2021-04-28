@@ -1,6 +1,6 @@
 #### IMPORTS ###
 import pymongo
-import numpy as np
+#import numpy as np
 import math
 from pymongo import MongoClient
 from copy import deepcopy
@@ -209,6 +209,9 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         gain = totalEntropy-(first/total)*entropyFirst-(second/total)*entropySecond
         splitV1 = first/total
         splitV2 = second/total
+        print("splitV1:"+str(splitV1)+" splitV2:"+str(splitV2))
+        if splitV1 == 0 or splitV2 == 0:
+            return 0
         splitInfo = -(splitV1)*math.log2(splitV1) -(splitV2)*math.log2(splitV2)
         gainRatio = (gain)/splitInfo
         return gainRatio
@@ -247,6 +250,11 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         sp2 = second / total
         sp3 = third / total
         gain = totalEntropy - (sp1)*entropyFirst - sp2*entropySecond - sp3*entropyThird
+        print("sp1:"+str(sp1)+" sp2:"+str(sp2)+" sp3:"+str(sp3))
+        
+        if sp1 == 0 or sp2 == 0 or sp3 == 0:
+            return 0
+        
         splitInfo = -(sp1)*math.log2(sp1) - sp2*math.log2(sp2) - sp3*math.log2(sp3)
         gainRatio = gain / splitInfo
         return gainRatio
@@ -453,99 +461,138 @@ def getRootAnswer(columnList, classList, childToUse):
     else:
         return "notdepressed"
 
-### DATA PREP ###
-client = MongoClient('*')
-db = client.mongodb4075
-data = db.game
-x = data.find()
-tableList = []
-for dRow in x:
-    row = Row(dRow['Choice 1'].strip(), dRow['Choice 2'].strip(), dRow['Choice 3'].strip(), dRow['Choice 4'].strip(), dRow['Choice 5'].strip(), dRow['Choice 6'].strip(), dRow['Choice 7'].strip(), dRow['Choice 8'].strip(), dRow['Choice 9'].strip(), dRow['Choice 10'].strip(), dRow['Choice 11'].strip(), dRow['Choice 12'].strip(), dRow['Result'].strip())
-    tableList.append(row)
 
-cols = []
-column = Col()
-for obj in tableList:
-    column.add(obj.c1)
+def getDepressionAnswer(answerDict, root,names):
+    node = root
+    while not node.isLeaf:
+        if len(node.children) == 3:
+            if answerDict[node.choiceColumnNumber] == node.choiceAnswer[0]:
+                node = node.children[0]
+            elif answerDict[node.choiceColumnNumber] == node.choiceAnswer[1]:
+                node = node.children[1]
+            elif answerDict[node.choiceColumnNumber] == node.choiceAnswer[2]:
+                node = node.children[2]
+            else:
+                print("3 Answer: "+answerDict[node.choiceColumnNumber]+" does not match any answer: "+str(node.choiceAnswer))
+                break
+        elif len(node.children) == 2:
+            if answerDict[node.choiceColumnNumber] == node.choiceAnswer[0]:
+                node = node.children[0]
+                
+            elif answerDict[node.choiceColumnNumber] == node.choiceAnswer[1]:
+                node = node.children[1]
+            else:
+                print("2 Answer: "+answerDict[node.choiceColumnNumber]+" does not match any answer: "+str(node.choiceAnswer))
+                break
+        else:
+            print("Broken")
+    return node.choiceAnswer
 
-column.setColNumber(0)
-cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c2)
+def startAlgorithm(resultChoices):
+    ### DATA PREP ###
+    client = MongoClient('mongodb://mongodb4075kj:xy5myq@danu7.it.nuigalway.ie:8717/mongodb4075')
+    db = client.mongodb4075
+    data = db.game
+    x = data.find()
+    tableList = []
+    for dRow in x:
+        row = Row(dRow['Choice 1'].strip(), dRow['Choice 2'].strip(), dRow['Choice 3'].strip(), dRow['Choice 4'].strip(), dRow['Choice 5'].strip(), dRow['Choice 6'].strip(), dRow['Choice 7'].strip(), dRow['Choice 8'].strip(), dRow['Choice 9'].strip(), dRow['Choice 10'].strip(), dRow['Choice 11'].strip(), dRow['Choice 12'].strip(), dRow['Result'].strip())
+        tableList.append(row)
 
-column.setColNumber(1)
-cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c3)
+    cols = []
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c1)
 
-column.setColNumber(2)
-cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c4)
+    column.setColNumber(0)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c2)
 
-column.setColNumber(3)
-cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c5)
+    column.setColNumber(1)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c3)
 
-column.setColNumber(4)
-cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c6)
+    column.setColNumber(2)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c4)
 
-column.setColNumber(5)
-#cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c7)
+    column.setColNumber(3)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c5)
 
-column.setColNumber(6)
-#cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c8)
+    column.setColNumber(4)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c6)
 
-column.setColNumber(7)
-#cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c9)
+    column.setColNumber(5)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c7)
 
-column.setColNumber(8)
-#cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c10)
+    column.setColNumber(6)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c8)
 
-column.setColNumber(9)
-#cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c11)
+    column.setColNumber(7)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c9)
 
-column.setColNumber(10)
-#cols.append(column)
-column = Col()
-for obj in tableList:
-    column.add(obj.c12)
+    column.setColNumber(8)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c10)
 
-column.setColNumber(11)
-#cols.append(column)
-classColumn = Col()
-for obj in tableList:
-    classColumn.add(obj.c13)
+    column.setColNumber(9)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c11)
 
-classColumn.setColNumber(12)
+    column.setColNumber(10)
+    cols.append(column)
+    column = Col()
+    for obj in tableList:
+        column.add(obj.c12)
+
+    column.setColNumber(11)
+    cols.append(column)
+    classColumn = Col()
+    for obj in tableList:
+        classColumn.add(obj.c13)
+
+    classColumn.setColNumber(12)
+
+    numberChoices = len(resultChoices)
+    names = ["Choice 1","Choice 2","Choice 3","Choice 4","Choice 5","Choice 6","Choice 7","Choice 8","Choice 9","Choice 10","Choice 11","Choice 12"]
+    node = startTreeBuilding(deepcopy(cols[0:numberChoices]), classColumn.colList[0:numberChoices], 0, names)
+    res = getDepressionAnswer(resultChoices,node,names)
+    if res == "notdepressed":
+        return "Not Depressed"
+    elif res == "depressed":
+        return "Depressed"
+    #node.display()
+    #confusionMatrix(deepcopy(cols), classColumn.colList[:], node, names)
 
 
-names = ["Choice 1","Choice 2","Choice 3","Choice 4","Choice 5","Choice 6","Choice 7","Choice 8","Choice 9","Choice 10","Choice 11","Choice 12"]
-node = startTreeBuilding(deepcopy(cols), classColumn.colList[:], 0, names)
-node.display()
-confusionMatrix(deepcopy(cols), classColumn.colList[:], node, names)
 
 
+######TESTING#####
+#fakeAnswerDict12 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust",5:"Nice",6:"Hopeful",7:"Yes",8:"Pressure",9:"Understanding",10:"FocusonSam",11:"Doesntmissparents"}
+#fakeAnswerDict5 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust"}
+#print(startAlgorithm(fakeAnswerDict12))
