@@ -206,15 +206,28 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         first = case1AndDepressed+case1AndNotDepressed
         second = case2AndDepressed+case2AndNotDepressed
         total = first+second
+        if total <= 0:
+            return 0
         gain = totalEntropy-(first/total)*entropyFirst-(second/total)*entropySecond
         splitV1 = first/total
         splitV2 = second/total
-        print("splitV1:"+str(splitV1)+" splitV2:"+str(splitV2))
-        if splitV1 == 0 or splitV2 == 0:
+        if gain <= 0:
             return 0
-        splitInfo = -(splitV1)*math.log2(splitV1) -(splitV2)*math.log2(splitV2)
-        gainRatio = (gain)/splitInfo
-        return gainRatio
+        #print("splitV1:"+str(splitV1)+" splitV2:"+str(splitV2))
+        if splitV1 <= 0 and splitV2 <= 0:
+            return 0
+        elif splitV1 > 0 and splitV2 <= 0:
+            splitInfo = -(splitV1)*math.log2(splitV1)
+            gainRatio = (gain)/splitInfo
+            return gainRatio
+        elif splitV1 <= 0 and splitV2 > 0:
+            splitInfo = -(splitV2)*math.log2(splitV2)
+            gainRatio = (gain)/splitInfo
+            return gainRatio
+        else:
+            splitInfo = -(splitV1)*math.log2(splitV1) -(splitV2)*math.log2(splitV2)
+            gainRatio = (gain)/splitInfo
+            return gainRatio
 
     elif len(allPossibleAnswers) == 3:
         #print("Number of possible answers: "+str(len(allPossibleAnswers)))
@@ -246,18 +259,46 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         second = case2AndDepressed+case2AndNotDepressed
         third = case3AndDepressed+case3AndNotDepressed
         total = first+second+third
+        if total <= 0:
+            return 0
         sp1 = first / total
         sp2 = second / total
         sp3 = third / total
-        gain = totalEntropy - (sp1)*entropyFirst - sp2*entropySecond - sp3*entropyThird
-        print("sp1:"+str(sp1)+" sp2:"+str(sp2)+" sp3:"+str(sp3))
-        
-        if sp1 == 0 or sp2 == 0 or sp3 == 0:
+        gain = totalEntropy - sp1*entropyFirst - sp2*entropySecond - sp3*entropyThird
+        if gain <= 0:
             return 0
+        #print("sp1: "+str(sp1)+" sp2: "+str(sp2)+" sp3:"+str(sp3))
+        if sp1 <= 0 and sp2 <= 0 and sp3 <= 0:
+            return 0
+        elif sp1 <= 0 and sp2 > 0 and sp3 > 0:
+            splitInfo = - sp2*math.log2(sp2) - sp3*math.log2(sp3)
+            gainRatio = gain / splitInfo
+            return gainRatio
+        elif sp1 > 0 and sp2 <= 0 and sp3 > 0:
+            splitInfo = -sp1*math.log2(sp1) -sp3*math.log2(sp3)
+            gainRatio = gain / splitInfo
+            return gainRatio
+        elif sp1 > 0 and sp2 > 0 and sp3 <= 0:
+            splitInfo = -sp1*math.log2(sp1) - sp2*math.log2(sp2)
+            gainRatio = gain / splitInfo
+            return gainRatio
+        elif sp1 > 0 and sp2 <= 0 and sp3 <= 0:
+            splitInfo = -sp1*math.log2(sp1)
+            gainRatio = gain / splitInfo
+            return gainRatio
+        elif sp1 <= 0 and sp2 > 0 and sp3 <= 0:
+            splitInfo = -sp2*math.log2(sp2)
+            gainRatio = gain / splitInfo
+            return gainRatio
+        elif sp1 <= 0 and sp2 <= 0 and sp3 > 0:
+            splitInfo = -sp3*math.log2(sp3)
+            gainRatio = gain / splitInfo
+            return gainRatio
+        else:
+            splitInfo = -sp1*math.log2(sp1) - sp2*math.log2(sp2) - sp3*math.log2(sp3)
+            gainRatio = gain / splitInfo
+            return gainRatio
         
-        splitInfo = -(sp1)*math.log2(sp1) - sp2*math.log2(sp2) - sp3*math.log2(sp3)
-        gainRatio = gain / splitInfo
-        return gainRatio
 
     else:
         #print("Number of possible answers in Entropy(): "+str(len(allPossibleAnswers)))
@@ -290,16 +331,23 @@ def detailClassList(classList):
 
 #Entropy = -value1/total*log2(value1/total)-value2/total*log2(value2/total)
 def calculateEntropy(value1, value2, total):
-    if total == 0 or value1 == 0 or value2 == 0:
-        #print("entropy equal to 0 Total: "+str(total) + " Value 1:"+str(value1)+" Value 2: "+str(value2))
+    if total <= 0:
         return 0
     
     first = value1 / total
     second = value2 / total
-    if first <= 0 or second <= 0:
-        #print("First or second below or equal to 0\nFirst: "+str(first)+" Second: "+str(second))
+
+    if first <= 0 and second > 0:
+        entropy = -(second)*math.log2(second)
+        return entropy
+    elif second <= 0 and first > 0:
+        entropy = -(first)*math.log2(first)
+        return entropy
+    elif first == 0 and second == 0:
         return 0
+    
     entropy = -(first)*math.log2(first)-(second)*math.log2(second)
+    
     return entropy
 
 def createLeafNode(Columns, classList, names):
@@ -341,7 +389,7 @@ def createLeafNode(Columns, classList, names):
 
         node = Node2(name, value, None, None, None)
         node.isLeaf = True
-        print("Created leaf Node")
+        #print("Created leaf Node")
         return node
     elif len(numberChildren) == 2:
         res = getRootAnswer(Columns[whichCol].colList, classList, numberChildren[0])
@@ -582,12 +630,13 @@ def startAlgorithm(resultChoices):
     names = ["Choice 1","Choice 2","Choice 3","Choice 4","Choice 5","Choice 6","Choice 7","Choice 8","Choice 9","Choice 10","Choice 11","Choice 12"]
     node = startTreeBuilding(deepcopy(cols[0:numberChoices]), classColumn.colList[0:numberChoices], 0, names)
     res = getDepressionAnswer(resultChoices,node,names)
+    #confusionMatrix(deepcopy(cols), classColumn.colList[:], node, names)
     if res == "notdepressed":
         return "Not Depressed"
     elif res == "depressed":
         return "Depressed"
     #node.display()
-    #confusionMatrix(deepcopy(cols), classColumn.colList[:], node, names)
+    
 
 
 
@@ -595,4 +644,5 @@ def startAlgorithm(resultChoices):
 ######TESTING#####
 #fakeAnswerDict12 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust",5:"Nice",6:"Hopeful",7:"Yes",8:"Pressure",9:"Understanding",10:"FocusonSam",11:"Doesntmissparents"}
 #fakeAnswerDict5 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust"}
-#print(startAlgorithm(fakeAnswerDict12))
+#print(startAlgorithm(fakeAnswerDict5))
+#print(calculateEntropy(10,100,-1))
