@@ -217,15 +217,15 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         if splitV1 <= 0 and splitV2 <= 0:
             return 0
         elif splitV1 > 0 and splitV2 <= 0:
-            splitInfo = -(splitV1)*math.log2(splitV1)
+            splitInfo = -(splitV1)*math.log(splitV1, 2)
             gainRatio = (gain)/splitInfo
             return gainRatio
         elif splitV1 <= 0 and splitV2 > 0:
-            splitInfo = -(splitV2)*math.log2(splitV2)
+            splitInfo = -(splitV2)*math.log(splitV2, 2)
             gainRatio = (gain)/splitInfo
             return gainRatio
         else:
-            splitInfo = -(splitV1)*math.log2(splitV1) -(splitV2)*math.log2(splitV2)
+            splitInfo = -(splitV1)*math.log(splitV1, 2) -(splitV2)*math.log(splitV2, 2)
             gainRatio = (gain)/splitInfo
             return gainRatio
 
@@ -271,31 +271,31 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         if sp1 <= 0 and sp2 <= 0 and sp3 <= 0:
             return 0
         elif sp1 <= 0 and sp2 > 0 and sp3 > 0:
-            splitInfo = - sp2*math.log2(sp2) - sp3*math.log2(sp3)
+            splitInfo = - sp2*math.log(sp2, 2) - sp3*math.log(sp3, 2)
             gainRatio = gain / splitInfo
             return gainRatio
         elif sp1 > 0 and sp2 <= 0 and sp3 > 0:
-            splitInfo = -sp1*math.log2(sp1) -sp3*math.log2(sp3)
+            splitInfo = -sp1*math.log(sp1, 2) -sp3*math.log(sp3, 2)
             gainRatio = gain / splitInfo
             return gainRatio
         elif sp1 > 0 and sp2 > 0 and sp3 <= 0:
-            splitInfo = -sp1*math.log2(sp1) - sp2*math.log2(sp2)
+            splitInfo = -sp1*math.log(sp1, 2) - sp2*math.log(sp2, 2)
             gainRatio = gain / splitInfo
             return gainRatio
         elif sp1 > 0 and sp2 <= 0 and sp3 <= 0:
-            splitInfo = -sp1*math.log2(sp1)
+            splitInfo = -sp1*math.log(sp1, 2)
             gainRatio = gain / splitInfo
             return gainRatio
         elif sp1 <= 0 and sp2 > 0 and sp3 <= 0:
-            splitInfo = -sp2*math.log2(sp2)
+            splitInfo = -sp2*math.log(sp2, 2)
             gainRatio = gain / splitInfo
             return gainRatio
         elif sp1 <= 0 and sp2 <= 0 and sp3 > 0:
-            splitInfo = -sp3*math.log2(sp3)
+            splitInfo = -sp3*math.log(sp3, 2)
             gainRatio = gain / splitInfo
             return gainRatio
         else:
-            splitInfo = -sp1*math.log2(sp1) - sp2*math.log2(sp2) - sp3*math.log2(sp3)
+            splitInfo = -sp1*math.log(sp1, 2) - sp2*math.log(sp2, 2) - sp3*math.log(sp3, 2)
             gainRatio = gain / splitInfo
             return gainRatio
         
@@ -338,15 +338,16 @@ def calculateEntropy(value1, value2, total):
     second = value2 / total
 
     if first <= 0 and second > 0:
-        entropy = -(second)*math.log2(second)
+        print("Second: "+str(second))
+        entropy = -(second)*math.log(second, 2)
         return entropy
     elif second <= 0 and first > 0:
-        entropy = -(first)*math.log2(first)
+        entropy = -(first)*math.log(first, 2)
         return entropy
     elif first == 0 and second == 0:
         return 0
     
-    entropy = -(first)*math.log2(first)-(second)*math.log2(second)
+    entropy = -(first)*math.log(first, 2)-(second)*math.log(second, 2)
     
     return entropy
 
@@ -642,7 +643,8 @@ def startAlgorithm(resultChoices):
 
 
 ######TESTING#####
-#fakeAnswerDict12 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust",5:"Nice",6:"Hopeful",7:"Yes",8:"Pressure",9:"Understanding",10:"FocusonSam",11:"Doesntmissparents"}
-#fakeAnswerDict5 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust"}
-#print(startAlgorithm(fakeAnswerDict5))
-#print(calculateEntropy(10,100,-1))
+fakeAnswerDict12 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust",5:"Nice",6:"Hopeful",7:"Yes",8:"Pressure",9:"Understanding",10:"FocusonSam",11:"Doesntmissparents"}
+fakeAnswerDict5 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust"}
+fakeAnswerDictTest = {0:"Understanding",1:"Noonesfault",2:"Distrust",3:"Dismissal",4:"Distrust"}
+print(startAlgorithm(fakeAnswerDictTest))
+#print(calculateEntropy(10,100,200))

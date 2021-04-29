@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 13: expected 'simple_expression' not found.
-    style default font = "NewTegomin-Regular.ttf"
-                       ^
+File "game/screens.rpy", line 392: style property pause is not known.
+    background "gui/overlay/main_menu.png" pause 0.1 "images/act1.png" repeat
+                                                ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Mar 31 13:36:22 2021
+Wed Apr 28 12:12:47 2021

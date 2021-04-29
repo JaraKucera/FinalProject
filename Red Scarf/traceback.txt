@@ -1,26 +1,43 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 227, in script
-    python:
-  File "game/script.rpy", line 230, in <module>
-    ghostStats[happiness] -= 5
-NameError: name 'happiness' is not defined
+  File "game/script.rpy", line 46, in script
+    init python:
+  File "game/script.rpy", line 46, in script
+    init python:
+  File "game/script.rpy", line 49, in <module>
+    import algorithm
+AttributeError: 'module' object has no attribute 'log2'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 227, in script
-    python:
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 515, in main
+    renpy.game.context().run(node)
+  File "game/script.rpy", line 46, in script
+    init python:
+  File "game/script.rpy", line 46, in script
+    init python:
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 230, in <module>
-    ghostStats[happiness] -= 5
-NameError: name 'happiness' is not defined
+  File "game/script.rpy", line 49, in <module>
+    import algorithm
+  File "renpy/loader.py", line 985, in load_module
+    exec(code, mod.__dict__)
+  File "algorithm.py", line 649, in <module>
+  File "algorithm.py", line 632, in startAlgorithm
+  File "algorithm.py", line 83, in startTreeBuilding
+  File "algorithm.py", line 104, in subTreeBuilding
+  File "algorithm.py", line 364, in createLeafNode
+  File "algorithm.py", line 256, in getGainRatio
+  File "algorithm.py", line 342, in calculateEntropy
+AttributeError: 'module' object has no attribute 'log2'
 
-Windows-10-10.0.18362
+Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
-Red Scarf 1.0
-Tue Mar 23 12:25:55 2021
+Jaroslav Kucera 1.0
+Thu Apr 29 12:16:57 2021

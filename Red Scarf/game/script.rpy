@@ -45,6 +45,7 @@ label start:
     # images directory to show it.
     init python:
         import pymongo
+        #import math
         import algorithm
         from pymongo import MongoClient
         #client = MongoClient('****')
@@ -1183,27 +1184,51 @@ label start:
         def calculateHighestEmotion(emotions):
             emotionToReturn = ""
             hE = 0
+            negative = False
             for emotion in emotions:
-                if emotions[emotion] > hE:
+                comparison = emotions[emotion] - 50
+                if comparison < 0:
+                    comparison = comparison*-1
+                    negative = True    
+                if comparison > hE:
                     hE = emotions[emotion]
                     emotionToReturn = emotion
 
             if emotionToReturn == "trust":
-                emotionToReturn = "Trusting"
+                if negative:
+                    emotionToReturn = "Distrustful"
+                else:
+                    emotionToReturn = "Trustful"
             elif emotionToReturn == "anger":
-                emotionToReturn = "Angry"
+                if negative:
+                    emotionToReturn = "Calm"
+                else:
+                    emotionToReturn = "Angry"
             elif emotionToReturn == "anxiety":
-                emotionToReturn = "Anxious"
+                if negative:
+                    emotionToReturn = "Nerveless"
+                else:
+                    emotionToReturn = "Anxious"
             elif emotionToReturn == "helped":
-                emotionToReturn = "Helped"
+                if negative:
+                    emotionToReturn = "Discouraged"
+                else:
+                    emotionToReturn = "Helped"
             elif emotionToReturn == "strength":
-                emotionToReturn = "Strong"
-            elif emotionToReturn == "anger":
-                emotionToReturn = "Angry"
+                if negative:
+                    emotionToReturn = "Weak"
+                else:
+                    emotionToReturn = "Vitalized"
             elif emotionToReturn == "hurt":
-                emotionToReturn = "Hurt"
+                if negative:
+                    emotionToReturn = "Revitalized"
+                else:
+                    emotionToReturn = "Hurt"
             elif emotionToReturn == "happiness":
-                emotionToReturn = "Happy"
+                if negative:
+                    emotionToReturn = "Sad"
+                else:
+                    emotionToReturn = "Happy"
             
             return emotionToReturn
         
