@@ -44,10 +44,10 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
     init python:
-        import pymongo
+        #import pymongo
         #import math
         import algorithm
-        from pymongo import MongoClient
+        #from pymongo import MongoClient
         #client = MongoClient('****')
         #db = client.mongodb4075
 
