@@ -11,7 +11,8 @@ install:
   - cd renpy
 # command to run tests
 
-env:
-  - SDL_AUDIODRIVER=dummy
+before_install:
+  - "pip install -U pip"
+  - "export PYTHONPATH=$PYTHONPATH:$(pwd)"
 
 script: ./renpy.sh "../FinalProject/" lint
