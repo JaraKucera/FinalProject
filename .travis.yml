@@ -10,4 +10,8 @@ install:
   - mv renpy-7.4.4-sdk renpy
   - cd renpy
 # command to run tests
-script: ./renpy.sh "../FinalProject/" lint && ./renpy.sh launcher distribute "../FinalProject/"
+
+env:
+  - SDL_AUDIODRIVER=dummy
+
+script: ./renpy.sh "../FinalProject/" lint
