@@ -641,7 +641,6 @@ def startAlgorithm(resultChoices):
 
 
 
-
 ######TESTING#####
 fakeAnswerDict12 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust",5:"Nice",6:"Hopeful",7:"Yes",8:"Pressure",9:"Understanding",10:"FocusonSam",11:"Doesntmissparents"}
 fakeAnswerDict5 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust"}
