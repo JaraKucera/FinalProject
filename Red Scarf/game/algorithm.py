@@ -539,7 +539,7 @@ def getDepressionAnswer(answerDict, root,names):
 
 def startAlgorithm(resultChoices):
     ### DATA PREP ###
-    client = MongoClient('mongodb://mongodb4075kj:xy5myq@danu7.it.nuigalway.ie:8717/mongodb4075')
+    client = MongoClient('*')
     db = client.mongodb4075
     data = db.game
     x = data.find()
