@@ -13,6 +13,6 @@ install:
 
 before_install:
   - "pip install -U pip"
-  - "export PYTHONPATH=$PYTHONPATH:$(pwd)"
+  - "python setup.py install"
 
 script: ./renpy.sh "../FinalProject/" lint
