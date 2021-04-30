@@ -8,5 +8,5 @@ setup(name='algorithm',
       author='x',
       author_email='x',
       license='Apache-2.0',
-      packages=[algorithm],
+      packages=['algorithm'],
       zip_safe=False)
