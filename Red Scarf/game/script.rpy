@@ -71,7 +71,7 @@ label start:
     play music "audio/Awaiting-the-Devil.ogg" volume 1.0 fadein 1 fadeout 1 loop
     scene act1 with Dissolve(1.0)
     pause .5
-    scene bg room with Dissolve(1.0)
+    scene 1 with Dissolve(1.0)
     pause .5
     mom "Are you sure that this is absolutely the best idea? Do you genuinely think that one less mouth to…"
     dad "Quiet, he’ll hear you. You wouldn’t want to cause that boy any more harm, would you?"
@@ -82,12 +82,14 @@ label start:
     "Whose worries? That was something that he did not expand upon. The world that I am in is reality. A harsh tough reality that does not always care about what you want."
     mom "I just think that maybe there could be a better way to go about this."
     dad "I wish that there was, but this summer camp might just be our saving grace."
+    scene 2 with Dissolve(1.0)
     "Just as those words left the mouth of my stern father, a flimsy wooden cracked sign with the words “John Kai’s Summer Camp” passed by the car."
     "The dirt track road spiralled down a forest so dense it felt as if the car would have to squeeze through to pass."
     "Even though it was July, the deeper we went, the more and more the trees lost their colours. With each passing minute, colours got drained out of the environment to leave just pale broken down tree barks."
     "Hollow emotionless trees replaced those bright summer colours and with them, they took the already sparse joyous emotions"
     play sound "audio/Car.ogg" volume 0.5 fadein 1 fadeout 1
     mc "So this, is it? The place where I will spend the rest of the summer all away from you guys?"
+    scene 3 with Dissolve(1.0)
     dad "Look Sport, we already discussed this with your mom, this will benefit you the most, so get out there and let the person in charge know that you’re here."
 
     menu choice_1:
@@ -125,26 +127,34 @@ label start:
         "Without even saying goodbye they were gone. The car getting swallowed by the spiral of trees, possibly never to be seen again."
     
     play music "audio/Punch-Deck-Longing.ogg" volume 1.0 fadein 1 fadeout 1 loop
+    scene 4 with Dissolve(1.0)
     "By looking at the camp, you could tell that in the past it must have been filled with the joyous souls of children laughing about, enjoying their summers, stress-free and happy."
     "All the buildings shining, feeling alive and fresh. The new reality was a mere husk of the past. The lake where children would cool off after a long day of activities looked more like one step inside would contaminate your body with toxic waste."
+    scene 5 with Dissolve(1.0)
     "The cabins and buildings all looked soulless, the colour drained from this place. It looked like it was all going to collapse soon from all the mould and lack of care."
     "From everyone’s expressions, you could tell that joy and happiness were two emotions gone from this world. Everyone had the same facial expression, an expression that screamed help me, let me leave, I’ve had enough."
     "Even those that were in charge all looked like they were slaves, slaving away for a minimal wage, hoping to get by until their next paycheque."
-    
+    pause 1
+    scene black with Dissolve(1.0)
     play sound "audio/Thud.ogg" volume 1.0
     with hpunch
     t "Hey watch it! What do you think that you’re doing?"
+    scene 6 with Dissolve(1.0)
     "Before I even got a chance to respond, he grabbed me by my shirt and held me against the wall."
     t "Listen here, I see that you’re new here, so I’m only going to give you a warning this time. People around here are in fear when they hear my name. The boys and I here are T."
     t "We run this little camp, so don’t you dare ever bump into me or the boys ever again. If you do you’ll get this but much worse."
     play sound "audio/Punch.ogg" 
     with vpunch
+    scene 7 with Dissolve(1.0)
     "With that, he punched me in the gut and left me heaving on the ground. As his friends walked by they spat on me and called me a loser."
+    scene 8or17 with Dissolve(1.0)
     "What a great way to start this camp. Hopefully, he won’t be too much of a problem."
-
+    pause 1
+    scene 9 with Dissolve(1.0)
     play music "audio/Dystopian.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "After going to the head’s office to sign up and be assigned to a bed in a run-down cabin. I was informed that I’ve come on time to be able to partake in the final activity of the day before bedtime."
     "One of the run-down buildings had a nice set of windows to one of the sides of the walls overlooking the forest. The cabin wasn’t as bad as it looked from the outside, the walls constructed out of logs with certifications hung up and framed from years before I was even born."
+    scene 10 with Dissolve(1.0)
     "How I wish I could have dealt with this camp twenty years ago during its glory years. While I am the last person to enjoy group activities and the outside, it would have made it much more bearable."
     "Opposing the wall of windows was a large fireplace, it was the only signal of hope in this building. Burning brightly, being strong and tough, all quantities that I would need to survive this summer."
     i "Welcome all to the afternoon slash evening class for today. We will box to tire ourselves out so that we can have that goodnights sleep."
@@ -153,21 +163,32 @@ label start:
     "I almost lost my heart to shock when I heard my name announced after the name Tray. For I realized in that split second upon seeing his face that the guy that had punched a hole through my gut was Trevor."
     t "I hope that you remember the warning that you got earlier today."
     "Hearing those words echo in my brain along with the devious smile plastered on his face brought back the feeling of pain that still wasn’t fully away. I was first to hold the punching bag. Trevors face grew with pleasure every time that he punched."
+    scene 13 with Dissolve(1.0)
     play sound "audio/Punch.ogg"
     with vpunch
-    pause 0.25
+    scene 14 with Dissolve(0.5)
+    pause 0.2
+    scene 13 with Dissolve(0.5)
     queue sound "audio/Punch.ogg" volume 0.75
     with hpunch
-    pause 0.25
+    scene 14 with Dissolve(0.5)
+    pause 0.2
+    scene 13 with Dissolve(0.5)
     queue sound "audio/Punch.ogg" volume 0.60
     with vpunch
-    pause 0.25
+    scene 14 with Dissolve(0.5)
+    pause 0.2
+    scene 13 with Dissolve(0.5)
     queue sound "audio/Punch.ogg" volume 0.25
     with hpunch
-    pause 0.25
+    scene 14 with Dissolve(0.5)
+    pause 0.2
+    scene 13 with Dissolve(0.5)
     queue sound "audio/Punch.ogg" volume 0.5
     with vpunch
+    scene 14 with Dissolve(0.5)
     "Each punch sent shockwaves throughout my body and pushed me further. Keeping my balance was getting more difficult with each punch. The harder the punch the wider the grin on his face would be."
+    scene 11 with Dissolve(1.0)
     "Somehow I managed to survive the first twenty minutes, it was now my turn to punch. It didn’t seem like my punches had any impact on Tray whatsoever. It was as if I was just gently tapping the punching bag."
     "For the first time, I was a little at peace, I could study the surrounding environment. Everyone seemed to be doing much better, some even had a smile on their face. It looked like they were making friends."
     "If some details had been taken out of the equation, it would almost be a wholesome scene to witness. Before I could fully immerse myself, it was time to swap once again. I held onto dear life, hoping to not let go of the punching bag, for if I did I would be in a world of pain."
@@ -214,11 +235,15 @@ label start:
         play sound "audio/Punch.ogg" volume 0.75
         t "Oh I am going to absolutely kill you."
     
+    scene 12 with Dissolve(1.0)
     "I was so lost in thought that I did not realize that time was over. I boxed Trevor into the throat."
+    scene 15 with Dissolve(1.0)
     i "Hey now calm down it was an accident, leave him alone."
     "Thank god that the supervisor was there to save me otherwise I probably would have died just there and then."
     t "You’re dead."
     "That’s all Trevor said as he left the building."
+    pause 0.5
+    scene 16 with Dissolve(1.0)
     play music "audio/EmptyStreets.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "With that, the activities had come to an end and so did the day. After making my way to the cabin and being checked off the present list I was ready to end the day in a hard and cold bed. I wanted to finally rest, the day had been so exhausting."
     "Even though I was so dead my body did not listen to me and instead kept me awake reliving all the events that had transpired. I just sat there at my bed wishing that this was all a dream and that I would just wake up in my bed at home."
@@ -226,9 +251,12 @@ label start:
     "Finding the cabin where I would be sleeping was not a difficult task. Even going blindly would give you a twenty percent chance to guess on the first try. There were five cabins for each gender which housed five kids each."
     "It didn’t take long before I heard the door open before a hand had been put over my mouth, with other hands used to drag me outside. It all happened so fast that I didn’t even get a chance to yell or focus attention on myself."
     "The last thing that I saw was a bright star shining in the night sky before everything went dark."
+    scene black with Dissolve(1.0)
     play music "audio/sad_piano_track_4.ogg" volume 0.5 fadein 1 fadeout 1 loop
+    pause 0.5
     play sound "audio/Punch.ogg" volume 0.75
     "I woke up to a punch to the gut, the same punch that I had received earlier."
+    scene 17 with Dissolve(1.0)
     t "Well, well, well, I told you that I’d kill you. You know, no one has messed up on the same day as their warning. You must be incredibly stupid or incredibly unlucky."
     t "Either way, let me explain what's going to happen to you. I want to see the fear in your eyes as I go over everything that will happen to you."
     t "Firstly, calm down, you’re not actually going to die, you’re just going to suffer a lot. My boys and I are going to roughen you up a little. When you are found tomorrow morning you’ll have to be brought to the hospital and possibly be put on life support."
@@ -248,21 +276,25 @@ label start:
     pause 0.25
     queue sound "audio/Punch.ogg" volume 0.5
     with vpunch
+    scene black with Dissolve(1.0)
     "I had no idea where I was. I was in the forest for sure but from what I could see, but it wasn't anywhere near the camp. The trees were here to cover up any sounds that might help me."
     "The branches as if being held against my mouth muffling anything that would escape my mouth, in hopes of getting help. It was almost pitch black now if I was to survive this beat down would I even be able to get back? I didn’t deserve this."
     t2 "Hey Trevor isn’t this forest haunted?"
     t "Tray are you completely stupid?"
-    play sound "audio/Howl2.ogg" volume 1 
+    play sound "audio/Howl2.ogg" volume 1
+    pause 2 
     "Suddenly a loud howl echoed throughout the forest distracting everyone. My hands remained tied by some rope, my legs although beaten were free."
+    scene 18 with Dissolve(1.0)
     "With the adrenaline in my body, I made a run for it through the forest with only a slight head start before being followed."
     "There wasn’t much light left from the sun and most of it was unable to pass through the forest sky. I had no clue where I was going before slipping and tumbling down."
     play music "audio/Punch-Deck-Brahe.ogg" volume 1.0 fadein 1 fadeout 1 loop
     #Chapter 2
     scene act2 with Dissolve(1.0)
-    pause .5
-    scene bg room with Dissolve(1.0)
-    pause .5
+    pause 1
+    scene 19 with Dissolve(1.0)
     r "Oh looks like you’re waking up. That fall looked like it hurt a lot."
+    pause 1
+    scene 20 with Dissolve(1.0)
     "I awoke to the sounds of someone gently talking as if assuming that no one would hear them. I couldn’t understand what they were saying, everything muffled and blurring. It took a couple of seconds before my eyes adjusted, and I could decipher what was said to me."
     "I was still in the forest, however, it felt different, that dead atmosphere disappeared and got replaced by a brighter living forest. Although it was dark, the bright stars illuminated the surroundings."
     "The trees no longer looked like they were trying to grab at you but instead looked like they were offering you a hug to console you. In front of me sat a girl about my age on a log."
@@ -272,6 +304,7 @@ label start:
     "I tried getting up to get closer to her for a better look but as I tried to stand on my right foot, I collapsed to the ground from the pain."
     r "Yikes blue shirt, looks like that fall might have twisted your ankle. You’re lucky that I am here to save you. You did almost fall on me though when you decided to tumble down all of those hills."
     r "I did notice that your hands had been tied with some rope, poor craftsmanship for sure though. So bad that your hands got untied by the fall. What did happen to you?"
+    scene 30 with Dissolve(1.0)
     "As she talked the moon lit up her face, she looked like an ordinary weird girl, weird because she had a huge smile plastered on her face the entire time that she talked."
     "Snickering here and there at her jokes. It kinda felt like she was happy that I almost fell on her. What do I tell her about what had happened?"
 
@@ -336,6 +369,7 @@ label start:
         r "Or at least it did have them the last time that I was there, which hadn’t been for a while."
 
     "With that, she jumped from the log that she was sitting at and waited for me to get up. Exerting pressure on the ankle caused a lot of pain shooting throughout my body but limping made walking somewhat possible."
+    scene 21 with Dissolve(1.0)
     "My entire body was already in pain from the still fresh beat down, so slightly more pain wouldn’t be too noticeable. The girl was very weird, walking a few feet in front of me."
     "To me, it seemed like her constant smile tried to tell people that she was happy. However, when she would reply to me, her eyes and speech made it feel like her smile was a cover-up for how she genuinely felt."
     "Her smile wasn’t a product of her heart but a product of her mind to hide away her true feelings. Yet there was something about her that gave me hope."
@@ -418,7 +452,9 @@ label start:
         play music "audio/sad_piano_track_6.ogg" volume 0.5 fadein 1 fadeout 1 loop
         "After a few seconds of us silently walking through the forest, twigs breaking under our feet, our shoes getting dirtier by the damp soil. A howl similar to that which I’ve used to escape from Tray echoed throughout the woods again."
         play sound "audio/Howl4.ogg" volume 1
+        pause 2
         "This time the sound wrapped through my skull, it felt much more intense and much closer. My legs started to twitch from the fear, my eyes gazing all around hoping to not see the source of the noises."
+        scene 22 with Dissolve(1.0)
         "The red scarf girl had noticed my twitching and looking around, she pointed behind me and when I averted my gaze to what laid there, I saw two bright yellow eyes. Eyes of death hungry not just for the meat on my bones but eager to ravage my soul."
         r "Listen to me Blue shirt, we will be in trouble if we are caught, I want you to go run as fast as possible with that hurt ankle, in the direction that we have been heading in. You will see the cabin, go inside, and you should see a ladder heading up into the attic."
         r "Go there now, I will distract these dogs. Trust me, go!"
@@ -468,12 +504,20 @@ label start:
         jump choice_5_done
 
     label choice_5_done:
+        scene 23 with Dissolve(1.0)
         "With those words, I limped as quickly as possible ahead. As I departed I looked back to notice a big wide smile on the girl’s face, the further I got, the less I saw until the only thing that I could see was her red scarf in the distance."
     
+    pause 1
+    scene 24 with Dissolve(1.0)
     "Movement occurred, but I could not recognize what was happening. Loud howls echoed through the woods as I limped further and further until I finally reached a cabin that looked more like a shack where a single step inside it would bring it crashing down."
+    scene 24-2 with Dissolve(1.0)
     "Nevertheless, I had to trust her and looked for the attic ladder she had mentioned and climbed my way up. I was very thankful that the ladder didn’t break under me and that my ankle was able to take all of that pressure."
+    scene 25a with Dissolve(1.0)
     "Pain was the last thing that I needed more of. I was all out of breath, wondering if the girl was going to be okay. Each second felt like an hour. What was I going to do without her? How would I get back?"
+    scene 25a-2 with Dissolve(1.0)
     "Would I be able to live with the fact that a girl could have given up her life for me?"
+    pause 1
+    scene 26 with Dissolve(1.0)
     r "You’re whimpering like a scared little puppy, don’t worry everything is okay."
     play music "audio/Beautiful-Splatter-Invadable-Harmony.ogg" volume 1.0 fadein 1 fadeout 1 loop
 
@@ -488,14 +532,16 @@ label start:
     r "Hmm, let’s see, I could swear that there was a first aid box somewhere around here, oh yeah there it is."
     "After finally being able to calm down and realize that the girl was okay, I finally had the chance to notice where I was. A low wooden ceiling that did not offer much protection. If the girl stayed here during the night, the scarf would start to make more sense, it was starting to get chilly."
     "The attic space showed no signs of being used, no place for a bed, absolutely nothing lying around. Just an empty hollow room that would have been swallowed in darkness if it was not for a tiny circle window that allowed some moonlight to enter through its mouth."
+    scene 28 with Dissolve(1.0)
     mc "How did you manage to escape?"
     r "Ah Blue shirt does not want nay plot holes, well I just made those dogs feel scared, I asserted my dominance and threw some rocks. Just needed you to leave because it is embarrassing to do and there is no way that you could ever pull of dominance."
-    r "Now no more questions, get yourself patched up, there are some bandages in that aid box over there."
+    scene 27 with Dissolve(1.0)
+    r "Now no more questions, get yourself patched up, there are some bandages in this aid box."
 
     #Chapter 3
     scene act3 with Dissolve(1.0)
     pause .5
-    scene bg room with Dissolve(1.0)
+    scene 28 with Dissolve(1.0)
     pause .5
     "She must have enjoyed calling me ‘Blue Shirt’, although it is true that neither one of us had introduced ourselves to one another. I guess that if I had worn any other t-shirt that day then I would have been called by that colour instead."
     "The sense of urgency of it all just left us without much time or care towards names. We just went along with everything, both of our social skills must have needed a little help. To me, she’s just a weird girl that found me in the forest at a time of need,"
@@ -646,13 +692,15 @@ label start:
     #Chapter 4
     scene act4 with Dissolve(1.0)
     pause .5
-    scene bg room with Dissolve(1.0)
+    scene 29 with Dissolve(1.0)
     pause .5
     "It was finally time to leave the attic, time to set off home. A sense of hope washed over me, it was always noise to have a plan, hopefully, there will be no more encounters with any wildlife. As we departed from the shack, we were both illuminated under the night sky."
+    scene 31 with Dissolve(1.0)
     "It wasn’t a typical skyline where all the stars were covered by clouds, only peeking from time to time like we had been used to. No, tonight was different, there wasn’t a single cloud in the sky, no light pollution, just tonnes of sparkling stars in the sky surrounding a large hypnotizing full moon."
     "Tonight was special. The only tall hill that would allow us to see the surrounding area that Sam knew of was about a few minutes walk from where we were. With my ankle, it would take a bit longer but shouldn’t have too much of an impact."
     "Thankfully my ankle was recovering. Sam started skipping along ahead of me. How did she have so much energy to skip. I have no idea. It made me realize that I didn’t even know what time it could possibly be."
     "How long was I out for initially, how long had I spent with Sam, time was all a blur. Only the moon directly above us gave some sort of sense of time."
+    scene 30 with Dissolve(1.0)
     R "It really is a beautiful night, you picked the best night to be bullied on. Nights like these used to be the best for getting rid of all the stress. For a while it used to help so much, yet ended up causing all the problems in the end."
     "Her voice trembled with the delivery of that last line. Sam was still a large mystery to me, sometimes she would talk about the forest with so much passion and love, but that passion would turn to sadness and despair very easily. The forest helped her a lot but also caused her the most problems."
     R "I used to feel so motivated, so hopeful, so full of life. I used to want to become an environmentalist to help protect this forest and many forests like it, forests that helped other people like me. Those times were much better."
@@ -719,16 +767,23 @@ label start:
     mc "I guess that’s why we put on a brave face, why we act like nothing is wrong, we don’t want anyone to feel the same kind of pain that we are feeling. We don’t want them to know how much pain we are in."
     R "Hiding it, and appearing fine is so hard sometimes, makes you want people to forget about you, makes you wish that you weren’t around so that none of your pain can be brought onto others."
     "The only image left were two people walking slowly, one in front of the other. Tough words have been said. A moment of peace was needed, a moment to take our minds off everything."
+    scene 31 with Dissolve(1.0)
     mc "The stars are so pretty tonight, I wish we could just lay here and enjoy them for a while. To forget about everything, to get a little life back."
+    scene 32 with Dissolve(1.0)
+    pause 1
     "Keeping my eyes open got harder and harder each second. The difference between having my eyes opened and closed was becoming less and less noticeable. Every time that I blinked my eyes remained closed for longer. What would it be like at home if I never returned?"
+    scene black with Dissolve(1.0)
     "Would they be sad without me around?  They did send me away. Mom would be heartbroken. She always tried to be tough to protect us. She didn’t often cry but when she did it felt as if the world was drowning in sorrows."
     "Mom didn’t want us to worry about her, so she always hid her tears, didn't want to make us sad. Overworking herself each night so that everything was okay. Never taking a day off. Mom would feel like she had failed her duty to protect me."
     "What about Dad? He always had his moments of anger, an anger that existed out of care for us. He always wanted all of us to be happy and carried us on his back."
     "His face was always the same, drained eyes and an expressionless look. He needed to appear tough so that we could all lean against him. I don’t think that I had ever seen him cry. He made us believe that he wasn’t even capable of it."
     "Would he be sad if I never came back? Maybe things would be easier without me, maybe without the burden of my existence, everyone would get along better. Would I be sad if I didn’t get back? Do I still have a place to come back to? What if they don’t want me to come back?"
-    R "You sure were very weird. I guess you’re not used to amazing night-time adventures with someone as great as me."
+    R "You sure are very weird. I guess you’re not used to amazing night-time adventures with someone as great as me."
     "I had not realized it until now but the entire time, my eyes were closed. I left the world for the land of the stars."
+    scene 32 with Dissolve(1.0)
     mc "What happened?"
+    pause 1
+    scene 33 with Dissolve(1.0)
     R "Well Blue Shirt, I was just minding my own business. When I heard a loud thud sound and the next thing I know is that you’re just lying there on the ground enjoying your sleep time. You didn’t even invite me to join."
     "It wasn’t easy getting off the grass back onto my feet. The grass pulling me back to dreamland, soothing me, and although I was dreaming about negative thoughts I still wanted to return. Pulling off from the ground felt like a connection was being severed."
     "Goodbye dreamland, goodbye land full of glistening stars, it’s time to get back to the travels."
@@ -742,13 +797,20 @@ label start:
     #Chapter 5
     scene act5 with Dissolve(1.0)
     pause .5
-    scene bg room with Dissolve(1.0)
+    scene 33 with Dissolve(1.0)
     pause .5
     R "We are almost…"
+    scene 34 with Dissolve(1.0)
+    pause 1
     "As soon as those words escaped her mouth, her foot failed to maintain balance and with one slip she came tumbling down towards me. At first, I thought that it would only be a slight problem, that I would be able to catch her."
+    scene 35 with Dissolve(1.0)
+    pause 1
     "But when I laid out my hands and arms to prepare myself to catch her, I discovered the real problem. Her body did not make an impact against me, it did not stop, I felt a cold shiver right as her body passed through mine."
+    scene 36 with Dissolve(1.0)
     mc "What the?"
+    pause 2
     "That was all my mouth could say as my brain realized that this girl had just passed through me. What kind of magic was this? How tired was I? Her body did not fall too far, stopping slightly behind me."
+    scene 37 with Dissolve(1.0)
     R "Oops, that wasn’t supposed to happen, anyway, let’s keep going shall we?"
     mc "No no, wait for a second, what just happened? You need to explain yourself, Sam."
     R "But Blue Shirt, it isn’t important, plus we have to get to the top of this hill and get you back as fast as possible."
@@ -816,15 +878,19 @@ label start:
         R "Fine, okay I will tell you everything, le’s just get to the top of this hill first, it’s not much longer, and I think that it will be much easier to do it there. I also need time to think through it."
     
     play music "audio/ForeverLost.ogg" volume 0.5 fadein 1 fadeout 1 loop
+    scene black with Dissolve(1.0)
     "The next five minutes were filled with dead silence. The only audible noises were our shoes stomping on the ground below as we tried to maintain balance. I tried to think about all the other times that Sam had touched, when I first fell while running from the bullies,"
     "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself. She had always skipped ahead of me, only ever slowing down and turning around to talk to me."
     "Was there something wrong with her or me? As we near the top, I noticed Sam’s face, she wasn’t hiding her emotions, there was no smile, just sadness and worry. The top of the hill was way brighter than any other location that we had been to thus far."
+    scene 38 with Dissolve(1.0)
     "It was free from all the sheltering trees. The dark sky, the bright stars, the shining moon were all perfectly fully visible and glancing at us for the tree’s protection as now gone. I looked across the horizon, for a second I was scared because all I could see was a large dense forest."
     "But then as I looked towards the direction of the moon, I finally saw it. A glistening body of water, if it wasn’t for the lake I would have never noticed those dark cabins to the side of it. There wasn’t a single light on, so I would have to follow the moon to be able to get back."
+    scene 39 with Dissolve(1.0)
     "I turned around to tell Sam that I had just found the camp only to see her saddening face, a tear rolling down her cheek."
     R "I guess it’s time for me to tell you everything now. I don’t remember too much about my life. I was an ordinary kid that loved being out in nature, especially this forest, painting and drawing the landscape or just running around. It was my biggest passion."
     R "I had other passions besides that of course, but this forest was the main one. Every summer my family and I would travel here, stay out camping and just enjoy life. Just a family tradition that was passed down through generations. It was my favourite time of life, the family being together all happy,"
     R "they would all focus on me, and we would have painting sessions together. We would take loads of photos and just smile a lot. As I grew older my passions changed but this forest remained. It was more of a home for me than my own house."
+    scene 40 with Dissolve(1.0)
     R "Then all of a sudden I just slowly started losing interest in all of my passions. I had trouble with sleep, with eating, with being happy."
     R "Sure there were stressful things going on in my life. The family wasn’t the best, I wasn’t doing too well in school any more. I was just left with one single piece of hope for me and my family and that was going camping in this forest over the summer. However, we had to skip that year."
     R "Mother wasn’t feeling too well and dad was just too busy at work to make any time for us. I clawed onto this one hope for the next year to come. I hated that year, I felt like a husk, I couldn’t feel anything and hated myself for that, but I couldn’t let anyone worry about me, they all had plenty of problems themselves,"
@@ -835,11 +901,13 @@ label start:
     R "It wasn’t all that bad until Dad got a work call, and told us that we would have to go back because it was important, and he could just not miss out on it. Dad was once again leaving us and mother wouldn’t say anything."
     R "I couldn’t control myself at that point any more, all the emotions that were being held back erupted and came flying out, and I let it all out on them, yelling at them both."
     R "At dad for only caring about money and not taking care of mom when she needed comfort the most, and for mom not doing anything about my dad, for being a pushover and doing nothing for herself or the family."
+    scene 41 with Dissolve(1.0)
     R "I couldn’t take it any more and just ran out crying. I hated everything that had just happened. I regretted it the second that it happened, but I couldn’t get myself to come back."
     R "Life was so unfair. But I wanted to calm down and return. A part of me felt fantastic for letting things go. I finally felt alive after almost two years. As I walked back I noticed the heart rising around me."
     
     play sound "audio/ForestFire.ogg" volume 0.2
-    
+    scene 42 with Dissolve(1.0)
+    pause 3
     R "There was a forest fire going off strongly right where mom and dad were. I had only been gone for about an hour, I didn’t know if they were okay or not, but I had to run away, getting caught up in the flames and smoke would have been the end of me."
     R "I ran as fast as I could. I had to get away and find my parents. The fire was spreading at a high rate, it was almost impossible to see anything, shades of red and orange just engulfed the atmosphere."
     R "While I was running disoriented, the ground below me collapsed and send me crashing down to some deep unused well. The fall had knocked me out and when I came to, it was already dark."
@@ -850,6 +918,7 @@ label start:
     R "It was like that for a long time, just walking about in the forest, observing random things. Once you get used to passing time it gets easier. Days end up passing as fast as seconds, weeks passed like hours and years passed like days."
     R "It was becoming hell, then one day I saw you tumble down that hill, things didn’t look okay for you,"
     R "so I decided to stick around to see what you would do. I was very surprised when you started talking back to me, that fact that you could see me and hear me cheered me up. It had been such a long time since I’ve talked to another person and not just myself."
+    scene 40 with Dissolve(1.0)
     mc "Wow that is a lot to process."
     R "I know Blue Shirt, I am sorry that I didn’t tell you sooner, I just felt like there was never a good time to blurt it out."
     "Tears were running down her face, dripping onto the grass below. She had become the most beautiful waterfall."
@@ -928,6 +997,7 @@ label start:
     label choice_9_5_done:
         "We sat around at the top of the hill taking in the environment. We felt like we were on top of the world being able to see the entire landscape out in front of us. The sun was going to be rising soon. Filling the world with red, orange, and yellow colours of warmth."
     
+    scene 43b with Dissolve(1.0)
     R "You know, this would be very romantic if it wasn’t for the fact that I am dead and stuff."
     mc "Oh absolutely so romantic. Sitting on the top of a hill in our tears watching the sunrise together while being sleep-deprived."
     "Sam was back to normal for now. We could set out now onto our journey, but where should we go?"
@@ -978,7 +1048,7 @@ label start:
     
     scene act6 with Dissolve(1.0)
     pause .5
-    scene bg room with Dissolve(1.0)
+    scene 45b with Dissolve(1.0)
     pause .5
     "We set off onto the final stretch of our journey, a lot of things had been said. They were all stuck in my head, and it would be awhile before I could process everything properly. It did make me question my sanity among other things,"
     "but it had been a long night, accepting supernatural events was easier than you’d think when you’re very heavily sleep-deprived."
@@ -1038,30 +1108,38 @@ label start:
     R "I think that we have gone through a lot tonight but spending it with you was worthwhile and your company was really enjoyable, much better than just walking around talking to myself."
     R "You have given me hope for the future, maybe there are other people out there like you that can see me and hear me. Plus you’ll be in camp so like maybe we could hang out sometimes if you’d like. I know that accepting a person lie me might not be the easiest, but I really do cherish this night with you"
     "Just as I was about to answer Sam, I heard faint shouting coming from the direction of the camp. I turned around trying to solve what the words shouted at us meant, thinking that maybe some camp instructor had seen us and was worried about me."
+    scene 43a46 with Dissolve(1.0)
     play music "audio/Forgotten-Memories.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "But as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure in the forest, the bullies."
     "Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. Sam had no clue what was going on at first until she saw my terrified expression. I think that she could guess who these people were."
+    scene 44b with Dissolve(1.0)
     "Just as I thought that life was going to be over, Sam grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind."
     "How was she holding me when a few hours ago she couldn’t make contact with me? They say that spirits stay around if they have a lot of willpower."
     "Was it all possible because of the amount of willpower she put into helping me? It would be something that I would only be able to speculate about. The ground was muddy and damp, each step drained the slimmer of energy that I had left."
     "Lifting my leg was a struggle, each step felt like the earth was grabbing my shoes, not wanting me to leave."
+    scene 47 with Dissolve(1.0)
     "We did not run long before we spotted what might have been exactly what Sam had described, a small run-down stone tower. It did not feel like we were getting any distance on the bullies they were getting closer, Sam pulled my hand towards the castle tower."
     "It wouldn’t be long before I would collapse, my lungs were working overtime and after walking around all night, my legs were starting to give up."
     "Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Sam was trying her best to get us to safety, there wasn’t a smile on her face"
     "nor any sense of positive emotions, it was completely different from the dog incident. Back then she forced herself to wear a smile to hide her true feelings from the world, but right now the mask was destroyed."
     "The scenery here was completely different, huge trees with branches that crept out to block out the sun were replaced with sparse burnt tree stumps that embraced the rising sun and used the dampness in the air to create orange filled burning sights."
     "Those were the last images I saw as we entered the tower, where the ground below me gave away and crumbled underneath me. As everything was going black I heard the loudest, darkest screech that I have ever heard in my life."
+    scene 48 with Dissolve(1.0)
     play sound "audio/Ghost.ogg" volume 1.0
+    pause 4
     "I don’t think that it was dark for long before my eyes adjusted and could see around me. Sunlight was entering through the circular hole in the sky through which I had fallen. I was surrounded by narrow stone slimy walls."
     "Laying in a pool of water explained my drenched state and low body heat. I was freezing and sore all over. Where was I? That was when my eyes adjusted and noticed that I was not the only one stuck in this hole, right beside me were skeleton remains."
+    scene 49 with Dissolve(1.0)
     "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Sam wore. We must have done it, we must have found her body."
     stop sound
     "Well now hopefully I won’t meet the same end as her. I used the last tiny amount of energy that I had managed to recollect to shout at the top of my lungs for help. No one answered back."
     "What had happened to Sam and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
     "because he had heard a loud screech and my call for help. Firefights and the police were called, firefights to save me and police to investigate the body. I awoke in a hospital bed where the police questioned me about the night."
     play music "audio/Punch-Deck-Ethereal.ogg" volume 1.0 fadein 1 fadeout 1 loop
+    scene 50 with Dissolve(1.0)
     "I changed the story around to not include any mentions of Sam but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Sam pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
     "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Sam and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
+    scene 51 with Dissolve(1.0)
     "The article didn’t mention me by name but mentioned how I almost suffered the same faith. The article ended with missing pictures of the bullies, they had gone missing from the camp at the same time as I was found."
     "There were search parties sent out but no one could find them. I wanted to revisit that forest and see Sam again, but a broken leg was keeping me at home and finding an excuse to revisit the forest was basically impossible."
     "It sadly took a few years before I would be able to visit again. A few years that would have been much more difficult if I hadn’t had met Sam that night. It was strange, but she felt like a part of me, there to remind me of hope at the worst of times."
@@ -1074,10 +1152,12 @@ label start:
         play music "audio/joshua-mclean_dreams-left-behind.ogg" volume 1.0 fadein 1 fadeout 1 loop
         R "Blue Shirt that’s too much. I... I don’t think that I can do this any more. I know that you must be very confused about the current situation, but you’ve been kinda rude to me and I just can’t trust you this much."
         R "I understand that it is partly unfair to you, but I’m sorry this is my fault. I have to leave, good luck with getting home, you should be able to do it on your own now."
+        scene black with Dissolve(1.0)
         "Tears ran down her face, her eyes screamed from the pain that she was in. It was too much for her to handle. She ran away from me, I was now all alone to solve what just happened and to get home. The next five minutes were filled with dead silence."
         "The only audible noises were my shoes stomping on the ground below as I tried to maintain balance. I tried to think about all the other times that Sam had touched, when I first fell while running from the bullies,"
         "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself."
         "She had always skipped ahead of me, only ever slowing down and turning around to talk to me. The top of the hill was way brighter than any other location that we had been to thus far. It was free from all the sheltering trees."
+        scene 38 with Dissolve(1.0)
         "The dark sky, the bright stars, the shining moon were all perfectly fully visible and glancing at us for the tree’s protection as now gone. I looked across the horizon, for a second I was scared because all I could see was a large dense forest. But then as I looked towards the direction of the moon, I finally saw it."
         "A glistening body of water, if it wasn’t for the lake I would have never noticed those dark cabins to the side of it. There wasn’t a single light on, so I would have to follow the moon to be able to get back."
         "It was time to get home."
@@ -1085,27 +1165,35 @@ label start:
 
     label choice_10_end:
         play music "audio/joshua-mclean_dreams-left-behind.ogg" volume 1.0 fadein 1 fadeout 1 loop
+        scene act6 with Dissolve(1.0)
+        pause 1
+        scene 44b with Dissolve(1.0)
         "I had been walking for a while. My ankle was sorer than ever. I would say that it was worse than when I first hurt it. All the walking must have taken its toll. For some reason, the forest seemed scarier alone."
         "The sounds seemed to intensify when you were alone with just your thoughts. Only a little while to go before I would get back to the camp. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
         "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now. Just as I was about to rest before walking further, I heard faint shouting coming from the direction of the camp."
         "I turned around trying to solve what the words shouted at me meant, thinking that maybe some camp instructor had seen me and was worried that I wasn’t in bed, but as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure "
+        scene 43a46 with Dissolve(1.0)
         " in the forest, the bullies. Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions."
         if ghostStats['trust'] >= 50 and ghostStats['hurt'] <= 50 and ghostStats['anger'] <= 45:
             jump reunite
         else:
             "It wasn’t long before they caught up to me. The impact they had on my body made it give up. It was too much to handle, it was over. I'm sorry."
+            scene 7 with Dissolve(1.0)
             jump end
     
     label end_distrust:
         play music "audio/joshua-mclean_dreams-left-behind.ogg" volume 1.0 fadein 1 fadeout 1 loop
         r "Sorry Blue Shirt but I don’t think that we should do this journey together. You’ve shown me that you don’t trust me, and it does seem like you don’t want me here. I can take a lot, but I have to be fair to myself, this isn’t good for me."
         r "I’ve enjoyed your company a bit since I haven’t been in one for a long time. But enough is enough. I wish you the best of luck with getting home. I'm sorry."
+        scene black with Dissolve(1.0)
         "My words had hurt her too much, showing a lack of trust and being dismissal towards her didn’t work. I guess that I will have to do this alone now."
         "The attic space showed no signs of being used, no place for a bed, absolutely nothing lying around. Just an empty hollow room that would have been swallowed in darkness if it was not for a tiny circle window that allowed some moonlight to enter through its mouth."
         "Finding the bandage in the first aid box was an easy task. Most of the other items were missing, but luckily I was able to use the bandages. Had I injured something else and required other items I would have been out of luck."
         "While I was bandaging my ankle I realized how bad it truly was. Inflamed and bruised, it will be difficult to walk the rest of the journey with this ankle. The next thing that I remember is waking up in massive pain, not just my ankle, but I was starving."
+        scene 25b with Dissolve(1.0)
         "Sun shined through the circle window, it was daytime now, I must have fallen asleep from the pain and weakness. I had to leave this place and get back to camp or else I would starve soon, well I was more likely to die from thirst first."
         "Each step was extremely painful, my ankle wouldn’t be able to take much. However, that pain could not be compared to the pain that I would feel next. The pack of dogs had surrounded the entrance of the cabin."
+        scene 25c with Dissolve(1.0)
         " I didn’t realize this until it was too late. Way too late to do anything at all. I’m sorry."
         jump end 
 
@@ -1558,7 +1646,7 @@ menu optional_name:
         "Yes"
         #block of code to run
 
-
+scene black with Dissolve(1.0)
 call screen end_screen1
 $ choicesMade = removeElements(choicesMade, removeChoices)
 $ removeChoices = []

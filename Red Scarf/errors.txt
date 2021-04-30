@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 392: style property pause is not known.
-    background "gui/overlay/main_menu.png" pause 0.1 "images/act1.png" repeat
-                                                ^
+File "game/script.rpy", line 1188: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    scene black with Dissolve(1.0)
+    ^
+
+File "game/script.rpy", line 1193: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    scene 25b with Dissolve(1.0)
+    ^
+
+File "game/script.rpy", line 1196: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    scene 25c with Dissolve(1.0)
+    ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Apr 28 12:12:47 2021
+Fri Apr 30 13:02:06 2021
