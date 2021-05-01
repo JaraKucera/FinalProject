@@ -15,4 +15,4 @@ install:
 
 script: 
   - python ../FinalProject/"Red Scarf"/game/algorithm.py
-#./renpy.sh "../FinalProject/" lint && ./renpy.sh launcher distribute "../FinalProject/"
+  - ./renpy.sh "../FinalProject/" lint && ./renpy.sh launcher distribute "../FinalProject/"
