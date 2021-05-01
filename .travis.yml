@@ -11,7 +11,5 @@ install:
   - cd renpy
 # command to run tests
 
-before_install:
-  - "pip install -U pip"
 
-script: py algorithm.py
+script: ./renpy.sh "../FinalProject/" lint && ./renpy.sh launcher distribute "../FinalProject/"
