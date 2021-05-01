@@ -3,6 +3,7 @@ python:
   - "2.7"
 # command to install dependencies
 install:
+  - pip install -r requirements.txt
   - cd ..
   - wget http://www.renpy.org/dl/7.4.4/renpy-7.4.4-sdk.tar.bz2
   - tar xf renpy-7.4.4-sdk.tar.bz2
@@ -12,4 +13,6 @@ install:
 # command to run tests
 
 
-script: ./renpy.sh "../FinalProject/" lint && ./renpy.sh launcher distribute "../FinalProject/"
+script: 
+  - algorithm
+#./renpy.sh "../FinalProject/" lint && ./renpy.sh launcher distribute "../FinalProject/"
