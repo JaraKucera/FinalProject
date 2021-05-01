@@ -13,6 +13,5 @@ install:
 
 before_install:
   - "pip install -U pip"
-  - "python setup.py install"
 
-script: ./renpy.sh "../FinalProject/" lint
+script: py algorithm.py

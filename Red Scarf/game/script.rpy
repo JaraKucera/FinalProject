@@ -46,7 +46,7 @@ label start:
     init python:
         #import pymongo
         #import math
-        import algorithm
+        #import algorithm
         #from pymongo import MongoClient
         #client = MongoClient('****')
         #db = client.mongodb4075
@@ -1531,7 +1531,7 @@ screen end_screen1():
     frame:
         xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
         vbox:
-            text "You left Sam feeling "+highestEmotion+"\n"+"your result: "+algorithm.startAlgorithm(trueChoices)
+            text "You left Sam feeling "+highestEmotion+"\n"+"your result: "#+algorithm.startAlgorithm(trueChoices)
             $ displayAmount = 4
             
             if choicesMade["2a"] and displayAmount > 0:
