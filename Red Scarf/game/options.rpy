@@ -12,13 +12,13 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Jaroslav Kucera")
+define config.name = _("The Red Scarf")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
@@ -30,6 +30,51 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+A final year project created by Jaroslav Kucera. This game is centured around the brief:
+
+“ Mental Health problems affect about one in ten children and young people. They include depression, anxiety, and conduct disorder, and are often a direct response to what is happening in their lives. The emotional well-being of children is just as important as their physical health. Good mental health allows children and young people to develop the resilience to cope with whatever life throws at them and grow into well-rounded, healthy adults”
+
+The game is about interacting with a perosn that is dealing with depression. Your actions will change her emotional state which will then have an impact on the progression of the story. The game will take note of how you treat this person and will analyse your actions at the end of the game. It will also try to see if you show signs of depression through the particular choices that you make.
+
+Credits:
+
+A special thanks to Attracta Brennan for her guidnace and advice with this project.
+
+Music:
+
+Joshua McLean - https://itch.io/profile/joshua-mclean
+
+Invadable Harmony - https://itch.io/profile/invadableharmony
+
+MaySama - https://maysama.itch.io/
+
+Machaon Maackii - https://machaon-maackii.itch.io/
+
+Punch Deck - https://itch.io/profile/punchdeck
+
+Sound Effects:
+
+Car arrive - https://freesound.org/people/ggAkatsukiP/sounds/447974/
+
+Howling - https://freesound.org/people/PhonosUPF/sounds/499699/
+
+Howling 6 - https://freesound.org/people/PhonosUPF/sounds/499704/
+
+Howling 2 - https://freesound.org/people/PhonosUPF/sounds/499700/
+
+Monster 5 - https://freesound.org/people/Sea%20Fury/sounds/48709/
+
+Fire Forest Inferno - https://freesound.org/people/Dynamicell/sounds/17548/
+
+Punch 02 - https://freesound.org/people/thefsoundman/sounds/118513/
+
+Ghost Whispers - https://freesound.org/people/Litruv/sounds/175944/
+
+Dropping body on Hard Ground - https://freesound.org/people/jjhouse4/sounds/203039/
+
+Thud - https://freesound.org/people/OtisJames/sounds/215162/
+
+Thank you for playing
 """)
 
 

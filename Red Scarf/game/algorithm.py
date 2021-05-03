@@ -1,6 +1,5 @@
 #### IMPORTS ###
 import pymongo
-#import numpy as np
 import math
 from pymongo import MongoClient
 from copy import deepcopy
@@ -638,24 +637,3 @@ def startAlgorithm(resultChoices):
         return "Depressed"
     #node.display()
     
-
-
-
-######TESTING#####
-#fakeAnswerDict12 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust",5:"Nice",6:"Hopeful",7:"Yes",8:"Pressure",9:"Understanding",10:"FocusonSam",11:"Doesntmissparents"}
-#fakeAnswerDict5 = {0:"Reconsider", 1:"Myself",2:"Blameself",3:"Dismissal",4:"Trust"}
-#fakeAnswerDictTest = {0:"Understanding",1:"Noonesfault",2:"Distrust",3:"Dismissal",4:"Distrust"}
-#print(startAlgorithm(fakeAnswerDict12))
-#print(calculateEntropy(10,100,200))
-#choice0 = ["Reconsider", "Silence", "Understanding"]
-#choice1 = ["Myself", "Family", "Noonesfault"]
-#choice2 = ["Blameself", "BlameBully", "Distrust"]
-#choice3 = ["Dismissal", "Appreciative", "Relatetolosingpassion"]
-#choice4 = ["Trust", "Distrust"]
-#choice5 = ["Nice", "Dismiss"]
-#choice6 = ["Hopeful", "Anger", "Optimistic"]
-#choice7 = ["Yes", "Somewhat", "No"]
-#choice8 = ["Pressure", "Careful", "Pushing"]
-#choice9 = ["Understanding", "Apologetic", "Getoverit"]
-#choice10 = ["FocusgettingHome", "FocusonSam"]
-#choice11 = ["MissParents", "Doesntmissparents"]

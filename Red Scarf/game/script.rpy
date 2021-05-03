@@ -40,20 +40,14 @@ label start:
                         "10b":"During Sam’s mental breakdown you were apologetic to her but supportive. Mental breakdowns are not fun to go through and generally feel horrible to go through. An outburst of emotions suddenly happens and it is very difficult to control that's why it is best to be understanding, careful and supportive with anyone going through one.",
                         "10c":"During Sam’s mental breakdown you pushed her to move on and get over it. This is the worst approach that can be taken and can be very hurtful when a person is at their worst. Mental breakdowns are not fun to go through and generally feel horrible to go through. An outburst of emotions suddenly happens and it is very difficult to control that's why it is best to be understanding, careful and supportive with anyone going through one."
                         }
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-    #init python:
-        #import pymongo
-        #import math
-        #import algorithm
-        #from pymongo import MongoClient
-        #client = MongoClient('****')
-        #db = client.mongodb4075
 
+    init python:
+        import pymongo
+        import algorithm
+        from pymongo import MongoClient
+        client = MongoClient('mongodb://mongodb4075kj:xy5myq@danu7.it.nuigalway.ie:8717/mongodb4075')
+        db = client.mongodb4075
 
-    #python:
-        #algorithm.algorithm_function()
         
     screen start_screen():
         frame:
@@ -1242,32 +1236,28 @@ label start:
 
     
     
-    #python:
-        #lengthC = len(choicesUpload)
-        #if lengthC < 12:
-        #    if lengthC == 11:
-        #        choicesUpload.append("")
-        #    else:
-        #        choicesUpload.append("")
-        #        choicesUpload.append("")
-        #        choicesUpload.append("")
-        # 
-        #posts = db.projectTest
-        #post_data = {
-        #    'Choice 1': choicesUpload[0],
-        #    'Choice 2': choicesUpload[1],
-        #    'Choice 3': choicesUpload[2],
-        #    'Choice 4': choicesUpload[3],
-        #    'Choice 5': choicesUpload[4],
-        #    'Choice 6': choicesUpload[5],
-        #    'Choice 7': choicesUpload[6],
-        #    'Choice 8': choicesUpload[7],
-        #    'Choice 9': choicesUpload[8],
-        #    'Choice 10': choicesUpload[9],
-        #    'Choice 11': choicesUpload[10],
-        #    'Choice 12': choicesUpload[11],
-        #}
-        #result = posts.insert_one(post_data) 
+    python:
+        lengthC = len(choicesUpload)
+        while lengthC <12:
+            choicesUpload.append("null")
+        
+        posts = db.gameResults
+        post_data = {
+            'Choice 1': choicesUpload[0],
+            'Choice 2': choicesUpload[1],
+            'Choice 3': choicesUpload[2],
+            'Choice 4': choicesUpload[3],
+            'Choice 5': choicesUpload[4],
+            'Choice 6': choicesUpload[5],
+            'Choice 7': choicesUpload[6],
+            'Choice 8': choicesUpload[7],
+            'Choice 9': choicesUpload[8],
+            'Choice 10': choicesUpload[9],
+            'Choice 11': choicesUpload[10],
+            'Choice 12': choicesUpload[11],
+        }
+        result = posts.insert_one(post_data) 
+
     init python:
         def calculateHighestEmotion(emotions):
             emotionToReturn = ""
@@ -1531,7 +1521,7 @@ screen end_screen1():
     frame:
         xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
         vbox:
-            text "You left Sam feeling "+highestEmotion+"\n"+"your result: "#+algorithm.startAlgorithm(trueChoices)
+            text "You left Sam feeling "+highestEmotion+"\n"+"your result: "+algorithm.startAlgorithm(trueChoices)
             $ displayAmount = 4
             
             if choicesMade["2a"] and displayAmount > 0:
