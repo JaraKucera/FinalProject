@@ -40,9 +40,7 @@ label start:
                         "10b":"During Sam’s mental breakdown you were apologetic to her but supportive. Mental breakdowns are not fun to go through and generally feel horrible to go through. An outburst of emotions suddenly happens and it is very difficult to control that's why it is best to be understanding, careful and supportive with anyone going through one.",
                         "10c":"During Sam’s mental breakdown you pushed her to move on and get over it. This is the worst approach that can be taken and can be very hurtful when a person is at their worst. Mental breakdowns are not fun to go through and generally feel horrible to go through. An outburst of emotions suddenly happens and it is very difficult to control that's why it is best to be understanding, careful and supportive with anyone going through one."
                         }
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+
     #init python:
         #import pymongo
         #import math
