@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1188: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    scene black with Dissolve(1.0)
-    ^
-
-File "game/script.rpy", line 1193: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    scene 25b with Dissolve(1.0)
-    ^
-
-File "game/script.rpy", line 1196: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    scene 25c with Dissolve(1.0)
-    ^
+File "game/script.rpy", line 265: u'print' is not a keyword argument or valid child for the frame statement.
+    print(percentageResTrue["onea"])
+         ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Fri Apr 30 13:02:06 2021
+Wed May  5 13:11:09 2021

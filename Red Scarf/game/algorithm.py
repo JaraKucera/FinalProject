@@ -202,14 +202,14 @@ def getGainRatio(oneColumn, classList, totalEntropy):
 
         entropyFirst = calculateEntropy(case1AndDepressed, case1AndNotDepressed, case1AndDepressed+case1AndNotDepressed)
         entropySecond = calculateEntropy(case2AndDepressed, case2AndNotDepressed, case2AndDepressed+case2AndNotDepressed)
-        first = case1AndDepressed+case1AndNotDepressed
-        second = case2AndDepressed+case2AndNotDepressed
-        total = first+second
+        first = float(case1AndDepressed+case1AndNotDepressed)
+        second = float(case2AndDepressed+case2AndNotDepressed)
+        total = float(first+second)
         if total <= 0:
             return 0
         gain = totalEntropy-(first/total)*entropyFirst-(second/total)*entropySecond
-        splitV1 = first/total
-        splitV2 = second/total
+        splitV1 = float(first/total)
+        splitV2 = float(second/total)
         if gain <= 0:
             return 0
         #print("splitV1:"+str(splitV1)+" splitV2:"+str(splitV2))
@@ -217,15 +217,15 @@ def getGainRatio(oneColumn, classList, totalEntropy):
             return 0
         elif splitV1 > 0 and splitV2 <= 0:
             splitInfo = -(splitV1)*math.log(splitV1, 2)
-            gainRatio = (gain)/splitInfo
+            gainRatio = float((gain)/splitInfo)
             return gainRatio
         elif splitV1 <= 0 and splitV2 > 0:
             splitInfo = -(splitV2)*math.log(splitV2, 2)
-            gainRatio = (gain)/splitInfo
+            gainRatio = float((gain)/splitInfo)
             return gainRatio
         else:
             splitInfo = -(splitV1)*math.log(splitV1, 2) -(splitV2)*math.log(splitV2, 2)
-            gainRatio = (gain)/splitInfo
+            gainRatio = float((gain)/splitInfo)
             return gainRatio
 
     elif len(allPossibleAnswers) == 3:
@@ -260,9 +260,9 @@ def getGainRatio(oneColumn, classList, totalEntropy):
         total = first+second+third
         if total <= 0:
             return 0
-        sp1 = first / total
-        sp2 = second / total
-        sp3 = third / total
+        sp1 = float(first / total)
+        sp2 = float(second / total)
+        sp3 = float(third / total)
         gain = totalEntropy - sp1*entropyFirst - sp2*entropySecond - sp3*entropyThird
         if gain <= 0:
             return 0
@@ -271,31 +271,31 @@ def getGainRatio(oneColumn, classList, totalEntropy):
             return 0
         elif sp1 <= 0 and sp2 > 0 and sp3 > 0:
             splitInfo = - sp2*math.log(sp2, 2) - sp3*math.log(sp3, 2)
-            gainRatio = gain / splitInfo
+            gainRatio = float(gain / splitInfo)
             return gainRatio
         elif sp1 > 0 and sp2 <= 0 and sp3 > 0:
             splitInfo = -sp1*math.log(sp1, 2) -sp3*math.log(sp3, 2)
-            gainRatio = gain / splitInfo
+            gainRatio = float(gain / splitInfo)
             return gainRatio
         elif sp1 > 0 and sp2 > 0 and sp3 <= 0:
             splitInfo = -sp1*math.log(sp1, 2) - sp2*math.log(sp2, 2)
-            gainRatio = gain / splitInfo
+            gainRatio = float(gain / splitInfo)
             return gainRatio
         elif sp1 > 0 and sp2 <= 0 and sp3 <= 0:
             splitInfo = -sp1*math.log(sp1, 2)
-            gainRatio = gain / splitInfo
+            gainRatio = float(gain / splitInfo)
             return gainRatio
         elif sp1 <= 0 and sp2 > 0 and sp3 <= 0:
             splitInfo = -sp2*math.log(sp2, 2)
-            gainRatio = gain / splitInfo
+            gainRatio = float(gain / splitInfo)
             return gainRatio
         elif sp1 <= 0 and sp2 <= 0 and sp3 > 0:
             splitInfo = -sp3*math.log(sp3, 2)
-            gainRatio = gain / splitInfo
+            gainRatio = float(gain / splitInfo)
             return gainRatio
         else:
             splitInfo = -sp1*math.log(sp1, 2) - sp2*math.log(sp2, 2) - sp3*math.log(sp3, 2)
-            gainRatio = gain / splitInfo
+            gainRatio = float(gain / splitInfo)
             return gainRatio
         
 
@@ -333,8 +333,8 @@ def calculateEntropy(value1, value2, total):
     if total <= 0:
         return 0
     
-    first = value1 / total
-    second = value2 / total
+    first = float(value1 / total)
+    second = float(value2 / total)
 
     if first <= 0 and second > 0:
         #print("Second: "+str(second))
@@ -456,7 +456,7 @@ def confusionMatrix(ColumnObject, classList, root, names):
     
     a = depressedAndActuallyDepressed + notDepressedAndActuallyNotDepressed
     b = depressedAndActuallyNotDepressed + notDepressedAndActuallyDepressed + a
-    res = (a / b)*100
+    res = float((a / b)*100)
     print("            Depressed  Not Depressed")
     print("Depressed     "+str(depressedAndActuallyDepressed)+"         "+str(depressedAndActuallyNotDepressed))
     print("Not Depressed "+str(depressedAndActuallyNotDepressed)+"         "+str(notDepressedAndActuallyNotDepressed) )

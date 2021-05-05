@@ -1,45 +1,37 @@
-Fri Apr 30 13:02:35 2021
+Wed May  5 23:05:37 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
  
 
 Bootstrap to the start of init.init took 0.06s
 Early init took 0.00s
-Loader init took 0.04s
+Loader init took 0.08s
 Loading error handling took 0.02s
-Loading script took 0.34s
+Loading script took 0.33s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Second: 1
-Second: 2
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 2
-Second: 1
-Not Depressed
- - Init at game/script.rpy:46 took 0.68632 s.
-Running init code took 0.73s
-Loading analysis data took 0.05s
+{'6a': '50.0', '6b': '50.0', '9b': '0.0', '7c': '25.0', '7b': '0.0', '7a': '75.0', '11b': '0.0', '8b': '25.0', '8c': '25.0', '9c': '25.0', '8a': '50.0', '12b': '0.0', '12a': '0.0', '10a': '75.0', '10c': '0.0', '11a': '0.0', '10b': '0.0', '5a': '22.22', '1a': '27.78', '9a': '75.0', '1c': '55.56', '1b': '16.67', '2a': '22.22', '2b': '50.0', '2c': '0.0', '3c': '77.78', '3b': '0.0', '3a': '0.0', '5b': '77.78', '4b': '0.0', '4c': '0.0', '4a': '77.78'}
+ - Init at game/script.rpy:44 took 0.59701 s.
+Running init code took 0.64s
+Loading analysis data took 0.09s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\JKTP8\\AppData\\Roaming/RenPy/backups\\Red Scarf':
 Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.02s
+Initial gc. took 0.03s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.05s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.06s
+Analyze screens took 0.01s
+Save screen analysis took 0.07s
 Prepare screens took 0.06s
-Save pyanalysis. took 0.20s
+Save pyanalysis. took 0.36s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
@@ -456,7 +448,7 @@ Extensions:
     GL_SUN_slice_accum
     GL_WIN_swap_hint
     WGL_EXT_swap_control
-Screen sizes: virtual=(1920, 1080) physical=(1424, 801) drawable=(1424, 801)
+Screen sizes: virtual=(1920, 1080) physical=(1162, 654) drawable=(1162, 654)
 vertex renpy.alpha, renpy.geometry, renpy.texture ------------------------------
 #version 120
 attribute vec2 a_tex_coord;
@@ -593,39 +585,15 @@ void main() {
 
 --------------------------------------------------------------------------------
 Maximum texture size: 4096x4096
-Total time until interface ready: 2.39811301231s
-[u'Understanding', u'No ones fault', u'Distrust', u'Relate to losing passion', u'Trust', u'Dismiss', u'Optimistic', u'Yes', u'Pushing', u'Understanding', u'Focus on Sam', u'Miss Parents']
+Total time until interface ready: 2.53203201294s
+[u'Understanding', u'Family', u'Distrust', u'Dismissal', u'Distrust']
 Understanding
-[u'Understanding', u'No ones fault', u'Distrust', u'Relate to losing passion', u'Trust', u'Dismiss', u'Optimistic', u'Yes', u'Pushing', u'Understanding', u'Focus on Sam', u'Miss Parents']
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
-Second: 1
+[u'Understanding', u'Family', u'Distrust', u'Dismissal', u'Distrust']
+trust
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.03s
+Load screen analysis took 0.33s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s

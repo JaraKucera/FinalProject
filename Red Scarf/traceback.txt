@@ -1,43 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 46, in script
-    init python:
-  File "game/script.rpy", line 46, in script
-    init python:
-  File "game/script.rpy", line 49, in <module>
-    import algorithm
-AttributeError: 'module' object has no attribute 'log2'
+  File "renpy/common/00keymap.rpy", line 458, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 458, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 477, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+TypeError: can't pickle thread.lock objects (perhaps store.posts._Collection__database._Database__client._MongoClient__lock = <thread.lock object at 0x0000000005f7def0>)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 515, in main
-    renpy.game.context().run(node)
-  File "game/script.rpy", line 46, in script
-    init python:
-  File "game/script.rpy", line 46, in script
-    init python:
+  File "renpy/common/00keymap.rpy", line 458, in script
+    python hide:
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 49, in <module>
-    import algorithm
-  File "renpy/loader.py", line 985, in load_module
-    exec(code, mod.__dict__)
-  File "algorithm.py", line 649, in <module>
-  File "algorithm.py", line 632, in startAlgorithm
-  File "algorithm.py", line 83, in startTreeBuilding
-  File "algorithm.py", line 104, in subTreeBuilding
-  File "algorithm.py", line 364, in createLeafNode
-  File "algorithm.py", line 256, in getGainRatio
-  File "algorithm.py", line 342, in calculateEntropy
-AttributeError: 'module' object has no attribute 'log2'
+  File "renpy/common/00keymap.rpy", line 458, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 477, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+  File "renpy/loadsave.py", line 416, in save
+    reraise(t, e, tb)
+  File "renpy/loadsave.py", line 399, in save
+    dump((roots, renpy.game.log), logf)
+  File "renpy/loadsave.py", line 49, in dump
+    cPickle.dump(o, f, cPickle.HIGHEST_PROTOCOL)
+TypeError: can't pickle thread.lock objects (perhaps store.posts._Collection__database._Database__client._MongoClient__lock = <thread.lock object at 0x0000000005f7def0>)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
-Jaroslav Kucera 1.0
-Thu Apr 29 12:16:57 2021
+The Red Scarf 1.0
+Wed May  5 23:01:36 2021
