@@ -632,8 +632,7 @@ def startAlgorithm(resultChoices):
     res = getDepressionAnswer(resultChoices,node,names)
     #confusionMatrix(deepcopy(cols), classColumn.colList[:], node, names)
     if res == "notdepressed":
-        return "Not Depressed"
+        return "Not enough symptoms of depression found."
     elif res == "depressed":
-        return "Depressed"
-    #node.display()
+        return "Enough Symptoms of depression found."
     

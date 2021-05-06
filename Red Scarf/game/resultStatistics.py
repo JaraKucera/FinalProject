@@ -83,16 +83,16 @@ def setUpClass():
         if result['Choice 2'] == "Family":
             results.c2Family =  results.c2Family + 1
         
-        if result['Choice 2'] == "Noonesfault":
+        if result['Choice 2'] == "No ones fault":
             results.c2Noonesfault =  results.c2Noonesfault + 1
 
         if result['Choice 3'] != "null":
             results.c3 =  results.c3 + 1
 
-        if result['Choice 3'] == "Blameself":
+        if result['Choice 3'] == "Blame self":
             results.c3Blameself =  results.c3Blameself + 1
         
-        if result['Choice 3'] == "BlameBully":
+        if result['Choice 3'] == "Blame Bully":
             results.c3BlameBully =  results.c3BlameBully + 1
         
         if result['Choice 3'] == "Distrust":
@@ -104,10 +104,10 @@ def setUpClass():
         if result['Choice 4'] == "Dismissal":
             results.c4Dismissal =  results.c4Dismissal + 1
         
-        if result['Choice 4'] == "Appreciation":
+        if result['Choice 4'] == "Appreciative":
             results.c4Appreciation =  results.c4Appreciation + 1
         
-        if result['Choice 4'] == "Relatetolosingpassion":
+        if result['Choice 4'] == "Relate to losing passion":
             results.c4Relatetolosingpassion =  results.c4Relatetolosingpassion + 1
 
         if result['Choice 5'] != "null":
@@ -173,25 +173,25 @@ def setUpClass():
         if result['Choice 10'] == "Apologetic":
             results.c10Apologetic =  results.c10Apologetic + 1
 
-        if result['Choice 10'] == "Getoverit":
+        if result['Choice 10'] == "Get over it":
             results.c10Getoverit =  results.c10Getoverit + 1
 
         if result['Choice 11'] != "null":
             results.c11 =  results.c11 + 1
         
-        if result['Choice 11'] == "FocusgettingHome":
+        if result['Choice 11'] == "Focus getting Home":
             results.c11FocusgettingHome =  results.c11FocusgettingHome + 1
         
-        if result['Choice 11'] == "FocusonSam":
+        if result['Choice 11'] == "Focus on Sam":
             results.c11FocusonSam =  results.c11FocusonSam + 1
 
         if result['Choice 12'] != "null":
             results.c12 =  results.c12 + 1
 
-        if result['Choice 12'] == "MissParents":
+        if result['Choice 12'] == "Miss Parents":
             results.c12MissParents =  results.c12MissParents + 1
         
-        if result['Choice 12'] == "Doesntmissparents":
+        if result['Choice 12'] == "Doesnt miss parents":
             results.c12Doesntmissparents =  results.c12Doesntmissparents + 1
         
     return results

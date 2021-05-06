@@ -17,7 +17,7 @@ label start:
     $ trueChoices = dict()
     $ relantionship = 0 #Relantionship rating based on choices made [int]
     #A bool dict to help with final showing of results
-    $ choicesMade = {"2a":False,"2b":False,"3a":False,"3c":False,"4a":False,"4b":False,"4c":False,"5a":False,"5b":False,"6a":False,"6b":False,"7b":False,"8":False,"9a":False,"9b":False,"9c":False,"10a":False,"10b":False,"10c":False}
+    $ choicesMade = dict()
     #Stats of ghost girl, each choice changes her emotions, too low in certain values causes the end of the game.
     $ ghostStats = {'trust':50, 'anger':50, 'anxiety':50, 'helped':50, 'strength':50, 'hurt':50, 'happiness':50}
     $ resultOutput = {  "2a":"Self blame is usually a sign of symptoms of depression. Repeated self-doubt and lack of belief in one self is connected with low self-esteem. The lower the confidence the higher the chance of having been affected by depression.",
@@ -46,6 +46,7 @@ label start:
         import algorithm
         import resultStatistics as rs
         from pymongo import MongoClient
+        from itertools import izip
         client = MongoClient('mongodb://mongodb4075kj:xy5myq@danu7.it.nuigalway.ie:8717/mongodb4075')
         db = client.mongodb4075
 
@@ -60,9 +61,18 @@ label start:
                     textbutton "I do not consent.":
                         action Quit(confirm=None)
     
-    screen choice1_screen():
+    screen choice2_screen(ps):
         frame:
-            $ ps = rs.getPercentageResults()
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 2\n\n\nMyself: "+ps["2a"]+"% had chosen to blame themselves for being at the summer camp.\n\nFamily: "+ps["2b"]+"% had chosen to blame their family for being sent to the summer camp.\n\nNo ones fault: "+ps["2c"]+"% had chosen that it was no ones fault that they were sent here.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice1_screen(ps):
+        frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
                 text "Choice 1\n\n\nReconsider: "+ps["1a"]+"% had chosen to ask their parents to reconsider the camp.\n\nSilence: "+ps["1b"]+"% had chosen to remain silent.\n\nUnderstanding: "+ps["1c"]+"% were understanding with their parents decision.\n\n"
@@ -71,7 +81,106 @@ label start:
                     textbutton ">>":
                         action Return(True)
 
-        
+    screen choice3_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 3\n\n\nMyself: "+ps["3a"]+"% had chosen to blame themselves for what had happened.\n\nBully: "+ps["3b"]+"% had chosen to blame Trevor for what had happened.\n\nDistrust: "+ps["3c"]+"% had chosen to not tell Sam about what happened.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice4_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 4\n\n\nDismissal: "+ps["4a"]+"% had chosen to dismiss Sam, when she talked to you about losing passion.\n\nAppreciative: "+ps["4b"]+"% had appreciated Sam telling you about her problems.\n\nRelated to losing passion: "+ps["4c"]+"% related to losing passion.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice5_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 5\n\n\n\nTrust: "+ps["5a"]+"% had chosen to trust Sam .\n\n\nDistrust: "+ps["5b"]+"% had chosen to not trust Sam.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice6_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 6\n\n\nNice: "+ps["6a"]+"% had chosen to be nice to Sam and tell her your name.\n\n\nDismiss: "+ps["6b"]+"% had chosen to not take the initiative to tell Sam their name.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice7_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 7\n\n\nHopeful: "+ps["7a"]+"% had chosen to be hopeful about their future.\n\nAnger: "+ps["7b"]+"% had chosen to react angerily about their future.\n\nOptimistic: "+ps["7c"]+"% had chosen to be optimistic about their future.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice8_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 8\n\n\nYes: "+ps["8a"]+"% stated that they had felt numb before.\n\nSomewhat: "+ps["8b"]+"% stated that they had felt numb here and there.\n\nNo: "+ps["8c"]+"% stated that they have not felt numb before.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice9_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 9\n\n\nPressure: "+ps["9a"]+"% pressured Sam into telling you about herself.\n\nCareful: "+ps["9b"]+"% were careful about getting Sam to talk about herself.\n\nPushing: "+ps["7c"]+"% pushed Sam into talking about herself.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice10_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 10\n\n\nUnderstanding: "+ps["10a"]+"% were understanding with Sam during her breakdown.\n\nApologetic: "+ps["10b"]+"% were apologetic with Sam during her breakdown.\n\nGet Over it: "+ps["10c"]+"% had chosen to tell Sam to get over with her breakdown.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice11_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 11\n\n\nFocused on getting home: "+ps["11a"]+"% chose to focused on themselves over Sam.\n\n\nFocus on Sam: "+ps["11b"]+"% chose to focus on Sam over themselves.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
+    screen choice12_screen(ps):
+        frame:
+            xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
+            vbox:
+                text "Choice 12\n\n\nMiss Parents: "+ps["12a"]+"% stated that they miss their parents.\n\n\nDoesnt miss parents: "+ps["12b"]+"% stated that they miss their parents.\n\n"
+                hbox xalign 0.5 spacing 500:
+                    textbutton ""
+                    textbutton ">>":
+                        action Return(True)
+
     call screen start_screen
     play music "audio/Awaiting-the-Devil.ogg" volume 1.0 fadein 1 fadeout 1 loop
     scene act1 with Dissolve(1.0)
@@ -1332,7 +1441,9 @@ label start:
         
         def removeElements(choices, listToRemove):
             for elements in listToRemove:
-                choices[elements] = False
+                print("Trying to del element: "+elements)
+                if choices.has_key(elements):
+                    del choices[elements]
             return choices
             
 
@@ -1344,82 +1455,10 @@ label start:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
                 $ displayAmount = 4
-                if choicesMade["2a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["2a"] = False
-                    text resultOutput["2a"]+"\n"
-                if choicesMade["2b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["2b"] = False
-                    text resultOutput["2b"]+"\n"
-                if choicesMade["3a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["3a"] = False
-                    text resultOutput["3a"]+"\n"
-                if choicesMade["3c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["3c"] = False
-                    text resultOutput["3c"]+"\n"
-                if choicesMade["4a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["4a"] = False
-                    text resultOutput["4a"]+"\n"
-                if choicesMade["4b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["4b"] = False
-                    text resultOutput["4b"]+"\n"
-                if choicesMade["4c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["4c"] = False
-                    text resultOutput["4c"]+"\n"
-                if choicesMade["5a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["5a"] = False
-                    text resultOutput["5a"]+"\n"
-                if choicesMade["5b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["5b"] = False
-                    text resultOutput["5b"]+"\n"
-                if choicesMade["6a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["6a"] = False
-                    text resultOutput["6a"]+"\n"
-                if choicesMade["6b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["6b"] = False
-                    text resultOutput["6b"]+"\n"
-                if choicesMade["7b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["7b"] = False
-                    text resultOutput["7b"]+"\n"
-                if choicesMade["8"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["8"] = False
-                    text resultOutput["8"]+"\n"
-                if choicesMade["9a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["9a"] = False
-                    text resultOutput["9a"]+"\n"
-                if choicesMade["9b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["9b"] = False
-                    text resultOutput["9b"]+"\n"
-                if choicesMade["9c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    #$ choicesMade["9c"] = False
-                    text resultOutput["9c"]+"\n"
-                if choicesMade["10a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10a"]+"\n"
-                    #$ choicesMade["10a"] = False
-                if choicesMade["10b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10b"]+"\n"
-                    #$ choicesMade["10b"] = False
-                if choicesMade["10c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10c"]+"\n"
-                # $ choicesMade["10c"] = False
+                for indexnum, item in izip(xrange(4),choicesMade):
+                    text resultOutput[item]+"\n"
+                    $ removeChoices.append(item)
+                    $ displayAmount = displayAmount - 1
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton "Continue":
@@ -1430,101 +1469,10 @@ label start:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
                 $ displayAmount = 4
-                if choicesMade["2a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["2a"]+"\n"
-                    $ removeChoices.append("2a")
-                    #$ choicesMade["2a"] = False
-                if choicesMade["2b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["2b"]+"\n"
-                    $ removeChoices.append("2b")
-                    #$ choicesMade["2b"] = False
-                if choicesMade["3a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["3a"]+"\n"
-                    $ removeChoices.append("3a")
-                    #$ choicesMade["3a"] = False
-                if choicesMade["3c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["3c"]+"\n"
-                    $ removeChoices.append("3c")
-                    #$ choicesMade["3c"] = False
-                if choicesMade["4a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["4a"]+"\n"
-                    $ removeChoices.append("4a")
-                    #$ choicesMade["4a"] = False
-                if choicesMade["4b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["4b"]+"\n"
-                    $ removeChoices.append("4b")
-                    #$ choicesMade["4b"] = False
-                if choicesMade["4c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["4c"]+"\n"
-                    $ removeChoices.append("4c")
-                    #$ choicesMade["4c"] = False
-                if choicesMade["5a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["5a"]+"\n"
-                    $ removeChoices.append("5a")
-                    #$ choicesMade["5a"] = False
-                if choicesMade["5b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["5b"]+"\n"
-                    $ removeChoices.append("5b")
-                    #$ choicesMade["5b"] = False
-                if choicesMade["6a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["6a"]+"\n"
-                    $ removeChoices.append("6a")
-                    #$ choicesMade["6a"] = False
-                if choicesMade["6b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["6b"]+"\n"
-                    $ removeChoices.append("6b")
-                    #$ choicesMade["6b"] = False
-                if choicesMade["7b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["7b"]+"\n"
-                    $ removeChoices.append("7b")
-                    #$ choicesMade["7b"] = False
-                if choicesMade["8"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["8"]+"\n"
-                    $ removeChoices.append("8")
-                    #$ choicesMade["8"] = False
-                if choicesMade["9a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["9a"]+"\n"
-                    $ removeChoices.append("9a")
-                    #$ choicesMade["9a"] = False
-                if choicesMade["9b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["9b"]+"\n"
-                    $ removeChoices.append("9b")
-                    #$ choicesMade["9b"] = False
-                if choicesMade["9c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["9c"]+"\n"
-                    $ removeChoices.append("9c")
-                    #$ choicesMade["9c"] = False
-                if choicesMade["10a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10a"]+"\n"
-                    $ removeChoices.append("10a")
-                    #$ choicesMade["10a"] = False
-                if choicesMade["10b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10b"]+"\n"
-                    $ removeChoices.append("10b")
-                    #$ choicesMade["10b"] = False
-                if choicesMade["10c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10c"]+"\n"
-                    $ removeChoices.append("10c")
-                    #$ choicesMade["10c"] = False
+                for indexnum, item in izip(xrange(4),choicesMade):
+                    text resultOutput[item]+"\n"
+                    $ removeChoices.append(item)
+                    $ displayAmount = displayAmount - 1
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -1536,104 +1484,12 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "You left Sam feeling "+highestEmotion+"\n"+"your result: "+algorithm.startAlgorithm(trueChoices)
+                text "You left Sam feeling "+highestEmotion+"\n\n"+"Depression Analysis: "+algorithm.startAlgorithm(trueChoices)+"\n"
                 $ displayAmount = 4
-                
-                if choicesMade["2a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["2a"]+"\n"
-                    $ removeChoices.append("2a")
-                    #$ choicesMade["2a"] = False
-                if choicesMade["2b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["2b"]+"\n"
-                    $ removeChoices.append("2b")
-                    #$ choicesMade["2b"] = False
-                if choicesMade["3a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["3a"]+"\n"
-                    $ removeChoices.append("3a")
-                    #$ choicesMade["3a"] = False
-                if choicesMade["3c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["3c"]+"\n"
-                    $ removeChoices.append("3c")
-                    #$ choicesMade["3c"] = False
-                if choicesMade["4a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["4a"]+"\n"
-                    $ removeChoices.append("4a")
-                    #$ choicesMade["4a"] = False
-                if choicesMade["4b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["4b"]+"\n"
-                    $ removeChoices.append("4b")
-                    #$ choicesMade["4b"] = False
-                if choicesMade["4c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["4c"]+"\n"
-                    $ removeChoices.append("4c")
-                    #$ choicesMade["4c"] = False
-                if choicesMade["5a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["5a"]+"\n"
-                    $ removeChoices.append("5a")
-                    #$ choicesMade["5a"] = False
-                if choicesMade["5b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["5b"]+"\n"
-                    $ removeChoices.append("5b")
-                    #$ choicesMade["5b"] = False
-                if choicesMade["6a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["6a"]+"\n"
-                    $ removeChoices.append("6a")
-                    #$ choicesMade["6a"] = False
-                if choicesMade["6b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["6b"]+"\n"
-                    $ removeChoices.append("6b")
-                    #$ choicesMade["6b"] = False
-                if choicesMade["7b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["7b"]+"\n"
-                    $ removeChoices.append("7b")
-                    #$ choicesMade["7b"] = False
-                if choicesMade["8"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["8"]+"\n"
-                    $ removeChoices.append("8")
-                    #$ choicesMade["8"] = False
-                if choicesMade["9a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["9a"]+"\n"
-                    $ removeChoices.append("9a")
-                    #$ choicesMade["9a"] = False
-                if choicesMade["9b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["9b"]+"\n"
-                    $ removeChoices.append("9b")
-                    #$ choicesMade["9b"] = False
-                if choicesMade["9c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["9c"]+"\n"
-                    $ removeChoices.append("9c")
-                    #$ choicesMade["9c"] = False
-                if choicesMade["10a"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10a"]+"\n"
-                    $ removeChoices.append("10a")
-                    #$ choicesMade["10a"] = False
-                if choicesMade["10b"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10b"]+"\n"
-                    $ removeChoices.append("10b")
-                    #$ choicesMade["10b"] = False
-                if choicesMade["10c"] and displayAmount > 0:
-                    $ displayAmount -= 1
-                    text resultOutput["10c"]+"\n"
-                    $ removeChoices.append("10c")
-                    #$ choicesMade["10c"] = False
+                for indexnum, item in izip(xrange(4),choicesMade):
+                    text resultOutput[item]+"\n"
+                    $ removeChoices.append(item)
+                    $ displayAmount = displayAmount - 1
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -1642,13 +1498,6 @@ label start:
 
 
     pause 2
-
-
-    
-
-
-
-
 
     menu optional_name:
         "Say Statement"
@@ -1664,15 +1513,25 @@ label start:
     $ choicesMade = removeElements(choicesMade, removeChoices)
     $ removeChoices = []
 
-    if dictContainsTrue(choicesMade):
+    if bool(choicesMade):
         call screen end_screen2
+        $ choicesMade = removeElements(choicesMade, removeChoices)
+        $ removeChoices = []
+        if bool(choicesMade):
+            call screen end_screen3
 
-    $ choicesMade = removeElements(choicesMade, removeChoices)
-    if dictContainsTrue(choicesMade):
-        call screen end_screen3
 
-
-        #percentage = getPercentageResults()#{'1a': '8.75', '1b': '0.25', '1c': '0.875', '2a': '0.5', '2b': '0.625', '2c': '1.0', '3a': '1.0', '3b': '1.0', '3c': '0.5', '4a': '0.5', '4b': '1.0', '4c': '1.0', '5a': '0.5', '5b': '0.5', '6a': '0.5', '6b': '1.0', '7a': '0.5', '7b': '1.0', '7c': '1.0', '8a': '0.5', '8b': '1.0', '8c': '1.0', '9a': '0.5', '9b': '1.0', '9c': '1.0', '10a': '0.5', '10b': '1.0', '10c': '1.0', '11a': '1.0', '11b': '1.0', '12a': '1.0', '12b': '1.0'}
-    call screen choice1_screen()
-
+    $ percentage = rs.getPercentageResults()
+    call screen choice1_screen(percentage)
+    call screen choice2_screen(percentage)
+    call screen choice3_screen(percentage)
+    call screen choice4_screen(percentage)        
+    call screen choice5_screen(percentage)
+    call screen choice6_screen(percentage)
+    call screen choice7_screen(percentage)
+    call screen choice8_screen(percentage)
+    call screen choice9_screen(percentage)
+    call screen choice10_screen(percentage)
+    call screen choice11_screen(percentage)
+    call screen choice12_screen(percentage)
 return
