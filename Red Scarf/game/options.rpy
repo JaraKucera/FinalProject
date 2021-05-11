@@ -238,7 +238,8 @@ init python:
 
     build.documentation('*.html')
     build.documentation('*.txt')
-
+    build.change_icon_i686 = True
+    build.change_icon = True
 
 ## A Google Play license key is required to download expansion files and perform
 ## in-app purchases. It can be found on the "Services & APIs" page of the Google

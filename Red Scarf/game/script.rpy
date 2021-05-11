@@ -65,7 +65,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 2\n\n\nMyself: "+ps["2a"]+"% had chosen to blame themselves for being at the summer camp.\n\nFamily: "+ps["2b"]+"% had chosen to blame their family for being sent to the summer camp.\n\nNo ones fault: "+ps["2c"]+"% had chosen that it was no ones fault that they were sent here.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 2:
+                    if trueChoices[1] == "Myself":
+                        $ output = "Choice 2\n\n\nMyself: "+ps["2a"]+"% had chosen to blame themselves for being at the summer camp. <-- Chosen by you.\n\nFamily: "+ps["2b"]+"% had chosen to blame their family for being sent to the summer camp.\n\nNo ones fault: "+ps["2c"]+"% had chosen that it was no ones fault that they were sent here.\n\n"
+                    elif trueChoices[1] == "Family":
+                        $ output = "Choice 2\n\n\nMyself: "+ps["2a"]+"% had chosen to blame themselves for being at the summer camp.\n\nFamily: "+ps["2b"]+"% had chosen to blame their family for being sent to the summer camp. <-- Chosen by you.\n\nNo ones fault: "+ps["2c"]+"% had chosen that it was no ones fault that they were sent here.\n\n"
+                    elif trueChoices[1] == "Noonesfault":
+                        $ output = "Choice 2\n\n\nMyself: "+ps["2a"]+"% had chosen to blame themselves for being at the summer camp.\n\nFamily: "+ps["2b"]+"% had chosen to blame their family for being sent to the summer camp.\n\nNo ones fault: "+ps["2c"]+"% had chosen that it was no ones fault that they were sent here. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 2\n\n\nMyself: "+ps["2a"]+"% had chosen to blame themselves for being at the summer camp.\n\nFamily: "+ps["2b"]+"% had chosen to blame their family for being sent to the summer camp.\n\nNo ones fault: "+ps["2c"]+"% had chosen that it was no ones fault that they were sent here.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -75,7 +85,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 1\n\n\nReconsider: "+ps["1a"]+"% had chosen to ask their parents to reconsider the camp.\n\nSilence: "+ps["1b"]+"% had chosen to remain silent.\n\nUnderstanding: "+ps["1c"]+"% were understanding with their parents decision.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 1:
+                    if trueChoices[0] == "Reconsider":
+                        $ output = "Choice 1\n\n\nReconsider: "+ps["1a"]+"% had chosen to ask their parents to reconsider the camp. <-- Chosen by you.\n\nSilence: "+ps["1b"]+"% had chosen to remain silent.\n\nUnderstanding: "+ps["1c"]+"% were understanding with their parents decision.\n\n"
+                    elif trueChoices[0] == "Silence":
+                        $ output = "Choice 1\n\n\nReconsider: "+ps["1a"]+"% had chosen to ask their parents to reconsider the camp.\n\nSilence: "+ps["1b"]+"% had chosen to remain silent. <-- Chosen by you.\n\nUnderstanding: "+ps["1c"]+"% were understanding with their parents decision.\n\n"
+                    elif trueChoices[0] == "Understanding":
+                        $ output = "Choice 1\n\n\nReconsider: "+ps["1a"]+"% had chosen to ask their parents to reconsider the camp.\n\nSilence: "+ps["1b"]+"% had chosen to remain silent.\n\nUnderstanding: "+ps["1c"]+"% were understanding with their parents decision. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 1\n\n\nReconsider: "+ps["1a"]+"% had chosen to ask their parents to reconsider the camp.\n\nSilence: "+ps["1b"]+"% had chosen to remain silent.\n\nUnderstanding: "+ps["1c"]+"% were understanding with their parents decision.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -85,7 +105,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 3\n\n\nMyself: "+ps["3a"]+"% had chosen to blame themselves for what had happened.\n\nBully: "+ps["3b"]+"% had chosen to blame Trevor for what had happened.\n\nDistrust: "+ps["3c"]+"% had chosen to not tell Sam about what happened.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 3:
+                    if trueChoices[2] == "Blameself":
+                        $ output = "Choice 3\n\n\nMyself: "+ps["3a"]+"% had chosen to blame themselves for what had happened. <-- Chosen by you.\n\nBully: "+ps["3b"]+"% had chosen to blame Trevor for what had happened.\n\nDistrust: "+ps["3c"]+"% had chosen to not tell Sam about what happened.\n\n"
+                    elif trueChoices[2] == "BlameBully":
+                        $ output = "Choice 3\n\n\nMyself: "+ps["3a"]+"% had chosen to blame themselves for what had happened.\n\nBully: "+ps["3b"]+"% had chosen to blame Trevor for what had happened. <-- Chosen by you.\n\nDistrust: "+ps["3c"]+"% had chosen to not tell Sam about what happened.\n\n"
+                    elif trueChoices[2] == "Distrust":
+                        $ output = "Choice 3\n\n\nMyself: "+ps["3a"]+"% had chosen to blame themselves for what had happened.\n\nBully: "+ps["3b"]+"% had chosen to blame Trevor for what had happened.\n\nDistrust: "+ps["3c"]+"% had chosen to not tell Sam about what happened. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 3\n\n\nMyself: "+ps["3a"]+"% had chosen to blame themselves for what had happened.\n\nBully: "+ps["3b"]+"% had chosen to blame Trevor for what had happened.\n\nDistrust: "+ps["3c"]+"% had chosen to not tell Sam about what happened.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -95,7 +125,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 4\n\n\nDismissal: "+ps["4a"]+"% had chosen to dismiss Sam, when she talked to you about losing passion.\n\nAppreciative: "+ps["4b"]+"% had appreciated Sam telling you about her problems.\n\nRelated to losing passion: "+ps["4c"]+"% related to losing passion.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 4:
+                    if trueChoices[3] == "Dismissal":
+                        $ output = "Choice 4\n\n\nDismissal: "+ps["4a"]+"% had chosen to dismiss Sam, when she talked to you about losing passion. <-- Chosen by you.\n\nAppreciative: "+ps["4b"]+"% had appreciated Sam telling you about her problems.\n\nRelated to losing passion: "+ps["4c"]+"% related to losing passion.\n\n"
+                    elif trueChoices[3] == "Appreciative":
+                        $ output = "Choice 4\n\n\nDismissal: "+ps["4a"]+"% had chosen to dismiss Sam, when she talked to you about losing passion.\n\nAppreciative: "+ps["4b"]+"% had appreciated Sam telling you about her problems. <-- Chosen by you.\n\nRelated to losing passion: "+ps["4c"]+"% related to losing passion.\n\n"
+                    elif trueChoices[3] == "Relatetolosingpassion":
+                        $ output = "Choice 4\n\n\nDismissal: "+ps["4a"]+"% had chosen to dismiss Sam, when she talked to you about losing passion.\n\nAppreciative: "+ps["4b"]+"% had appreciated Sam telling you about her problems.\n\nRelated to losing passion: "+ps["4c"]+"% related to losing passion.<-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 4\n\n\nDismissal: "+ps["4a"]+"% had chosen to dismiss Sam, when she talked to you about losing passion.\n\nAppreciative: "+ps["4b"]+"% had appreciated Sam telling you about her problems.\n\nRelated to losing passion: "+ps["4c"]+"% related to losing passion.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -105,7 +145,15 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 5\n\n\n\nTrust: "+ps["5a"]+"% had chosen to trust Sam .\n\n\nDistrust: "+ps["5b"]+"% had chosen to not trust Sam.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 5:
+                    if trueChoices[4] == "Trust":
+                        $ output = "Choice 5\n\n\n\nTrust: "+ps["5a"]+"% had chosen to trust Sam . <-- Chosen by you.\n\n\nDistrust: "+ps["5b"]+"% had chosen to not trust Sam.\n\n"
+                    elif trueChoices[4] == "Distrust":
+                        $ output = "Choice 5\n\n\n\nTrust: "+ps["5a"]+"% had chosen to trust Sam .\n\n\nDistrust: "+ps["5b"]+"% had chosen to not trust Sam. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 5\n\n\n\nTrust: "+ps["5a"]+"% had chosen to trust Sam .\n\n\nDistrust: "+ps["5b"]+"% had chosen to not trust Sam.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -115,7 +163,15 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 6\n\n\nNice: "+ps["6a"]+"% had chosen to be nice to Sam and tell her your name.\n\n\nDismiss: "+ps["6b"]+"% had chosen to not take the initiative to tell Sam their name.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 6:
+                    if trueChoices[5] == "Nice":
+                        $ output = "Choice 6\n\n\nNice: "+ps["6a"]+"% had chosen to be nice to Sam and tell her your name. <-- Chosen by you.\n\n\nDismiss: "+ps["6b"]+"% had chosen to not take the initiative to tell Sam their name.\n\n"
+                    elif trueChoices[5] == "Dismiss":
+                        $ output = "Choice 6\n\n\nNice: "+ps["6a"]+"% had chosen to be nice to Sam and tell her your name.\n\n\nDismiss: "+ps["6b"]+"% had chosen to not take the initiative to tell Sam their name. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 6\n\n\nNice: "+ps["6a"]+"% had chosen to be nice to Sam and tell her your name.\n\n\nDismiss: "+ps["6b"]+"% had chosen to not take the initiative to tell Sam their name.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -125,7 +181,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 7\n\n\nHopeful: "+ps["7a"]+"% had chosen to be hopeful about their future.\n\nAnger: "+ps["7b"]+"% had chosen to react angerily about their future.\n\nOptimistic: "+ps["7c"]+"% had chosen to be optimistic about their future.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 7:
+                    if trueChoices[6] == "Hopeful":
+                        $ output = "Choice 7\n\n\nHopeful: "+ps["7a"]+"% had chosen to be hopeful about their future. <-- Chosen by you.\n\nAnger: "+ps["7b"]+"% had chosen to react angerily about their future.\n\nOptimistic: "+ps["7c"]+"% had chosen to be optimistic about their future.\n\n"
+                    elif trueChoices[6] == "Anger":
+                        $ output = "Choice 7\n\n\nHopeful: "+ps["7a"]+"% had chosen to be hopeful about their future.\n\nAnger: "+ps["7b"]+"% had chosen to react angerily about their future. <-- Chosen by you. \n\nOptimistic: "+ps["7c"]+"% had chosen to be optimistic about their future.\n\n"
+                    elif trueChoices[6] == "Optimistic":
+                        $ output = "Choice 7\n\n\nHopeful: "+ps["7a"]+"% had chosen to be hopeful about their future.\n\nAnger: "+ps["7b"]+"% had chosen to react angerily about their future.\n\nOptimistic: "+ps["7c"]+"% had chosen to be optimistic about their future. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 7\n\n\nHopeful: "+ps["7a"]+"% had chosen to be hopeful about their future.\n\nAnger: "+ps["7b"]+"% had chosen to react angerily about their future.\n\nOptimistic: "+ps["7c"]+"% had chosen to be optimistic about their future.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -135,7 +201,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 8\n\n\nYes: "+ps["8a"]+"% stated that they had felt numb before.\n\nSomewhat: "+ps["8b"]+"% stated that they had felt numb here and there.\n\nNo: "+ps["8c"]+"% stated that they have not felt numb before.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 8:
+                    if trueChoices[7] == "Yes":
+                        $ output = "Choice 8\n\n\nYes: "+ps["8a"]+"% stated that they had felt numb before. <-- Chosen by you.\n\nSomewhat: "+ps["8b"]+"% stated that they had felt numb here and there.\n\nNo: "+ps["8c"]+"% stated that they have not felt numb before.\n\n"
+                    elif trueChoices[7] == "Somewhat":
+                        $ output = "Choice 8\n\n\nYes: "+ps["8a"]+"% stated that they had felt numb before.\n\nSomewhat: "+ps["8b"]+"% stated that they had felt numb here and there. <-- Chosen by you.\n\nNo: "+ps["8c"]+"% stated that they have not felt numb before.\n\n"
+                    elif trueChoices[7] == "No":
+                        $ output = "Choice 8\n\n\nYes: "+ps["8a"]+"% stated that they had felt numb before.\n\nSomewhat: "+ps["8b"]+"% stated that they had felt numb here and there.\n\nNo: "+ps["8c"]+"% stated that they have not felt numb before. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 8\n\n\nYes: "+ps["8a"]+"% stated that they had felt numb before.\n\nSomewhat: "+ps["8b"]+"% stated that they had felt numb here and there.\n\nNo: "+ps["8c"]+"% stated that they have not felt numb before.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -145,7 +221,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 9\n\n\nPressure: "+ps["9a"]+"% pressured Sam into telling you about herself.\n\nCareful: "+ps["9b"]+"% were careful about getting Sam to talk about herself.\n\nPushing: "+ps["7c"]+"% pushed Sam into talking about herself.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 9:
+                    if trueChoices[8] == "Pressure":
+                        $ output = "Choice 9\n\n\nPressure: "+ps["9a"]+"% pressured Sam into telling you about herself. <-- Chosen by you.\n\nCareful: "+ps["9b"]+"% were careful about getting Sam to talk about herself.\n\nPushing: "+ps["7c"]+"% pushed Sam into talking about herself.\n\n"
+                    elif trueChoices[8] == "Careful":
+                        $ output = "Choice 9\n\n\nPressure: "+ps["9a"]+"% pressured Sam into telling you about herself.\n\nCareful: "+ps["9b"]+"% were careful about getting Sam to talk about herself. <-- Chosen by you.\n\nPushing: "+ps["7c"]+"% pushed Sam into talking about herself.\n\n"
+                    elif trueChoices[8] == "Pushing":
+                        $ output = "Choice 9\n\n\nPressure: "+ps["9a"]+"% pressured Sam into telling you about herself.\n\nCareful: "+ps["9b"]+"% were careful about getting Sam to talk about herself.\n\nPushing: "+ps["7c"]+"% pushed Sam into talking about herself. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 9\n\n\nPressure: "+ps["9a"]+"% pressured Sam into telling you about herself.\n\nCareful: "+ps["9b"]+"% were careful about getting Sam to talk about herself.\n\nPushing: "+ps["7c"]+"% pushed Sam into talking about herself.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -155,7 +241,17 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 10\n\n\nUnderstanding: "+ps["10a"]+"% were understanding with Sam during her breakdown.\n\nApologetic: "+ps["10b"]+"% were apologetic with Sam during her breakdown.\n\nGet Over it: "+ps["10c"]+"% had chosen to tell Sam to get over with her breakdown.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 10:
+                    if trueChoices[9] == "Understanding":
+                        $ output = "Choice 10\n\n\nUnderstanding: "+ps["10a"]+"% were understanding with Sam during her breakdown. <-- Chosen by you.\n\nApologetic: "+ps["10b"]+"% were apologetic with Sam during her breakdown.\n\nGet Over it: "+ps["10c"]+"% had chosen to tell Sam to get over with her breakdown.\n\n"
+                    elif trueChoices[9] == "Apologetic":
+                        $ output = "Choice 10\n\n\nUnderstanding: "+ps["10a"]+"% were understanding with Sam during her breakdown.\n\nApologetic: "+ps["10b"]+"% were apologetic with Sam during her breakdown. <-- Chosen by you.\n\nGet Over it: "+ps["10c"]+"% had chosen to tell Sam to get over with her breakdown.\n\n"
+                    elif trueChoices[9] == "Getoverit":
+                        $ output = "Choice 10\n\n\nUnderstanding: "+ps["10a"]+"% were understanding with Sam during her breakdown.\n\nApologetic: "+ps["10b"]+"% were apologetic with Sam during her breakdown.\n\nGet Over it: "+ps["10c"]+"% had chosen to tell Sam to get over with her breakdown. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 10\n\n\nUnderstanding: "+ps["10a"]+"% were understanding with Sam during her breakdown.\n\nApologetic: "+ps["10b"]+"% were apologetic with Sam during her breakdown.\n\nGet Over it: "+ps["10c"]+"% had chosen to tell Sam to get over with her breakdown.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -165,7 +261,15 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 11\n\n\nFocused on getting home: "+ps["11a"]+"% chose to focused on themselves over Sam.\n\n\nFocus on Sam: "+ps["11b"]+"% chose to focus on Sam over themselves.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 11:
+                    if trueChoices[10] == "FocusgettingHome":
+                        $ output = "Choice 11\n\n\nFocused on getting home: "+ps["11a"]+"% chose to focused on themselves over Sam. <-- Chosen by you.\n\n\nFocus on Sam: "+ps["11b"]+"% chose to focus on Sam over themselves.\n\n"
+                    elif trueChoices[10] == "FocusonSam":
+                        $ output = "Choice 11\n\n\nFocused on getting home: "+ps["11a"]+"% chose to focused on themselves over Sam.\n\n\nFocus on Sam: "+ps["11b"]+"% chose to focus on Sam over themselves. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 11\n\n\nFocused on getting home: "+ps["11a"]+"% chose to focused on themselves over Sam.\n\n\nFocus on Sam: "+ps["11b"]+"% chose to focus on Sam over themselves.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -175,7 +279,15 @@ label start:
         frame:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
-                text "Choice 12\n\n\nMiss Parents: "+ps["12a"]+"% stated that they miss their parents.\n\n\nDoesnt miss parents: "+ps["12b"]+"% stated that they miss their parents.\n\n"
+                $ output = ""
+                if len(trueChoices) >= 12:
+                    if trueChoices[11] == "MissParents":
+                        $ output = "Choice 12\n\n\nMiss Parents: "+ps["12a"]+"% stated that they miss their parents. <-- Chosen by you.\n\n\nDoesnt miss parents: "+ps["12b"]+"% stated that they miss their parents.\n\n"
+                    elif trueChoices[11] == "Doesntmissparents":
+                        $ output = "Choice 12\n\n\nMiss Parents: "+ps["12a"]+"% stated that they miss their parents.\n\n\nDoesnt miss parents: "+ps["12b"]+"% stated that they miss their parents. <-- Chosen by you.\n\n"
+                else:
+                    $ output = "Choice 12\n\n\nMiss Parents: "+ps["12a"]+"% stated that they miss their parents.\n\n\nDoesnt miss parents: "+ps["12b"]+"% stated that they miss their parents.\n\n"
+                text output
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -1315,26 +1427,33 @@ label start:
         play music "audio/Forgotten-Memories.ogg" volume 1.0 fadein 1 fadeout 1 loop
         "Just as I thought that life was going to be over, Sam grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind."
         R "You’re not going to get rid of me so easily blue shirt, now shush I’ll save you."
+        scene 44b with Dissolve(1.0)
         "How was she holding me when a few hours ago she couldn’t make contact with me? They say that spirits stay around if they have a lot of willpower."
         "Was it all possible because of the amount of willpower she put into helping me? It would be something that I would only be able to speculate about. The ground was muddy and damp, each step drained the slimmer of energy that I had left."
         "Lifting my leg was a struggle, each step felt like the earth was grabbing my shoes, not wanting me to leave."
+        scene 47 with Dissolve(1.0)
         "We did not run long before we spotted what might have been exactly what Sam had described, a small run-down stone tower. It did not feel like we were getting any distance on the bullies they were getting closer, Sam pulled my hand towards the castle tower."
         "It wouldn’t be long before I would collapse, my lungs were working overtime and after walking around all night, my legs were starting to give up."
         "Yet with all of this happening, my eyes were starting to close more than ever, everything felt as if it was in slow motion. Sam was trying her best to get us to safety, there wasn’t a smile on her face"
         "nor any sense of positive emotions, it was completely different from the dog incident. Back then she forced herself to wear a smile to hide her true feelings from the world, but right now the mask was destroyed."
         "The scenery here was completely different, huge trees with branches that crept out to block out the sun were replaced with sparse burnt tree stumps that embraced the rising sun and used the dampness in the air to create orange filled burning sights."
         "Those were the last images I saw as we entered the tower, where the ground below me gave away and crumbled underneath me. As everything was going black I heard the loudest, darkest screech that I have ever heard in my life."
+        scene 48 with Dissolve(1.0)
         play sound "audio/Ghost.ogg" volume 1.0
+        pause 4
         "I don’t think that it was dark for long before my eyes adjusted and could see around me. Sunlight was entering through the circular hole in the sky through which I had fallen. I was surrounded by narrow stone slimy walls."
         "Laying in a pool of water explained my drenched state and low body heat. I was freezing and sore all over. Where was I? That was when my eyes adjusted and noticed that I was not the only one stuck in this hole, right beside me were skeleton remains."
-        stop sound
+        scene 49 with Dissolve(1.0)
         "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Sam wore. We must have done it, we must have found her body."
+        stop sound
         "Well now hopefully I won’t meet the same end as her. I used the last tiny amount of energy that I had managed to recollect to shout at the top of my lungs for help. No one answered back."
         "What had happened to Sam and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
         "because he had heard a loud screech and my call for help. Firefights and the police were called, firefights to save me and police to investigate the body. I awoke in a hospital bed where the police questioned me about the night."
         play music "audio/Punch-Deck-Ethereal.ogg" volume 1.0 fadein 1 fadeout 1 loop
+        scene 50 with Dissolve(1.0)
         "I changed the story around to not include any mentions of Sam but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Sam pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
         "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Sam and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
+        scene 51 with Dissolve(1.0)
         "The article didn’t mention me by name but mentioned how I almost suffered the same faith. The article ended with missing pictures of the bullies, they had gone missing from the camp at the same time as I was found."
         "There were search parties sent out but no one could find them. I wanted to revisit that forest and see Sam again, but a broken leg was keeping me at home and finding an excuse to revisit the forest was basically impossible."
         "It sadly took a few years before I would be able to visit again. A few years that would have been much more difficult if I hadn’t had met Sam that night. It was strange, but she felt like a part of me, there to remind me of hope at the worst of times."
@@ -1352,7 +1471,6 @@ label start:
             choicesUpload = choices
             print(choicesUpload)
         
-        "[choices]"
         # This ends the game.
 
 
@@ -1455,10 +1573,11 @@ label start:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
                 $ displayAmount = 4
-                for indexnum, item in izip(xrange(4),choicesMade):
-                    text resultOutput[item]+"\n"
-                    $ removeChoices.append(item)
-                    $ displayAmount = displayAmount - 1
+                for indexnum, item in izip(xrange(3),choicesMade):
+                    if resultOutput.has_key(item):
+                        text resultOutput[item]+"\n"
+                        $ removeChoices.append(item)
+                        $ displayAmount = displayAmount - 1
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton "Continue":
@@ -1469,10 +1588,11 @@ label start:
             xalign 0.5 yalign 0.5 xpadding 20 ypadding 20
             vbox:
                 $ displayAmount = 4
-                for indexnum, item in izip(xrange(4),choicesMade):
-                    text resultOutput[item]+"\n"
-                    $ removeChoices.append(item)
-                    $ displayAmount = displayAmount - 1
+                for indexnum, item in izip(xrange(3),choicesMade):
+                    if resultOutput.has_key(item):
+                        text resultOutput[item]+"\n"
+                        $ removeChoices.append(item)
+                        $ displayAmount = displayAmount - 1
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -1486,10 +1606,11 @@ label start:
             vbox:
                 text "You left Sam feeling "+highestEmotion+"\n\n"+"Depression Analysis: "+algorithm.startAlgorithm(trueChoices)+"\n"
                 $ displayAmount = 4
-                for indexnum, item in izip(xrange(4),choicesMade):
-                    text resultOutput[item]+"\n"
-                    $ removeChoices.append(item)
-                    $ displayAmount = displayAmount - 1
+                for indexnum, item in izip(xrange(3),choicesMade):
+                    if resultOutput.has_key(item):
+                        text resultOutput[item]+"\n"
+                        $ removeChoices.append(item)
+                        $ displayAmount = displayAmount - 1
                 hbox xalign 0.5 spacing 500:
                     textbutton ""
                     textbutton ">>":
@@ -1498,15 +1619,6 @@ label start:
 
 
     pause 2
-
-    menu optional_name:
-        "Say Statement"
-        "Choice 1":
-            "Yes"
-            #block of code to run
-        "Choice 2":
-            "Yes"
-            #block of code to run
 
     scene black with Dissolve(1.0)
     call screen end_screen1

@@ -629,10 +629,14 @@ def startAlgorithm(resultChoices):
     numberChoices = len(resultChoices)
     names = ["Choice 1","Choice 2","Choice 3","Choice 4","Choice 5","Choice 6","Choice 7","Choice 8","Choice 9","Choice 10","Choice 11","Choice 12"]
     node = startTreeBuilding(deepcopy(cols[0:numberChoices]), classColumn.colList[0:numberChoices], 0, names)
+    node.display()
     res = getDepressionAnswer(resultChoices,node,names)
     #confusionMatrix(deepcopy(cols), classColumn.colList[:], node, names)
     if res == "notdepressed":
         return "Not enough symptoms of depression found."
     elif res == "depressed":
         return "Enough Symptoms of depression found."
-    
+
+
+test = {0: "Reconsider", 1: "Myself", 2:"Blameself", 3:"Relatetolosingpassion", 4:"Trust", 5:"Nice", 6:"Hopeful", 7:"Yes"}
+print(startAlgorithm(test))
