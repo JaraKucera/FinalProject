@@ -379,7 +379,8 @@ label start:
     scene 9 with Dissolve(1.0)
     play music "audio/Dystopian.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "After going to the head’s office to sign up and be assigned to a bed in a run-down cabin. I was informed that I’ve come on time to be able to partake in the final activity of the day before bedtime."
-    "One of the run-down buildings had a nice set of windows to one of the sides of the walls overlooking the forest. The cabin wasn’t as bad as it looked from the outside, the walls constructed out of logs with certifications hung up and framed from years before I was even born."
+    "One of the run-down buildings had a nice set of windows to one of the sides of the walls overlooking the forest. The cabin wasn’t as bad as it looked from the outside,"
+    "the walls constructed out of logs with certifications hung up and framed from years before I was even born."
     scene 10 with Dissolve(1.0)
     "How I wish I could have dealt with this camp twenty years ago during its glory years. While I am the last person to enjoy group activities and the outside, it would have made it much more bearable."
     "Opposing the wall of windows was a large fireplace, it was the only signal of hope in this building. Burning brightly, being strong and tough, all quantities that I would need to survive this summer."
@@ -417,8 +418,8 @@ label start:
     scene 11 with Dissolve(1.0)
     "Somehow I managed to survive the first twenty minutes, it was now my turn to punch. It didn’t seem like my punches had any impact on Tray whatsoever. It was as if I was just gently tapping the punching bag."
     "For the first time, I was a little at peace, I could study the surrounding environment. Everyone seemed to be doing much better, some even had a smile on their face. It looked like they were making friends."
-    "If some details had been taken out of the equation, it would almost be a wholesome scene to witness. Before I could fully immerse myself, it was time to swap once again. I held onto dear life, hoping to not let go of the punching bag, for if I did I would be in a world of pain."
-    "Trevor was not holding back at all. Thankfully, I managed to survive the full twenty minutes, only one last set from me before I was free."
+    "If some details had been taken out of the equation, it would almost be a wholesome scene to witness. Before I could fully immerse myself, it was time to swap once again. I held onto dear life, hoping to not let go of the punching bag,"
+    "for if I did I would be in a world of pain. Trevor was not holding back at all. Thankfully, I managed to survive the full twenty minutes, only one last set from me before I was free."
     "As I punched I started to immerse myself, none of this would have happened if I wasn’t here, this pain wouldn’t be in my stomach. I wouldn’t be wasting my time on a summer camp if it wasn’t for:"
 
     menu choice_2:
@@ -521,8 +522,8 @@ label start:
     r "Oh looks like you’re waking up. That fall looked like it hurt a lot."
     pause 1
     scene 20 with Dissolve(1.0)
-    "I awoke to the sounds of someone gently talking as if assuming that no one would hear them. I couldn’t understand what they were saying, everything muffled and blurring. It took a couple of seconds before my eyes adjusted, and I could decipher what was said to me."
-    "I was still in the forest, however, it felt different, that dead atmosphere disappeared and got replaced by a brighter living forest. Although it was dark, the bright stars illuminated the surroundings."
+    "I awoke to the sounds of someone gently talking as if assuming that no one would hear them. I couldn’t understand what they were saying, everything muffled and blurring. It took a couple of seconds before my eyes adjusted, and I could decipher what was"
+    " said to me. I was still in the forest, however, it felt different, that dead atmosphere disappeared and got replaced by a brighter living forest. Although it was dark, the bright stars illuminated the surroundings."
     "The trees no longer looked like they were trying to grab at you but instead looked like they were offering you a hug to console you. In front of me sat a girl about my age on a log."
     "She wore a typical summer outfit of a t-shirt and pants, but for some reason had a red scarf tied around her neck."
     r "Well blue shirt? Did the fall remove your ability to communicate? Are you okay?"
@@ -574,8 +575,8 @@ label start:
 
     label choice_3_depressive:
         mc "I messed up a lot, where bumping into someone lead up to getting beaten up to messing up again. I ran away from them, but I couldn’t see in the dark and slipped, so now I am here. It is all my fault."
-        r "Yeah that makes a little sense, most of our pain starts from little things that transpire out of control and eventually lead us here. But everything will be okay, we just need to get you to someplace to rest for a while. This part of the forest sometimes has wild rabid dogs."
-        r "I wouldn’t want you getting hurt more than you already are, Blue Shirt." 
+        r "Yeah that makes a little sense, most of our pain starts from little things that transpire out of control and eventually lead us here. But everything will be okay, we just need to get you to someplace to rest for a while. This part of the forest sometimes"
+        r "has wild rabid dogs. I wouldn’t want you getting hurt more than you already are, Blue Shirt." 
         jump choice_3_done
 
     label choice_3_hurtful:
@@ -756,8 +757,9 @@ label start:
     
     
     r "Hmm, let’s see, I could swear that there was a first aid box somewhere around here, oh yeah there it is."
-    "After finally being able to calm down and realize that the girl was okay, I finally had the chance to notice where I was. A low wooden ceiling that did not offer much protection. If the girl stayed here during the night, the scarf would start to make more sense, it was starting to get chilly."
-    "The attic space showed no signs of being used, no place for a bed, absolutely nothing lying around. Just an empty hollow room that would have been swallowed in darkness if it was not for a tiny circle window that allowed some moonlight to enter through its mouth."
+    "After finally being able to calm down and realize that the girl was okay, I finally had the chance to notice where I was. A low wooden ceiling that did not offer much protection. If the girl stayed here during the night, the scarf would start to make more sense,"
+    "it was starting to get chilly. The attic space showed no signs of being used, no place for a bed, absolutely nothing lying around."
+    "Just an empty hollow room that would have been swallowed in darkness if it was not for a tiny circle window that allowed some moonlight to enter through its mouth."
     scene 28 with Dissolve(1.0)
     mc "How did you manage to escape?"
     r "Ah Blue shirt does not want nay plot holes, well I just made those dogs feel scared, I asserted my dominance and threw some rocks. Just needed you to leave because it is embarrassing to do and there is no way that you could ever pull of dominance."
@@ -885,7 +887,8 @@ label start:
         R "Why fight for a future with more pain in it?  Even if there are good things to come, the bad overshadows it. Isn’t it easier to give up now to give up on the pain?"
         "Although still maintaining that smile of hers, her voice trembled."
         R "What if you can’t save yourself?"
-        mc "I don’t think that most of us can do this alone, I can’t beat my problems alone. I need help from others, but I won’t ever get that help if I don’t try if I don’t ask for it. I have to take the first step. I can’t do this alone. So Sam please help me. Please help me return home."
+        mc "I don’t think that most of us can do this alone, I can’t beat my problems alone. I need help from others, but I won’t ever get that help if I don’t try if I don’t ask for it. I have to take the first step. I can’t do this alone. So Sam please help me."
+        mc "Please help me return home."
         "That was the first time that I saw her face without s smile, without a mask on. Her sad glistening eyes now matched the rest of her face. A single tear rolled down her cheek. This was the true Sam in front of me."
         "It only lasted a few seconds that I would see her like that. Looking into her eyes full of despair felt like hours had been lost,"
         "it felt like a lot was still unexplained a lot more tears were built up, still yet to drop. But that single droplet was all I was going to get out of her today. She quickly composed herself, the mask wasn’t shattered yet, it was still capable of hiding her emotions."
@@ -920,21 +923,25 @@ label start:
     pause .5
     scene 29 with Dissolve(1.0)
     pause .5
-    "It was finally time to leave the attic, time to set off home. A sense of hope washed over me, it was always noise to have a plan, hopefully, there will be no more encounters with any wildlife. As we departed from the shack, we were both illuminated under the night sky."
+    "It was finally time to leave the attic, time to set off home. A sense of hope washed over me, it was always noise to have a plan, hopefully, there will be no more encounters with any wildlife. As we departed from the shack, we were both illuminated under"
+    "the night sky."
     scene 31 with Dissolve(1.0)
-    "It wasn’t a typical skyline where all the stars were covered by clouds, only peeking from time to time like we had been used to. No, tonight was different, there wasn’t a single cloud in the sky, no light pollution, just tonnes of sparkling stars in the sky surrounding a large hypnotizing full moon."
+    "It wasn’t a typical skyline where all the stars were covered by clouds, only peeking from time to time like we had been used to. No, tonight was different, there wasn’t a single cloud in the sky, no light pollution, just tonnes of sparkling stars in the sky"
+    "surrounding a large hypnotizing full moon."
     "Tonight was special. The only tall hill that would allow us to see the surrounding area that Sam knew of was about a few minutes walk from where we were. With my ankle, it would take a bit longer but shouldn’t have too much of an impact."
     "Thankfully my ankle was recovering. Sam started skipping along ahead of me. How did she have so much energy to skip. I have no idea. It made me realize that I didn’t even know what time it could possibly be."
     "How long was I out for initially, how long had I spent with Sam, time was all a blur. Only the moon directly above us gave some sort of sense of time."
     scene 30 with Dissolve(1.0)
     R "It really is a beautiful night, you picked the best night to be bullied on. Nights like these used to be the best for getting rid of all the stress. For a while it used to help so much, yet ended up causing all the problems in the end."
-    "Her voice trembled with the delivery of that last line. Sam was still a large mystery to me, sometimes she would talk about the forest with so much passion and love, but that passion would turn to sadness and despair very easily. The forest helped her a lot but also caused her the most problems."
+    "Her voice trembled with the delivery of that last line. Sam was still a large mystery to me, sometimes she would talk about the forest with so much passion and love, but that passion would turn to sadness and despair very easily. The forest helped her a lot but"
+    " also caused her the most problems."
     R "I used to feel so motivated, so hopeful, so full of life. I used to want to become an environmentalist to help protect this forest and many forests like it, forests that helped other people like me. Those times were much better."
     mc "What happened that made you change your mind? At times, you’re in love with this forest and at other times, the forest seems to almost bring you to tears."
-    R "I don’t want to talk about it too much, because the reason is weird. I wish that I had a particular reason and could just blame it all on that. But I don’t have that. I have nothing to blame, it all just happened, no cause and effect, just bam there you go all of your feelings."
+    R "I don’t want to talk about it too much, because the reason is weird. I wish that I had a particular reason and could just blame it all on that. But I don’t have that. I have nothing to blame, it all just happened, no cause and effect,"
+    R " just bam there you go all of your feelings."
     R "Suddenly you no longer care, suddenly there is nothing that makes you feel any more if you try really hard then you’ll manage to make yourself feel pain. For some reason after not feeling anything but guilt for a while that pain seduces you, makes you want more."
-    R "For a few seconds, you feel alive and happy, but after you’re left with guilt and more self-hate. You try to get that passion for things back, even trying to get that passion back in itself is difficult, and after pushing yourself so hard, only to not be able to get it back hurts a lot."
-    R "It brings intense numbness. Have you ever felt so numb, where you would try anything to feel again?"
+    R "For a few seconds, you feel alive and happy, but after you’re left with guilt and more self-hate. You try to get that passion for things back, even trying to get that passion back in itself is difficult, and after pushing yourself so hard,"
+    R "only to not be able to get it back hurts a lot. It brings intense numbness. Have you ever felt so numb, where you would try anything to feel again?"
 
     menu choice_8:
         "Yes":
@@ -984,12 +991,12 @@ label start:
         jump choice_8_done
     
     label choice_8_done:
-        R "Yeah it certainly isn’t nice. It all just makes you want to blame yourself, there is nothing else to blame, so it must be me. That blame against yourself, it hurts your body a lot, it stops you from sleeping at night while also making you tired and wanting to stay in bed all the time."
-    
+        R "Yeah it certainly isn’t nice. It all just makes you want to blame yourself, there is nothing else to blame, so it must be me. That blame against yourself, it hurts your body a lot, it stops you from sleeping at night while also making you tired and wanting to stay in"
+        R " bed all the time."
     R "You end up not having any energy to do anything, you either eat nothing or eat too much which just brings you more self-hate. But while all of this is happening you don’t want to worry those around you, you don’t want them to worry about you."
     R "You don’t feel like your life is important enough to bring those that care worries and stress. You lose all control of your life. So, the main reason for my love-hate with the forest is that I don’t know."
-    "There was no more skipping from Sam after that, no more smile to brighten up that face. Just a neutral walk with a neutral expression. Like her body had been reminded of the past which brought enough horror to her that her body was no longer able to put up her mask to the world."
-    "She had to recover before she could function again."
+    "There was no more skipping from Sam after that, no more smile to brighten up that face. Just a neutral walk with a neutral expression. Like her body had been reminded of the past which brought enough horror to her that her body was no longer able to"
+    " put up her mask to the world. She had to recover before she could function again."
     mc "I guess that’s why we put on a brave face, why we act like nothing is wrong, we don’t want anyone to feel the same kind of pain that we are feeling. We don’t want them to know how much pain we are in."
     R "Hiding it, and appearing fine is so hard sometimes, makes you want people to forget about you, makes you wish that you weren’t around so that none of your pain can be brought onto others."
     "The only image left were two people walking slowly, one in front of the other. Tough words have been said. A moment of peace was needed, a moment to take our minds off everything."
@@ -997,13 +1004,15 @@ label start:
     mc "The stars are so pretty tonight, I wish we could just lay here and enjoy them for a while. To forget about everything, to get a little life back."
     scene 32 with Dissolve(1.0)
     pause 1
-    "Keeping my eyes open got harder and harder each second. The difference between having my eyes opened and closed was becoming less and less noticeable. Every time that I blinked my eyes remained closed for longer. What would it be like at home if I never returned?"
+    "Keeping my eyes open got harder and harder each second. The difference between having my eyes opened and closed was becoming less and less noticeable. Every time that I blinked my eyes remained closed for longer. What would it be like at home"
+    "if I never returned?"
     scene black with Dissolve(1.0)
     "Would they be sad without me around?  They did send me away. Mom would be heartbroken. She always tried to be tough to protect us. She didn’t often cry but when she did it felt as if the world was drowning in sorrows."
     "Mom didn’t want us to worry about her, so she always hid her tears, didn't want to make us sad. Overworking herself each night so that everything was okay. Never taking a day off. Mom would feel like she had failed her duty to protect me."
     "What about Dad? He always had his moments of anger, an anger that existed out of care for us. He always wanted all of us to be happy and carried us on his back."
     "His face was always the same, drained eyes and an expressionless look. He needed to appear tough so that we could all lean against him. I don’t think that I had ever seen him cry. He made us believe that he wasn’t even capable of it."
-    "Would he be sad if I never came back? Maybe things would be easier without me, maybe without the burden of my existence, everyone would get along better. Would I be sad if I didn’t get back? Do I still have a place to come back to? What if they don’t want me to come back?"
+    "Would he be sad if I never came back? Maybe things would be easier without me, maybe without the burden of my existence, everyone would get along better. Would I be sad if I didn’t get back? Do I still have a place to come back to?"
+    "What if they don’t want me to come back?"
     R "You sure are very weird. I guess you’re not used to amazing night-time adventures with someone as great as me."
     "I had not realized it until now but the entire time, my eyes were closed. I left the world for the land of the stars."
     scene 32 with Dissolve(1.0)
@@ -1014,8 +1023,8 @@ label start:
     "It wasn’t easy getting off the grass back onto my feet. The grass pulling me back to dreamland, soothing me, and although I was dreaming about negative thoughts I still wanted to return. Pulling off from the ground felt like a connection was being severed."
     "Goodbye dreamland, goodbye land full of glistening stars, it’s time to get back to the travels."
     R "Hey I just want you to know that I am sorry about all these things that you have to go through, it must be hard and tiring. But hey look, we are almost there just a few more minutes."
-    "Sam was correct, right in front of us was the base of a tall hill, just a few more steps before the hill would open our view from the shackles of the surrounding trees. The inclination increased with each step, each step was more difficult to make than the one before."
-    "For the first time, I wasn’t sure if a tree wasn’t easier to climb."
+    "Sam was correct, right in front of us was the base of a tall hill, just a few more steps before the hill would open our view from the shackles of the surrounding trees. The inclination increased with each step,"
+    "each step was more difficult to make than the one before. For the first time, I wasn’t sure if a tree wasn’t easier to climb."
     mc "Geez you certainly picked a steep hill."
     R "Only for you. Although I don’t remember it being this steep, this is the only spot that escapes these trees, there is no other nearby point high enough that I know of."
     "Soon I would discover Sam’s biggest secret. The hill that we were almost climbing at this point was known to the locals as the Truth Seeker. A place that would one way or another be the cause to reveal all major secrets, and Sam’s secret was a big one."
@@ -1105,24 +1114,33 @@ label start:
     
     play music "audio/ForeverLost.ogg" volume 0.5 fadein 1 fadeout 1 loop
     scene black with Dissolve(1.0)
-    "The next five minutes were filled with dead silence. The only audible noises were our shoes stomping on the ground below as we tried to maintain balance. I tried to think about all the other times that Sam had touched, when I first fell while running from the bullies,"
-    "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself. She had always skipped ahead of me, only ever slowing down and turning around to talk to me."
+    "The next five minutes were filled with dead silence. The only audible noises were our shoes stomping on the ground below as we tried to maintain balance. I tried to think about all the other times that Sam had touched,"
+    "when I first fell while running from the bullies,"
+    "I almost fell onto her, but I wasn’t conscience back then, when we first met she sat away from me and didn’t touch me at all, neither did she touch me during the dog ambush. She also told me to bandage myself. She had always skipped ahead of me,"
+    "only ever slowing down and turning around to talk to me."
     "Was there something wrong with her or me? As we near the top, I noticed Sam’s face, she wasn’t hiding her emotions, there was no smile, just sadness and worry. The top of the hill was way brighter than any other location that we had been to thus far."
     scene 38 with Dissolve(1.0)
-    "It was free from all the sheltering trees. The dark sky, the bright stars, the shining moon were all perfectly fully visible and glancing at us for the tree’s protection as now gone. I looked across the horizon, for a second I was scared because all I could see was a large dense forest."
-    "But then as I looked towards the direction of the moon, I finally saw it. A glistening body of water, if it wasn’t for the lake I would have never noticed those dark cabins to the side of it. There wasn’t a single light on, so I would have to follow the moon to be able to get back."
+    "It was free from all the sheltering trees. The dark sky, the bright stars, the shining moon were all perfectly fully visible and glancing at us for the tree’s protection as now gone. I looked across the horizon, for a second I was scared because"
+    "all I could see was a large dense forest."
+    "But then as I looked towards the direction of the moon, I finally saw it. A glistening body of water, if it wasn’t for the lake I would have never noticed those dark cabins to the side of it."
+    "There wasn’t a single light on, so I would have to follow the moon to be able to get back."
     scene 39 with Dissolve(1.0)
     "I turned around to tell Sam that I had just found the camp only to see her saddening face, a tear rolling down her cheek."
-    R "I guess it’s time for me to tell you everything now. I don’t remember too much about my life. I was an ordinary kid that loved being out in nature, especially this forest, painting and drawing the landscape or just running around. It was my biggest passion."
-    R "I had other passions besides that of course, but this forest was the main one. Every summer my family and I would travel here, stay out camping and just enjoy life. Just a family tradition that was passed down through generations. It was my favourite time of life, the family being together all happy,"
+    R "I guess it’s time for me to tell you everything now. I don’t remember too much about my life. I was an ordinary kid that loved being out in nature, especially this forest, painting and drawing the landscape or just running around."
+    R "It was my biggest passion."
+    R "I had other passions besides that of course, but this forest was the main one. Every summer my family and I would travel here, stay out camping and just enjoy life. Just a family tradition that was passed down through generations. It was my favourite time of life, "
+    R "the family being together all happy,"
     R "they would all focus on me, and we would have painting sessions together. We would take loads of photos and just smile a lot. As I grew older my passions changed but this forest remained. It was more of a home for me than my own house."
     scene 40 with Dissolve(1.0)
     R "Then all of a sudden I just slowly started losing interest in all of my passions. I had trouble with sleep, with eating, with being happy."
-    R "Sure there were stressful things going on in my life. The family wasn’t the best, I wasn’t doing too well in school any more. I was just left with one single piece of hope for me and my family and that was going camping in this forest over the summer. However, we had to skip that year."
-    R "Mother wasn’t feeling too well and dad was just too busy at work to make any time for us. I clawed onto this one hope for the next year to come. I hated that year, I felt like a husk, I couldn’t feel anything and hated myself for that, but I couldn’t let anyone worry about me, they all had plenty of problems themselves,"
+    R "Sure there were stressful things going on in my life. The family wasn’t the best, I wasn’t doing too well in school any more. I was just left with one single piece of hope for me and my family and that was going camping in this forest over the summer."
+    R "However, we had to skip that year."
+    R "Mother wasn’t feeling too well and dad was just too busy at work to make any time for us. I clawed onto this one hope for the next year to come. I hated that year, I felt like a husk, I couldn’t feel anything and hated myself for that,"
+    R "but I couldn’t let anyone worry about me, they all had plenty of problems themselves,"
     R "I didn’t want to add to them, so I just put on a happy face and pretended that everything was okay while crying all night. I think that my parents must have noticed that something was up because they announced that we would be going camping that summer,"
     R "that dad would take time off work and that mother was feeling well enough for it."
-    R "At the time it was two months away, but it gave me so much hope, and honestly, it was the only thing keeping me alive. I thought that one visit to the forest would help me with all of my problems that it would suddenly just fill me with joy. Mother was even feeling a little better during that time too."
+    R "At the time it was two months away, but it gave me so much hope, and honestly, it was the only thing keeping me alive. I thought that one visit to the forest would help me with all of my problems that it would suddenly just fill me with joy."
+    R " Mother was even feeling a little better during that time too."
     R "When we finally got to the forest though I realized that I had no passion for it. I looked forward to being together once again, but that feeling was left unfulfilled. I felt hollow."
     R "It wasn’t all that bad until Dad got a work call, and told us that we would have to go back because it was important, and he could just not miss out on it. Dad was once again leaving us and mother wouldn’t say anything."
     R "I couldn’t control myself at that point any more, all the emotions that were being held back erupted and came flying out, and I let it all out on them, yelling at them both."
@@ -1137,7 +1155,8 @@ label start:
     R "There was a forest fire going off strongly right where mom and dad were. I had only been gone for about an hour, I didn’t know if they were okay or not, but I had to run away, getting caught up in the flames and smoke would have been the end of me."
     R "I ran as fast as I could. I had to get away and find my parents. The fire was spreading at a high rate, it was almost impossible to see anything, shades of red and orange just engulfed the atmosphere."
     R "While I was running disoriented, the ground below me collapsed and send me crashing down to some deep unused well. The fall had knocked me out and when I came to, it was already dark."
-    R "I wanted to get up and potentially climb out, but my leg was broken by the fall, and it was hard to breathe. I couldn’t move out of there, I was trapped. Not only that, but I spent hours crying and shouting for help until I lost all of my voice. No one ever came for me."
+    R "I wanted to get up and potentially climb out, but my leg was broken by the fall, and it was hard to breathe. I couldn’t move out of there, I was trapped. Not only that, but I spent hours crying and shouting for help until I lost all of my voice. "
+    R "No one ever came for me."
     R "I remember passing out and feeling full of regret. I awoke in the burnt down forest, I thought that someone had found me and rescued me, but there was no one to be found."
     R "I was feeling completely okay. I thought that maybe I just passed out, and it had all been a bad nightmare, so I went looking for people. Everyone that I met would just ignore me, after a few hours I got tired and thought that I was going to force someone to listen to me,"
     R "but I couldn’t touch anyone I just went through them. People just passed through me and no one could hear me. I realized that I must have died that night, that it wasn’t a dream, that life was over, and I was just a wandering spirit or ghost now."
@@ -1156,7 +1175,8 @@ label start:
     R "It’s so difficult. I know that I am crying here in front of you, and I’m really sorry about that but at the same time, I don't feel anything. I’m so numb and overwhelmed."
     menu choice_9_5:
         "Relate, Understanding":
-            mc "It’s okay don’t worry I understand you, I’ve felt like that before. Just overwhelmed and so emotional but just not feeling anything. People have tried to console me in that state, but it’s just like I understand that you’re worried about me, but I just can’t emotionally feel it."
+            mc "It’s okay don’t worry I understand you, I’ve felt like that before. Just overwhelmed and so emotional but just not feeling anything. People have tried to console me in that state, but it’s just like I understand that you’re worried about me,"
+            mc " but I just can’t emotionally feel it."
             python:
                 choices.append("Understanding")
                 relantionship += 5
@@ -1279,11 +1299,14 @@ label start:
     "We set off onto the final stretch of our journey, a lot of things had been said. They were all stuck in my head, and it would be awhile before I could process everything properly. It did make me question my sanity among other things,"
     "but it had been a long night, accepting supernatural events was easier than you’d think when you’re very heavily sleep-deprived."
     "I kind of let logic go away and embraced Sam’s words for the truth. It was now downhill towards the truth and back home. The horizon had begun to tear away, allowing for some of the rising sun’s light to emanate into the world."
-    R "I miss my Mom and Dad. I tried looking for them after I awoke. But I never found them. I never even heard a thing about them. The thought that they had lost their daughter either to a fire or potentially hoping that she had run off and started a new life, was just heartbreaking to me."
+    R "I miss my Mom and Dad. I tried looking for them after I awoke. But I never found them. I never even heard a thing about them. The thought that they had lost their daughter either to a fire or potentially hoping that"
+    R "she had run off and started a new life, was just heartbreaking to me."
     mc "Did you find anything at the place you guys were camping at?"
     R "Just ashes. The whole part of being born again as a spirit must have taken a while. Somehow I never managed to leave this forest. I did try but whenever I would head in a direction that I knew would lead me out, the forest would just keep going without ending."
-    R "Maybe I am cursed to this place? Maybe I am tied to my body?  I don’t know, we are dealing with the weird paranormal here. I don’t live in reality but in fiction. Not only that, but I really miss them and wish that the last memory of me wouldn’t be me running away from them. It’s been too long now."
-    R "The chances that they are alive are very slim. I used to read every single newspaper that I would find in hopes of maybe hearing something about them, but newspapers rarely have any good news, it was becoming depressing to read. Plus it's not common to bring newspaper to a random forest in the middle of nowhere."
+    R "Maybe I am cursed to this place? Maybe I am tied to my body?  I don’t know, we are dealing with the weird paranormal here. I don’t live in reality but in fiction. Not only that, but I really miss them and"
+    R "wish that the last memory of me wouldn’t be me running away from them. It’s been too long now."
+    R "The chances that they are alive are very slim. I used to read every single newspaper that I would find in hopes of maybe hearing something about them, but newspapers rarely have any good news, it was becoming depressing to read."
+    R "Plus it's not common to bring newspaper to a random forest in the middle of nowhere."
     R "Do you miss your parents?"
     menu choice_11:
         "Yeah, I do.":
@@ -1321,23 +1344,27 @@ label start:
         R "I think that it is important to remember that they won’t be with us forever. One day we will lose them and most of us won’t know that day in advanced."
         R "Had I known things would have turned that way I would have told them about my emotions and my state while I was still in control. Not in some random outburst."
 
-    mc "I know, it’s just sometimes you get tired of being the bigger person. You want them to take you seriously. You want them to listen. They are great parents they just have a lot on their plate. I just don’t want to be robbed of my future because of them. If they mess up their life, they mess up mine too."     
+    mc "I know, it’s just sometimes you get tired of being the bigger person. You want them to take you seriously. You want them to listen. They are great parents they just have a lot on their plate."
+    mc "I just don’t want to be robbed of my future because of them. If they mess up their life, they mess up mine too."     
     R "I robbed myself of my future. I don’t know how that fire started. I don’t really blame it either, I blame myself for everything. I don’t even know if I wanted a future back then. I wish for a future now, but I know that is no longer possible."
     R "I think that now I just want to be able to pass on. Living like this is not what I want."
     "The walk downhill was much easier physically, but emotionally it had been much tougher. Sam was having a hard time keeping everything together. A mask of fake emotions was no longer possible for now. All the raw emotions were out there to deal with now."    
     R "What if the hole doesn’t even exist any more, don’t you think that someone would have found me by now, and we are just wasting our time searching? What if finding my body doesn’t change anything, and I’ll still be stuck in this world?"
-    mc "Well, I think that maybe the hole got covered over, there would have been a lot of ash after a fire. Mabe some logs fell over and covered it? I don’t know, but I don’t think that we are wasting time attempting. You have done a lot for me, so at least let me do this small task for you."
-    mc "Let’s not lose hope before we have even begun."
-    "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now, but this was no longer about me, this was now about repaying the one that had saved my life."
+    mc "Well, I think that maybe the hole got covered over, there would have been a lot of ash after a fire. Mabe some logs fell over and covered it? I don’t know, but I don’t think that we are wasting time attempting. You have done a lot for me,"
+    mc "so at least let me do this small task for you. Let’s not lose hope before we have even begun."
+    "The sense of anticipation in the atmosphere grew as we neared the lake, the lights from the camp grew from across the lake. I was no longer lost and could easily get back now, but this was no longer about me,"
+    "this was now about repaying the one that had saved my life."
     "I was still limping around, but my body had got used to the pain from stepping on my sore ankle."
     R "I have a hard time remembering where exactly, well, where exactly I died. But I do remember that there was a large tree stump and the remains of a small castle tower I think. I also wanted to say that I appreciate everything that you have done for me Blue Shirt."
     R "I think that we have gone through a lot tonight but spending it with you was worthwhile and your company was really enjoyable, much better than just walking around talking to myself."
-    R "You have given me hope for the future, maybe there are other people out there like you that can see me and hear me. Plus you’ll be in camp so like maybe we could hang out sometimes if you’d like. I know that accepting a person lie me might not be the easiest, but I really do cherish this night with you"
+    R "You have given me hope for the future, maybe there are other people out there like you that can see me and hear me. Plus you’ll be in camp so like maybe we could hang out sometimes if you’d like."
+    R " I know that accepting a person lie me might not be the easiest, but I really do cherish this night with you"
     "Just as I was about to answer Sam, I heard faint shouting coming from the direction of the camp. I turned around trying to solve what the words shouted at us meant, thinking that maybe some camp instructor had seen us and was worried about me."
     scene 43a46 with Dissolve(1.0)
     play music "audio/Forgotten-Memories.ogg" volume 1.0 fadein 1 fadeout 1 loop
     "But as my luck would have it, my eyes focused and realized that it was none other than the people responsible for my adventure in the forest, the bullies."
-    "Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. Sam had no clue what was going on at first until she saw my terrified expression. I think that she could guess who these people were."
+    "Immediately my legs froze and panic had devoured my body. My brain translated the shouts, they were after me, and anger was a calm word to express their expressions. Sam had no clue what was going on at first until she saw my terrified expression."
+    "I think that she could guess who these people were."
     scene 44b with Dissolve(1.0)
     "Just as I thought that life was going to be over, Sam grabbed my hand and pulled me to start running with her. At the time the fact that she had grabbed my hand was lost in my worries, and it wouldn’t be until much later that it would connect in my mind."
     "How was she holding me when a few hours ago she couldn’t make contact with me? They say that spirits stay around if they have a lot of willpower."
@@ -1356,14 +1383,17 @@ label start:
     "I don’t think that it was dark for long before my eyes adjusted and could see around me. Sunlight was entering through the circular hole in the sky through which I had fallen. I was surrounded by narrow stone slimy walls."
     "Laying in a pool of water explained my drenched state and low body heat. I was freezing and sore all over. Where was I? That was when my eyes adjusted and noticed that I was not the only one stuck in this hole, right beside me were skeleton remains."
     scene 49 with Dissolve(1.0)
-    "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Sam wore. We must have done it, we must have found her body."
+    "I wanted to panic and freak out, but my body had no energy left for anything besides mere thoughts. I noticed the red fabric wrapped around the neck of the remains. A scarf which looked exactly like the one Sam wore."
+    "We must have done it, we must have found her body."
     stop sound
     "Well now hopefully I won’t meet the same end as her. I used the last tiny amount of energy that I had managed to recollect to shout at the top of my lungs for help. No one answered back."
-    "What had happened to Sam and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body. I was told that a camp instructor showed up soon"
+    "What had happened to Sam and the bullies? Did they get her? No, there was no way they would be able to see her. I didn’t stay conscience in that hole for long before I passed out from the damage the night has taken out on my body."
+    "I was told that a camp instructor showed up soon"
     "because he had heard a loud screech and my call for help. Firefights and the police were called, firefights to save me and police to investigate the body. I awoke in a hospital bed where the police questioned me about the night."
     play music "audio/Punch-Deck-Ethereal.ogg" volume 1.0 fadein 1 fadeout 1 loop
     scene 50 with Dissolve(1.0)
-    "I changed the story around to not include any mentions of Sam but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Sam pass onto the next life. Both of my parents were very worried about me. I didn’t get a night of sleep and had broken many bones."
+    "I changed the story around to not include any mentions of Sam but told them to please look into whom the body was. This was the most that I would be able to do to hopefully make Sam pass onto the next life. Both of my parents were very worried about me."
+    "I didn’t get a night of sleep and had broken many bones."
     "That was more than enough for my parents to pull me out of the camp and keep me at home. A few days later an article had been published about Sam and that she had been missing for over sixty years, only to be found dead in that hole that I had fallen into."
     scene 51 with Dissolve(1.0)
     "The article didn’t mention me by name but mentioned how I almost suffered the same faith. The article ended with missing pictures of the bullies, they had gone missing from the camp at the same time as I was found."
@@ -1371,7 +1401,8 @@ label start:
     "It sadly took a few years before I would be able to visit again. A few years that would have been much more difficult if I hadn’t had met Sam that night. It was strange, but she felt like a part of me, there to remind me of hope at the worst of times."
     "I spent the day strolling through the forest, revisiting the cabin that we used for shelter, the hilltop, the place where I awoke to see her for the first time. In all those years it had not changed at all."
     "A part of me hoped to be able to see her again, while the other hoped that she was laid to rest after her body had been found."
-    "She was free from the forest. Life went on, and I decided to use her memory of visiting the forest with her family every year for my family too. Every year as I grew older I wished that maybe she would be there or at least know how grateful I was for her existence."
+    "She was free from the forest. Life went on, and I decided to use her memory of visiting the forest with her family every year for my family too. Every year as I grew older"
+    "I wished that maybe she would be there or at least know how grateful I was for her existence."
     jump end
 
     label end_hill:
